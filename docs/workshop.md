@@ -641,11 +641,37 @@ Here are the main options to keep in mind:
 - Terminal commands / selection
 - Web Search can search the internet to improve result on specific topics. For example, if you're using a specific API or a very new framework/librarie
 
-Here is a few example to try. Feel free to challenge it and see how effective it is.
+Here is a few example to try. Feel free to challenge it and see how effective it is. You can add multiple reference in context in a single request.
+
+**Pass a file**
 
 ```text
-> @workspace /new create a new ASP.NET core 9.0 project, with three views Index, Users and products.
+> @workspace /tests generate unit tests for #Albu
 ```
+
+And then select `AlbumController.cs` to add the file as reference.
+
+![Context manipulation file](assets/context-manip-file.png)
+
+**ASk question on git changes**
+
+```text
+> can you give me the content to add in my changelog regarding my current #changes
+
+> What in my current #changes can cause my code to fail at runtime?
+```
+
+**Target selection and attach folder**
+
+Open the `AlbumController.cs` file and select one or many functions. Then in the chat add all the album-api folder to the contect by drag-and-dropping the folder from the file explorer on the left.
+
+```text
+> @workspace /tests generate unit tests for the function in #selection 
+```
+
+![Selection in context](assets/chat-context-selection.png)
+
+It will improve result by targeting a very specific part of the code for the action while giving a better understanding of the context for the task by attaching all the code in the api folder.
 
 
 ## Everyday developer's tasks
@@ -755,16 +781,29 @@ Once you have the answer, you can ask to fix the issues by typing:
 When you have the fix in the code you choose to **copy it or inject it directy in the file** by hovering the code block in the chat and selecting the right option on the top left.
 
 
-### Debug with Copilot
+### Debug with Copilots *
 
-Coming soon: VS Code and Visual Studio
+\* Coming soon: VS Code and Visual Studio
 
-### Ask copilot to review your code [VS Code only]
+### Ask copilot to review your code
 
-You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It provide explanations and suggestions to improve your code that you can choose to apply or not.
+You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It .
 
-Coming soon: captures
+<div class="warning" data-title="note">
 
+> Preview feature available only on VS Code
+
+</div>
+
+Open again the `album-api/Controllers/UnsecuredController.cs`, right-click in the code window, and then in the `Copilot` menu select `Review and Comment` option. 
+
+![VS Code Copilot code review menu](assets/vscode-copilot-review.png)
+
+It will start a review of your code and provide explanations and suggestions to improve your code that you can choose to apply or not with the same experience with code review comments integration.
+- in red below: Copilot comment and suggestions with buttons to directly accept or discard change and go to next comment
+- in green below: All comment shows in the "Comments" list in VS Code
+
+![VS Code Copilot code review results](assets/vscode-code-review-results.png)
 
 ---
 
