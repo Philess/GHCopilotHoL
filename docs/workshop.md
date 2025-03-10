@@ -757,13 +757,13 @@ When you have the fix in the code you choose to **copy it or inject it directy i
 
 ### Debug with Copilot
 
-TODO: VS Code and Visual Studio
+Coming soon: VS Code and Visual Studio
 
 ### Ask copilot to review your code [VS Code only]
 
 You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It provide explanations and suggestions to improve your code that you can choose to apply or not.
 
-TODO complete with captures
+Coming soon: captures
 
 
 ---
@@ -772,19 +772,19 @@ TODO complete with captures
 
 ## Edit mode
 
-TODO
+Coming soon
 
 ### Code refactoring
 
-TODO
+Coming soon
 
 ### Tests generation
 
-TODO
+Coming soon
 
 ## Agents mode
 
-TODO
+Coming soon
 
 ---
 
@@ -798,7 +798,7 @@ We will use advanced `reusable prompts` and `customization capabilities` to make
 
 *Currently only available in VS Code and Visual Studio*
 
-TODO: integrate previous advanced prompt engineering techniques
+Coming soon: integrate previous advanced prompt engineering techniques
 
 ## Reusable prompts
 
