@@ -217,7 +217,7 @@ An example is better than a thousands words so let's try that!
 
 First, be sure to activate the feature on your copilot settings. Select the `Preferences: Open User Settings` command in the Command Palette (`Ctrl+Shift+P`) and search for the `Next Edit Suggestions` seetings:
 
-![Next Edit Suggestions in settings](assets/nes-setting.png
+![Next Edit Suggestions in settings](assets/nes-setting.png)
 
 Then, open the `albums-api/Models/Album.cs` file and, on the Album contructor, add a new input parameter `Year` of type `int` and see the Next Edit Suggestion propose to change the body of the method accordingly:
 
@@ -639,7 +639,12 @@ Here are the main options to keep in mind:
 - (Git) Changes will focus only on your pending modifications
 - Image / Screenshot will use the Vision capability (only GPT-4o) to add some visual context
 - Terminal commands / selection
-- Web Search can search the internet to improve result on specific topics. For example, if you're using a specific API or a very new framework/librarie
+
+In VS Code insiders, there is other options already availables like:
+- Prompt to attach reusables prompts
+- Tests failure for unit test runs that have failes
+- Problems identified in the VS Code windows
+- other to come and try...
 
 Here is a few example to try. Feel free to challenge it and see how effective it is. You can add multiple reference in context in a single request.
 
@@ -653,7 +658,7 @@ And then select `AlbumController.cs` to add the file as reference.
 
 ![Context manipulation file](assets/context-manip-file.png)
 
-**ASk question on git changes**
+**Ask question on git changes**
 
 ```text
 > can you give me the content to add in my changelog regarding my current #changes
@@ -663,7 +668,7 @@ And then select `AlbumController.cs` to add the file as reference.
 
 **Target selection and attach folder**
 
-Open the `AlbumController.cs` file and select one or many functions. Then in the chat add all the album-api folder to the contect by drag-and-dropping the folder from the file explorer on the left.
+Open the `AlbumController.cs` file and select one or many functions. Then in the chat add all the album-api folder to the contect by **drag-and-dropping** the folder from the file explorer on the left.
 
 ```text
 > @workspace /tests generate unit tests for the function in #selection 
