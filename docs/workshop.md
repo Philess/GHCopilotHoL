@@ -796,7 +796,7 @@ You can also ask Copilot to do a review of your code. It will check your code fo
 
 <div class="warning" data-title="note">
 
-> Preview feature available only on VS Code
+> This feature is available only on VS Code BUT you can simply ask to copilot chat to review your code and he will give you feedbacks and fix suggestions.
 
 </div>
 
@@ -816,19 +816,121 @@ It will start a review of your code and provide explanations and suggestions to 
 
 ## Edit mode
 
-Coming soon
+The Edit Mode of GitHub Copilot is redefines the way you code with Copilot by transitioning from an `AI Infused` mode to an `AI-Native` approach. What it means is that instead of just answering questions, Copilot is taking actions, and is able now to achieve more complex, multi-steps tasks.
+
+It's very powerfull for tasks that needs a lot of operations while keeping track and context on a longer term, like code refactoring for example. Let's try that!
+
+<div class="warning" data-title="note">
+
+> This feature is available only on VS Code for the moment
+
+</div>
+
+### Code Generation
+
+Let's start by rebuilding the existing webapp, which is very basic by using a more powerfull framework like Vue for exemple.
+
+After **committing your code**, to keep a valid starting point to potentially rollback to, **remove** the old `album-viewer` folder and then Open Copilot windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
+
+![Open Edit Mode](assets/open-edit-mode.png)
+
+Add the `AlbumController.cs` and `Album.cs` files from the API folder in the Working Set, by clicking *Add file* button or simply by pasting it, and then type the following request to Copilot Edit:
+
+```text
+Create a album-app client project in vuejs with screen to list, 
+display, create, update and delete albums using the AlbumAPI
+```
+
+![edit mode code generation](assets/edit-mode-codegen.png)
+
+It will create an execute a plan to (probably):
+- Add missing route to existing API controller
+- create a new Vue from scratch with all the required code
+- provide explaination and details on all the code created
+
+When the job is done you'll a working set enriched with all new files. You'll be able to stop there by just clicking **Done** button to end the edit process and keep it, iterate by continuing giving instructions in the current session, or rollbakc everything by clicking on the **Undo** arrow on top to come back to the previous state.
+
+![edit mode result](assets/edit-mode-result.png)
+
+<div class="tip" data-title="tips">
+
+> The default model of Copilot will probably already do the job but if you're not 100% satisfied, you can try a different one here to leverage more power and achieve more complex tasks. Try and make your own opinion on your favorite model!
+
+</div>
 
 ### Code refactoring
 
-Coming soon
+We already seen in the previous example that the edit mode is able to create new code but also refactor existing files in the process of implementing new behavior.
+
+Let's continue to explore this:
+
+**Add a new Artist model on the API**
+
+Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code with this 3 consecutive requests:
+
+```text
+> Add the missing function to the Album Class
+
+> Add a new Artist model with Name, Birthdate, BirthPlace properties
+
+> User the Artist class in the Album object
+```
+
+![Edit mode code refactoring](assets/edit-mode-refactoring.png)
+
 
 ### Tests generation
 
-Coming soon
+Another use case where we can take advantage of this powerfull edit mode is writing tests. 
+
+Add the `AlbumController.cs`, `Album.cs` and `Artist.cs` files and Let's add some unit tests for our API:
+
+```text
+> Add unit test to my api
+```
+
+![Edit mode generate tests](assets/edit-mode-testsgen.png)
+
+Again, Copilot Edits is very strong to write complex code but this is also his limit: for the rest, aka running commands, installing package, running tests, etc. it can gives you the instructions but you will have to take the control.
+
+**What if... it can do all that for you?**
 
 ## Agents mode
 
-Coming soon
+The Agent mode is the evolution of edit mode, with capabilities to directly run commands on the terminal and correct errors on the fly on top of just editing code. It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
+
+<div class="warning" data-title="note">
+
+> This feature is available only on **VS Code Insiders** for the moment. The insiders version of VS Code is the *nighly build* or *canary* version. It means that it can be less stable but you can experiment cutting edge features like this one.
+[Download VS Code Insiders](https://code.visualstudio.com/insiders/)
+
+</div>
+
+Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
+
+Again, after **commiting your code**, to keep a new starting point to potentially rollback to, **remove** the old `album-api` folder and then Open Copilot windows on Edit Mode but then select the `Agent` mode:
+
+![Agent mode](assets/agent-mode.png)
+
+Then type:
+
+```text
+Create a new nodejs api to manage music albums. 
+Create all basic routes to list, get, add, update and delete albums.
+
+Create a collection with sample data. 
+Data are kept in memory for the moment no need to database.
+
+Add unit tests and run it
+```
+
+Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample datas and even unit tests**. 
+
+The last step before committing it and share it with you team is documenting. Try to ask this to Copilot again:
+
+```text
+can you add the instructions to a readme.md file
+```
 
 ---
 
