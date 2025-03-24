@@ -940,18 +940,7 @@ In the previous sections you discovered how to use all out-of-the-box features f
 
 We will use advanced `reusable prompts` and `customization capabilities` to make Copilot act like a real co-worker and not just the copilot everyone is using. 
 
-## Custom Instructions
-
-*Currently only available in VS Code and Visual Studio*
-
-Coming soon: integrate previous advanced prompt engineering techniques
-
-## Reusable prompts
-
-**What is prompt engineering?**
-Prompt engineering is the process of designing high quality prompts to generate high quality code suggestions. There are good practices and tips to write better prompts. Let's see some of them.
-
-## The part that will be moved in the custom instructions
+## Prompt Engineering techniques
 
 ### Provide examples: one-shot and few-shots programming
 
@@ -983,30 +972,7 @@ You can use this technique to **generate code that keeps the styling code from a
 Write a MusicStyle record that conatins a List<MusicStyle> with 6 sample values like in the Album.cs file.
 ```
 
-## Provide external references
-
-The chat copilot can use external references to build more accurate suggestions. For exemple if you want to generate a code that make a request to an API you can provide an example of the API response in the chat or the url to the API reference. Copilot will use it to generate better code.
-
-```bash
-Write a TS function that retreiev all dog breeds from the following API and return an array of Breed objects Request: HTTP GET https://dog.ceo/api/breeds/list/all
-```
-
-Copilot will use the given external reference to generate the code. You will see that he wil generate the Breef interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
-
-```ts
-interface Breed {
-  name: string;
-  subBreeds: string[];
-}
-```
-
-<div class="tips" data-title="tip">
-
-> You can also provide links to external documentations like SDK, libraries, etc... or event normative documents like RFCs, etc...
-
-</div>
-
-## Role Prompting
+### Role Prompting
 
 Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalise his behavior and setup your flavour of Copilot.
 
@@ -1035,7 +1001,7 @@ Start a new conversation and type the following prompt:
 I'm working on a new mobile application that is built on React Native. 
 I need to build a new feature that will allow the user to upload a picture of a dog and get the breed of the dog. 
 I will need to use the following set of APIs to work on the breeds: https://dog.ceo/api/breeds. I need to be sure that my code is secured againt at least the OWASP Top 10 treats (https://owasp.org/Top10/). 
-I need to have unit tests for the code and i want my application to be fully accessible and conforms with the WCAG 2.1 level A and AA success criteria defined at https://www.w3.org/TR/WCAG21/.
+I need to have unit tests for the code using Jest framework.
 I need you to act as my own code coach to ensure that my code fits all these requirements. 
 When possible, please provide links and references for additional learning. 
 Do you understand these instructions? 
@@ -1058,6 +1024,141 @@ how can i make my app accessible with react native?
 
 what is the most secure way to upload a photo from my app?
 ```
+
+## Custom Instructions
+
+<div class="warning" data-title="note">
+
+> This feature is available only on VS Code, Visual Studio and the GitHub Website for the moment
+
+</div>
+
+This feature is easing the customization of copilot by providing an instruction file that will be:
+- used as **meta instructions** for all you chat/edit requests
+- stored in the repo as code which means it will be automatically **shared among team members**
+
+It very powerfull to add context for copilot specifically dedicated for the current codebase.
+
+Start using it by simply creating a `.github/copilot-instructions.md`. Start simple by adding these simple instructions and make a few requests to copilot chat to see the impact:
+
+```md
+Please answer in french but provide code in English.
+We code in TypeScript and use Jest for testing our code.
+When possible, please provide links and references for additional learning.
+```
+
+This is a very basic example. By the way you can provide more advanced information on your project to improve responses by Copilot. Here is a few examples:
+
+Example 1:
+```md
+The backend code is using NestJS in TypeScript, Prisma as our ORM, and PostgreSQL as our database.
+The frontend code is using VueJS in TypeScript with Vue Router and Vuex for state management.
+We use Docker for containerization and deploy on Azure.
+We use GitHub Actions for CI/CD.
+
+We write tests for ou code with Jest.
+Use the following examples for positive test (test that should return true): 
+it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
+Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
+```
+Example 2:
+
+```md
+This is our SQL database schema for Music Albums management:
+
+    ```sql
+    CREATE TABLE artists (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        genre VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE albums (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        artist VARCHAR(255) NOT NULL,
+        price DECIMAL(10, 2) NOT NULL,
+        image_url VARCHAR(2083),
+        release_date DATE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    ```
+```
+
+
+## Reusable prompts
+
+As you can see with the previous examples of `custom-instructions`, putting everything in the same file will soon bring complexity and maybe even have bad impact on copilot reponse quality.
+
+This is why it's also possible to create specialized prompt files, to give specific instructions, for specific tasks.
+
+<div class="warning" data-title="note">
+
+> This feature is available in preview only on VS Code for the moment
+
+</div>
+
+Instructions to activate and use reusable prompts are [available here](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode#about-prompt-files)
+
+
+## Tools integration with Model Context Protocol
+
+Coming Soon
+
+## Advanced Context Manipulations
+
+### Fetch Web Pages
+
+The chat copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a librarie, using a specific code sample from a documentation, or even request an API. You can point provide a specific url or a web request that Copilot will use it to generate more accurate code.
+
+<div class="warning" data-title="note">
+
+> This feature is available in preview only on VS Code Insiders for the moment
+
+</div>
+
+Example 1:
+```text
+what are the new features of the last version on Angular? #fetch 
+```
+
+![Fetch info last version of angular](assets/fetch-angular.png)
+
+<div class="info" data-title="note">
+
+> The `#fetch` is essential to ask to copilot to fetch data on the web
+
+</div>
+
+Example 2:
+```text
+Write a TS function that retrieve all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
+```
+
+\* *you can see below that it could ask you validation depending on the domain for the request*
+
+![Fetch Web Dogs API](assets/fetch-dogs-api.png)
+
+Copilot will use the given external reference to generate the code. You will see that he wil generate the Breed interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
+
+```ts
+interface Breed {
+  name: string;
+  subBreeds: string[];
+}
+```
+
+<div class="tips" data-title="tip">
+
+> You can also provide links to external documentations like SDK, libraries, etc... or event normative documents like RFCs, etc...
+
+</div>
+
+
+### Pass Images as context
+
+Coming Soon
 
 ---
 
