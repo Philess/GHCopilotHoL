@@ -969,12 +969,12 @@ Organize test in logic suites and generate at least 4 positives tests and 2 nega
 You can use this technique to **generate code that keeps the styling code from another file**. For example if you want to create sample records for music style like the Albums in albums-api>Models>Album.cs file, open it and type:
 
 ```bash
-Write a MusicStyle record that conatins a List<MusicStyle> with 6 sample values like in the Album.cs file.
+Write a MusicStyle record that contains a List<MusicStyle> with 6 sample values like in the Album.cs file.
 ```
 
 ### Role Prompting
 
-Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalise his behavior and setup your flavour of Copilot.
+Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalize his behavior and setup your flavour of Copilot.
 
 This is probably the first thing to do when you start a new task with Copilot Chat: **provide a clear description of what you want to build and how do you want copilot to help you**.
 
