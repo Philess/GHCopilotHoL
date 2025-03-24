@@ -144,19 +144,19 @@ Once you start typing a prompt and copilot generate proposals, you can use the f
 
 ### Change completion model to GPT-4o mini
 
-<div class="warning" data-title="note">
-
-> Preview feature available only on VS Code
-
-</div>
-
-If you are using VS Code, it's now possible to switch from the standard Github Copilot completion model to the improved new one based on GPT-4o mini. This new model has additional training on over 275,000 high-quality public repositories in over 30 popular programming languages including JavaScript and TypeScript, Python, Java, C#, C++ and many more. 
+If you are using on of these IDE, it's now possible to switch from the standard Github Copilot completion model to the improved new one based on GPT-4o mini. This new model has additional training on over 275,000 high-quality public repositories in over 30 popular programming languages including JavaScript and TypeScript, Python, Java, C#, C++ and many more. 
 
 As a result, you can expect this model to provide more accurate suggestions and to have better performance.
 
-To get started, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
+In **VS Code** To get started, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
 
 ![alt text](assets/chg-comp-model.png)
+
+<div class="info" data-title="info">
+
+> These instructions are for VS Code. If you are using JetBrains or other supported IDE, you can find instructions on [GitHub Copilot documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-code-completion?tool=jetbrains).
+
+<div>
 
 ## Let's start with the basics
 
