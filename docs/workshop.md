@@ -1110,7 +1110,7 @@ Coming Soon
 
 ### Fetch Web Pages
 
-The chat copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a librarie, using a specific code sample from a documentation, or even request an API. You can point provide a specific url or a web request that Copilot will use it to generate more accurate code.
+The chat copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
 
 <div class="warning" data-title="note">
 
@@ -1136,7 +1136,7 @@ Example 2:
 Write a TS function that retrieves all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
 ```
 
-\* *you can see below that it could ask you validation depending on the domain for the request*
+\* *you can see below that it might request validation depending on the domain for the request*
 
 ![Fetch Web Dogs API](assets/fetch-dogs-api.png)
 
