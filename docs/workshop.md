@@ -1037,7 +1037,7 @@ This feature is easing the customization of copilot by providing an instruction 
 - used as **meta instructions** for all you chat/edit requests
 - stored in the repo as code which means it will be automatically **shared among team members**
 
-It very powerfull to add context for copilot specifically dedicated for the current codebase.
+It very powerful to add context for copilot specifically dedicated for the current codebase.
 
 Start using it by simply creating a `.github/copilot-instructions.md`. Start simple by adding these simple instructions and make a few requests to copilot chat to see the impact:
 
@@ -1056,7 +1056,7 @@ The frontend code is using VueJS in TypeScript with Vue Router and Vuex for stat
 We use Docker for containerization and deploy on Azure.
 We use GitHub Actions for CI/CD.
 
-We write tests for ou code with Jest.
+We write tests for our code with Jest.
 Use the following examples for positive test (test that should return true): 
 it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
 Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
@@ -1133,14 +1133,14 @@ what are the new features of the last version on Angular? #fetch
 
 Example 2:
 ```text
-Write a TS function that retrieve all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
+Write a TS function that retrieves all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
 ```
 
 \* *you can see below that it could ask you validation depending on the domain for the request*
 
 ![Fetch Web Dogs API](assets/fetch-dogs-api.png)
 
-Copilot will use the given external reference to generate the code. You will see that he wil generate the Breed interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
+Copilot will use the given external reference to generate the code. You will see that he will generate the Breed interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
 
 ```ts
 interface Breed {
