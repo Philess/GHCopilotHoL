@@ -640,13 +640,16 @@ Here are the main options to keep in mind:
 - Image / Screenshot will use the Vision capability (only GPT-4o) to add some visual context
 - Terminal commands / selection
 
-In VS Code insiders, there is other options already availables like:
+Depending on the IDE, there is other options already availables like:
 - Prompt to attach reusables prompts
-- Tests failure for unit test runs that have failes
+- Fetch data from the web
+- Tests failure for unit test runs that have failed
 - Problems identified in the VS Code windows
 - other to come and try...
 
-Here is a few example to try. Feel free to challenge it and see how effective it is. You can add multiple reference in context in a single request.
+Here are a few basic examples to understand how it works. More complex example are available in ***Level 4: Copilot Advanced*** part of this workshop. 
+
+You can add multiple reference in context in a single request. Feel free to challenge it and see how effective it is. 
 
 **Pass a file**
 
@@ -822,7 +825,7 @@ It's very powerfull for tasks that needs a lot of operations while keeping track
 
 <div class="warning" data-title="note">
 
-> This feature is available only on VS Code for the moment
+> This feature is available only on **VS Code** and **JetBrains IDEs** for the moment
 
 </div>
 
@@ -906,6 +909,8 @@ The Agent mode is the evolution of edit mode, with capabilities to directly run 
 
 </div>
 
+### Step 1: Rewrite the API from scratch
+
 Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
 
 Again, after **commiting your code**, to keep a new starting point to potentially rollback to, **remove** the old `album-api` folder and then Open Copilot windows on Edit Mode but then select the `Agent` mode:
@@ -915,7 +920,7 @@ Again, after **commiting your code**, to keep a new starting point to potentiall
 Then type:
 
 ```text
-Create a new nodejs api to manage music albums. 
+Create a new nodejs api named album-api to manage music albums. 
 Create all basic routes to list, get, add, update and delete albums.
 
 Create a collection with sample data. 
@@ -924,13 +929,37 @@ Data are kept in memory for the moment no need to database.
 Add unit tests and run it
 ```
 
-Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample datas and even unit tests**. 
+Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample datas and even unit tests** and Copilot will list all actions completed. From there, you can choose to:
+- **Keep** changes to validate this set of modifications
+- **Undo** to rollback to before this set of modifications
+- **Give new instructions** & continue to iterate
+
+![Agent mode continue or keep](assets/agent-mode-keep.png)
 
 The last step before committing it and share it with you team is documenting. Try to ask this to Copilot again:
 
 ```text
 can you add the instructions to a readme.md file
 ```
+
+Clic on `Keep` and `Done` to validate your modification and commit your changes.
+
+### Step 2: Create a new web app
+
+Now that we have a new API, let's take the opportunity to rewrite our frontend app, based on this new API. 
+
+First, **remove** the old `album-app` folder, start a new session in `Agent Mode` and type (reference your created file in context):
+
+```text
+Create a new Vue app named album-app to manage music albums, using the album api #file:albumRoutes.js #file:albumModel.js  
+Create a splashscreen, a view for all routes, and a burger menu to navigate.
+```
+![Agent Mode Vue App](assets/agent-mode-vue-app.png)
+
+### Debug with agent mode and Vision
+
+Let's say that when running you app, you have an error message like this one:
+
 
 ---
 
@@ -1102,9 +1131,9 @@ This is why it's also possible to create specialized prompt files, to give speci
 Instructions to activate and use reusable prompts are [available here](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode#about-prompt-files)
 
 
-## Tools integration with Model Context Protocol
+## Tools integration with Model Context Protocol *
 
-Coming Soon
+\* Coming Soon
 
 ## Advanced Context Manipulations
 
@@ -1162,10 +1191,16 @@ Coming Soon
 
 ---
 
-# Credits
+# Extra Credits 🪙
 
-This workshop's challenges are a fork from the original Hackaton [accessible here](https://github.com/microsoft/CopilotHackathon). We just wanted to integrate it into the [MOAW](https://github.com/microsoft/moaw) format and add some exercises.
+Well done, you made it 'till the end :)
 
-Role Prompts described in the Prompt engineering section are inspired by this [great blog post](https://github.blog/2023-10-09-prompting-github-copilot-chat-to-become-your-personal-ai-assistant-for-accessibility/) from Github's engineers [Ed Summers](https://github.com/edsummersnc) and [Jesse Dugas](https://github.com/jadugas).
+If you want more challenge, or specific use cases, here a a list of great content for you:
 
-A big thanks to them <3
+- [Copilot Adventures](https://github.com/microsoft/CopilotAdventures)
+    An series of code adventures in fantistic worlds were Copilot will be your best ally
+- [Zero2Hero](https://github.com/Azure-Samples/zero2hero)
+    A set of short challenges to test your ability with GitHub Copilot
+
+- [Mastering GitHubCopilot for paired programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming)
+    A set of technology-focused lesson for developers, sharing best practices and recipices for adressing code, sql, deployment, and modernization tasks with GitHub Copilot
