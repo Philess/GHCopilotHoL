@@ -31,13 +31,13 @@ GitHub Copilot is an AI-powered code assistant that helps developers write bette
 
 <div class="warning" data-title="warning">
 
-> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the differentes features of the different extensions you are going to use. Please be clever if it's not exactly the same. For info, this page has been updated in December 2023.
+> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the different features of the different extensions you are going to use. Please be clever if it's not exactly the same.
 
 </div>
 
 ## Minimal Pre-requisites
 
-There's two way to run this workshop:
+There are two ways to run this workshop:
 - online with **GitHub Codespaces**: fastest and easiest way to start playing immediately
 - locally on **your computer**: the best way to install and configure the tools you need to work with GitHub Copilot on every projects
 
@@ -54,7 +54,7 @@ These are the very minimal pre-requisites to run this workshop:
 
 There are different ways to get access to GitHub Copilot:
 
-- **As an individual**, you can sign up to use [Copilot for free](https://github.com/github-copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
+- **As an individual**, you can sign up to use [Copilot Free](https://github.com/github-copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
 
 - **As an individual**, sign up for a [paid subscription](https://github.com/github-copilot/signup/copilot_individual) to get unlimited completions and chat interactions. You can try GitHub Copilot for free with a one-time 30-day trial.
 
@@ -89,7 +89,7 @@ After a few seconds, you will be redirected to the Codespace environment. You ca
 
 ## OPTION 2: Work locally
 
-If you choose to work locally on your computer for this workshop and take that as an opportunity to install and configure the tools you need to work with GitHub Copilot on every projects. 
+You can choose to work locally on your computer for this workshop and take that as an opportunity to install and configure the tools you'll need to work with GitHub Copilot on your projects. 
 
 You first need to install the following tools locally:
 
@@ -281,7 +281,7 @@ describe('validateDate', () => {
     });
 
     it('should throw an error when given an invalid date string', () => {
-        const date = '01/01/2019';
+        const date = 'invalid-date';
         expect(() => validateDate(date)).to.throw();
     });
 });
@@ -306,7 +306,7 @@ describe('validateDate', () => {
 # Docker build and push the album-api image to ACR
 ```
 
-*Copilot will generate the pipeline block by block. Generation pipelines Yaml, you will sometimes need to jump to a new line to trigger the generation of the next block more often than with other type of code.*
+*Copilot will generate the pipeline block by block. When generating pipeline YAML, you may need to press Enter to move to a new line to prompt the generation of the next block, which is more frequent compared to other types of code.*
 
 *It will often generate a task with a few errores coming from bad indentation or missing quote around a task name. You can easily fix these with your IDE and your developer skills :)*
 
@@ -378,7 +378,7 @@ This is because completion must be almost "instant" to be natural to use where a
 
 ```ts
 // generate a plot with D3.js of the selling price of the album by year
-// x-axis are the month series and y-axis show the numbers of album selled
+// x-axis are the month series and y-axis show the numbers of albums sold
 // data from the sales of album are loaded in from an external source and are in json format
 ```
 
@@ -640,13 +640,16 @@ Here are the main options to keep in mind:
 - Image / Screenshot will use the Vision capability (only GPT-4o) to add some visual context
 - Terminal commands / selection
 
-In VS Code insiders, there is other options already availables like:
+Depending on the IDE, there is other options already availables like:
 - Prompt to attach reusables prompts
-- Tests failure for unit test runs that have failes
+- Fetch data from the web
+- Tests failure for unit test runs that have failed
 - Problems identified in the VS Code windows
 - other to come and try...
 
-Here is a few example to try. Feel free to challenge it and see how effective it is. You can add multiple reference in context in a single request.
+Here are a few basic examples to understand how it works. More complex example are available in ***Level 4: Copilot Advanced*** part of this workshop. 
+
+You can add multiple reference in context in a single request. Feel free to challenge it and see how effective it is. 
 
 **Pass a file**
 
@@ -792,7 +795,7 @@ When you have the fix in the code you choose to **copy it or inject it directy i
 
 ### Ask copilot to review your code
 
-You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It .
+You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It provides actionable suggestions to improve your code quality and ensure best practices are followed.
 
 <div class="warning" data-title="note">
 
@@ -822,7 +825,7 @@ It's very powerfull for tasks that needs a lot of operations while keeping track
 
 <div class="warning" data-title="note">
 
-> This feature is available only on VS Code for the moment
+> This feature is available only on **VS Code** and **JetBrains IDEs** for the moment
 
 </div>
 
@@ -906,6 +909,8 @@ The Agent mode is the evolution of edit mode, with capabilities to directly run 
 
 </div>
 
+### Step 1: Rewrite the API from scratch
+
 Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
 
 Again, after **commiting your code**, to keep a new starting point to potentially rollback to, **remove** the old `album-api` folder and then Open Copilot windows on Edit Mode but then select the `Agent` mode:
@@ -915,7 +920,7 @@ Again, after **commiting your code**, to keep a new starting point to potentiall
 Then type:
 
 ```text
-Create a new nodejs api to manage music albums. 
+Create a new nodejs api named album-api to manage music albums. 
 Create all basic routes to list, get, add, update and delete albums.
 
 Create a collection with sample data. 
@@ -924,13 +929,37 @@ Data are kept in memory for the moment no need to database.
 Add unit tests and run it
 ```
 
-Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample datas and even unit tests**. 
+Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample datas and even unit tests** and Copilot will list all actions completed. From there, you can choose to:
+- **Keep** changes to validate this set of modifications
+- **Undo** to rollback to before this set of modifications
+- **Give new instructions** & continue to iterate
+
+![Agent mode continue or keep](assets/agent-mode-keep.png)
 
 The last step before committing it and share it with you team is documenting. Try to ask this to Copilot again:
 
 ```text
 can you add the instructions to a readme.md file
 ```
+
+Clic on `Keep` and `Done` to validate your modification and commit your changes.
+
+### Step 2: Create a new web app
+
+Now that we have a new API, let's take the opportunity to rewrite our frontend app, based on this new API. 
+
+First, **remove** the old `album-app` folder, start a new session in `Agent Mode` and type (reference your created file in context):
+
+```text
+Create a new Vue app named album-app to manage music albums, using the album api #file:albumRoutes.js #file:albumModel.js  
+Create a splashscreen, a view for all routes, and a burger menu to navigate.
+```
+![Agent Mode Vue App](assets/agent-mode-vue-app.png)
+
+### Debug with agent mode and Vision
+
+Let's say that when running you app, you have an error message like this one:
+
 
 ---
 
@@ -940,18 +969,7 @@ In the previous sections you discovered how to use all out-of-the-box features f
 
 We will use advanced `reusable prompts` and `customization capabilities` to make Copilot act like a real co-worker and not just the copilot everyone is using. 
 
-## Custom Instructions
-
-*Currently only available in VS Code and Visual Studio*
-
-Coming soon: integrate previous advanced prompt engineering techniques
-
-## Reusable prompts
-
-**What is prompt engineering?**
-Prompt engineering is the process of designing high quality prompts to generate high quality code suggestions. There are good practices and tips to write better prompts. Let's see some of them.
-
-## The part that will be moved in the custom instructions
+## Prompt Engineering techniques
 
 ### Provide examples: one-shot and few-shots programming
 
@@ -980,35 +998,12 @@ Organize test in logic suites and generate at least 4 positives tests and 2 nega
 You can use this technique to **generate code that keeps the styling code from another file**. For example if you want to create sample records for music style like the Albums in albums-api>Models>Album.cs file, open it and type:
 
 ```bash
-Write a MusicStyle record that conatins a List<MusicStyle> with 6 sample values like in the Album.cs file.
+Write a MusicStyle record that contains a List<MusicStyle> with 6 sample values like in the Album.cs file.
 ```
 
-## Provide external references
+### Role Prompting
 
-The chat copilot can use external references to build more accurate suggestions. For exemple if you want to generate a code that make a request to an API you can provide an example of the API response in the chat or the url to the API reference. Copilot will use it to generate better code.
-
-```bash
-Write a TS function that retreiev all dog breeds from the following API and return an array of Breed objects Request: HTTP GET https://dog.ceo/api/breeds/list/all
-```
-
-Copilot will use the given external reference to generate the code. You will see that he wil generate the Breef interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
-
-```ts
-interface Breed {
-  name: string;
-  subBreeds: string[];
-}
-```
-
-<div class="tips" data-title="tip">
-
-> You can also provide links to external documentations like SDK, libraries, etc... or event normative documents like RFCs, etc...
-
-</div>
-
-## Role Prompting
-
-Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalise his behavior and setup your flavour of Copilot.
+Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalize his behavior and setup your flavour of Copilot.
 
 This is probably the first thing to do when you start a new task with Copilot Chat: **provide a clear description of what you want to build and how do you want copilot to help you**.
 
@@ -1034,8 +1029,8 @@ Start a new conversation and type the following prompt:
 ```bash
 I'm working on a new mobile application that is built on React Native. 
 I need to build a new feature that will allow the user to upload a picture of a dog and get the breed of the dog. 
-I will need to use the following set of APIs to work on the breeds: https://dog.ceo/api/breeds. I need to be sure that my code is secured againt at least the OWASP Top 10 treats (https://owasp.org/Top10/). 
-I need to have unit tests for the code and i want my application to be fully accessible and conforms with the WCAG 2.1 level A and AA success criteria defined at https://www.w3.org/TR/WCAG21/.
+I will need to use the following set of APIs to work on the breeds: https://dog.ceo/api/breeds. I need to be sure that my code is secured against at least the OWASP Top 10 treats (https://owasp.org/Top10/). 
+I need to have unit tests for the code using Jest framework.
 I need you to act as my own code coach to ensure that my code fits all these requirements. 
 When possible, please provide links and references for additional learning. 
 Do you understand these instructions? 
@@ -1059,12 +1054,153 @@ how can i make my app accessible with react native?
 what is the most secure way to upload a photo from my app?
 ```
 
+## Custom Instructions
+
+<div class="warning" data-title="note">
+
+> This feature is available only on VS Code, Visual Studio and the GitHub Website for the moment
+
+</div>
+
+This feature is easing the customization of copilot by providing an instruction file that will be:
+- used as **meta instructions** for all you chat/edit requests
+- stored in the repo as code which means it will be automatically **shared among team members**
+
+It very powerful to add context for copilot specifically dedicated for the current codebase.
+
+Start using it by simply creating a `.github/copilot-instructions.md`. Start simple by adding these simple instructions and make a few requests to copilot chat to see the impact:
+
+```md
+Please answer in french but provide code in English.
+We code in TypeScript and use Jest for testing our code.
+When possible, please provide links and references for additional learning.
+```
+
+This is a very basic example. By the way you can provide more advanced information on your project to improve responses by Copilot. Here is a few examples:
+
+Example 1:
+```md
+The backend code is using NestJS in TypeScript, Prisma as our ORM, and PostgreSQL as our database.
+The frontend code is using VueJS in TypeScript with Vue Router and Vuex for state management.
+We use Docker for containerization and deploy on Azure.
+We use GitHub Actions for CI/CD.
+
+We write tests for our code with Jest.
+Use the following examples for positive test (test that should return true): 
+it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
+Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
+```
+Example 2:
+
+```md
+This is our SQL database schema for Music Albums management:
+
+    ```sql
+    CREATE TABLE artists (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        genre VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE albums (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        artist VARCHAR(255) NOT NULL,
+        price DECIMAL(10, 2) NOT NULL,
+        image_url VARCHAR(2083),
+        release_date DATE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    ```
+```
+
+
+## Reusable prompts
+
+As you can see with the previous examples of `custom-instructions`, putting everything in the same file will soon bring complexity and maybe even have bad impact on copilot reponse quality.
+
+This is why it's also possible to create specialized prompt files, to give specific instructions, for specific tasks.
+
+<div class="warning" data-title="note">
+
+> This feature is available in preview only on VS Code for the moment
+
+</div>
+
+Instructions to activate and use reusable prompts are [available here](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode#about-prompt-files)
+
+
+## Tools integration with Model Context Protocol *
+
+\* Coming Soon
+
+## Advanced Context Manipulations
+
+### Fetch Web Pages
+
+The chat copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
+
+<div class="warning" data-title="note">
+
+> This feature is available in preview only on VS Code Insiders for the moment
+
+</div>
+
+Example 1:
+```text
+what are the new features of the last version on Angular? #fetch 
+```
+
+![Fetch info last version of angular](assets/fetch-angular.png)
+
+<div class="info" data-title="note">
+
+> The `#fetch` is essential to ask to copilot to fetch data on the web
+
+</div>
+
+Example 2:
+```text
+Write a TS function that retrieves all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
+```
+
+\* *you can see below that it might request validation depending on the domain for the request*
+
+![Fetch Web Dogs API](assets/fetch-dogs-api.png)
+
+Copilot will use the given external reference to generate the code. You will see that he will generate the Breed interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
+
+```ts
+interface Breed {
+  name: string;
+  subBreeds: string[];
+}
+```
+
+<div class="tips" data-title="tip">
+
+> You can also provide links to external documentations like SDK, libraries, etc... or event normative documents like RFCs, etc...
+
+</div>
+
+
+### Pass Images as context
+
+Coming Soon
+
 ---
 
-# Credits
+# Extra Credits 🪙
 
-This workshop's challenges are a fork from the original Hackaton [accessible here](https://github.com/microsoft/CopilotHackathon). We just wanted to integrate it into the [MOAW](https://github.com/microsoft/moaw) format and add some exercises.
+Well done, you made it 'till the end :)
 
-Role Prompts described in the Prompt engineering section are inspired by this [great blog post](https://github.blog/2023-10-09-prompting-github-copilot-chat-to-become-your-personal-ai-assistant-for-accessibility/) from Github's engineers [Ed Summers](https://github.com/edsummersnc) and [Jesse Dugas](https://github.com/jadugas).
+If you want more challenge, or specific use cases, here a a list of great content for you:
 
-A big thanks to them <3
+- [Copilot Adventures](https://github.com/microsoft/CopilotAdventures)
+    A series of code adventures in fantastic worlds were Copilot will be your best ally
+- [Zero2Hero](https://github.com/Azure-Samples/zero2hero)
+    A set of short challenges to test your ability with GitHub Copilot
+
+- [Mastering GitHubCopilot for paired programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming)
+    A set of technology-focused lesson for developers, sharing best practices and recipices for adressing code, sql, deployment, and modernization tasks with GitHub Copilot
