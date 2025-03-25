@@ -31,13 +31,13 @@ GitHub Copilot is an AI-powered code assistant that helps developers write bette
 
 <div class="warning" data-title="warning">
 
-> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the differentes features of the different extensions you are going to use. Please be clever if it's not exactly the same. For info, this page has been updated in December 2023.
+> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the different features of the different extensions you are going to use. Please be clever if it's not exactly the same.
 
 </div>
 
 ## Minimal Pre-requisites
 
-There's two way to run this workshop:
+There are two ways to run this workshop:
 - online with **GitHub Codespaces**: fastest and easiest way to start playing immediately
 - locally on **your computer**: the best way to install and configure the tools you need to work with GitHub Copilot on every projects
 
@@ -54,7 +54,7 @@ These are the very minimal pre-requisites to run this workshop:
 
 There are different ways to get access to GitHub Copilot:
 
-- **As an individual**, you can sign up to use [Copilot for free](https://github.com/github-copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
+- **As an individual**, you can sign up to use [Copilot Free](https://github.com/github-copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
 
 - **As an individual**, sign up for a [paid subscription](https://github.com/github-copilot/signup/copilot_individual) to get unlimited completions and chat interactions. You can try GitHub Copilot for free with a one-time 30-day trial.
 
@@ -89,7 +89,7 @@ After a few seconds, you will be redirected to the Codespace environment. You ca
 
 ## OPTION 2: Work locally
 
-If you choose to work locally on your computer for this workshop and take that as an opportunity to install and configure the tools you need to work with GitHub Copilot on every projects. 
+You can choose to work locally on your computer for this workshop and take that as an opportunity to install and configure the tools you'll need to work with GitHub Copilot on your projects. 
 
 You first need to install the following tools locally:
 
@@ -281,7 +281,7 @@ describe('validateDate', () => {
     });
 
     it('should throw an error when given an invalid date string', () => {
-        const date = '01/01/2019';
+        const date = 'invalid-date';
         expect(() => validateDate(date)).to.throw();
     });
 });
@@ -306,7 +306,7 @@ describe('validateDate', () => {
 # Docker build and push the album-api image to ACR
 ```
 
-*Copilot will generate the pipeline block by block. Generation pipelines Yaml, you will sometimes need to jump to a new line to trigger the generation of the next block more often than with other type of code.*
+*Copilot will generate the pipeline block by block. When generating pipeline YAML, you may need to press Enter to move to a new line to prompt the generation of the next block, which is more frequent compared to other types of code.*
 
 *It will often generate a task with a few errores coming from bad indentation or missing quote around a task name. You can easily fix these with your IDE and your developer skills :)*
 
@@ -378,7 +378,7 @@ This is because completion must be almost "instant" to be natural to use where a
 
 ```ts
 // generate a plot with D3.js of the selling price of the album by year
-// x-axis are the month series and y-axis show the numbers of album selled
+// x-axis are the month series and y-axis show the numbers of albums sold
 // data from the sales of album are loaded in from an external source and are in json format
 ```
 
@@ -795,7 +795,7 @@ When you have the fix in the code you choose to **copy it or inject it directy i
 
 ### Ask copilot to review your code
 
-You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It .
+You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It provides actionable suggestions to improve your code quality and ensure best practices are followed.
 
 <div class="warning" data-title="note">
 
@@ -1029,7 +1029,7 @@ Start a new conversation and type the following prompt:
 ```bash
 I'm working on a new mobile application that is built on React Native. 
 I need to build a new feature that will allow the user to upload a picture of a dog and get the breed of the dog. 
-I will need to use the following set of APIs to work on the breeds: https://dog.ceo/api/breeds. I need to be sure that my code is secured againt at least the OWASP Top 10 treats (https://owasp.org/Top10/). 
+I will need to use the following set of APIs to work on the breeds: https://dog.ceo/api/breeds. I need to be sure that my code is secured against at least the OWASP Top 10 treats (https://owasp.org/Top10/). 
 I need to have unit tests for the code using Jest framework.
 I need you to act as my own code coach to ensure that my code fits all these requirements. 
 When possible, please provide links and references for additional learning. 
@@ -1198,7 +1198,7 @@ Well done, you made it 'till the end :)
 If you want more challenge, or specific use cases, here a a list of great content for you:
 
 - [Copilot Adventures](https://github.com/microsoft/CopilotAdventures)
-    An series of code adventures in fantistic worlds were Copilot will be your best ally
+    A series of code adventures in fantastic worlds were Copilot will be your best ally
 - [Zero2Hero](https://github.com/Azure-Samples/zero2hero)
     A set of short challenges to test your ability with GitHub Copilot
 
