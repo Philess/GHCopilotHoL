@@ -105,7 +105,7 @@ You first need to install the following tools locally:
     ```
 
 7. Install [Docker](https://docs.docker.com/engine/install/)
-8. Install [.NET Core](https://dotnet.microsoft.com/download) \* *optional - needed if you want to run provided .net code*
+8. Install [.NET Core](https://dotnet.microsoft.com/download) \* *oneeded if you want to run provided .net code*
 
 Then, clone your forked repository and open it in VS Code.
 
@@ -954,9 +954,9 @@ Create a splashscreen, a view for all routes, and a burger menu to navigate.
 ```
 ![Agent Mode Vue App](assets/agent-mode-vue-app.png)
 
-### Debug with agent mode and Vision
+<!-- ### Debug with agent mode and Vision
 
-Let's say that when running you app, you have an error message like this one:
+Let's say that when running you app, you have an error message like this one: -->
 
 
 ---
