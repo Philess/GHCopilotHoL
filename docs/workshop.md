@@ -105,7 +105,7 @@ You first need to install the following tools locally:
     ```
 
 7. Install [Docker](https://docs.docker.com/engine/install/)
-8. Install [.NET Core](https://dotnet.microsoft.com/download)
+8. Install [.NET Core](https://dotnet.microsoft.com/download) \* *optional - needed if you want to run provided .net code*
 
 Then, clone your forked repository and open it in VS Code.
 
@@ -142,11 +142,9 @@ Once you start typing a prompt and copilot generate proposals, you can use the f
 
 <div>
 
-### Change completion model to GPT-4o mini
+### Change completion model
 
-If you are using on of these IDE, it's now possible to switch from the standard Github Copilot completion model to the improved new one based on GPT-4o mini. This new model has additional training on over 275,000 high-quality public repositories in over 30 popular programming languages including JavaScript and TypeScript, Python, Java, C#, C++ and many more. 
-
-As a result, you can expect this model to provide more accurate suggestions and to have better performance.
+It's now possible to switch from the standard Github Copilot completion model, based on GPT-4o mini to another one. The completion model has been specifically trained on over 275,000 high-quality public repositories in over 30 popular programming languages including JavaScript and TypeScript, Python, Java, C#, C++ and many more for better result but you a able to switch to another one if your administrator activated this feature.
 
 In **VS Code** To get started, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
 
