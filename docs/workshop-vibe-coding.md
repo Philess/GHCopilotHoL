@@ -71,9 +71,9 @@ Start by creating **your own fork** of the repository by clicking on the `Fork` 
 
 ![fork repo](assets/fork-repo.png)
 
-## OPTION 1: Work with GitHub Codespaces
+## Work with GitHub Codespaces
 
-The environment is already configured to work with [GitHub Codespaces](https://github.com/features/codespaces), you can find the configuration files in the *.devcontainer* folder.
+The environment is already configured to work with [GitHub Codespaces](https://github.com/features/codespaces), a containerized dev environment hosted on GitHub.
 
 To start programming just start a new codespace and you are ready to go, don't need to install anything.
 
@@ -87,37 +87,6 @@ To start programming just start a new codespace and you are ready to go, don't n
 
 After a few seconds, you will be redirected to the Codespace environment. You can start coding right away, your Github Copilot extensions are already installed and configured.
 
-## OPTION 2: Work locally
-
-You can choose to work locally on your computer for this workshop and take that as an opportunity to install and configure the tools you'll need to work with GitHub Copilot on your projects. 
-
-You first need to install the following tools locally:
-
-1. Install [Visual Studio Code](https://code.visualstudio.com/)
-2. Install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
-3. Install the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extension
-4. Install [Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-5. Install mocha
-
-    ``` bash
-    npm install --global mocha
-    npm install axios
-    ```
-
-7. Install [Docker](https://docs.docker.com/engine/install/)
-8. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
-
-Then, clone your forked repository and open it in VS Code.
-
-``` bash
-git clone https://github.com/<YourUser>/gh-copilot-demo
-cd gh-copilot-demo
-code .
-```
-
-Finally, you need login to your GitHub account in Visual Studio Code to activate the GitHub Copilot extensions. The extensions will ask you to login, but if you don't see the prompt, you can login by clicking on the user icon in the bottom left sidebar where you will see the logins for Github and Github Copilot Chat.
-
-![alt text](assets/gh-login.png)
 
 ---
 
