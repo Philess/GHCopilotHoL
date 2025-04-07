@@ -1,15 +1,15 @@
 ---
 published: false                        # Optional. Set to true to publish the workshop (default: false)
 type: workshop                          # Required.
-title: Product Hands-on Lab - GitHub Copilot, your new AI pair programmer              # Required. Full title of the workshop
-short_title: GitHub Copilot, your new AI pair programmer                # Optional. Short title displayed in the header
+title: Hands-on Lab - Vibe Coding with GitHub Copilot programmer              # Required. Full title of the workshop
+short_title: Vibe Coding with GitHub Copilot                # Optional. Short title displayed in the header
 description: Discover how to leverage GitHub Copilot to develop your project  # Required.
 level: beginner                         # Required. Can be 'beginner', 'intermediate' or 'advanced'
 authors:                                # Required. You can add as many authors as needed      
   - Philippe DIDIERGEORGES
 contacts:                               # Required. Must match the number of authors
   - '@philess'
-duration_minutes: 180                    # Required. Estimated duration in minutes
+duration_minutes: 90                    # Required. Estimated duration in minutes
 tags: javascript, .net, python, GitHub, IA, copilot, AI          # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
 #video_url: https://youtube.com/link     # Optional. Link to a video of the workshop
@@ -25,7 +25,7 @@ navigation_numbering: false             # Optional. Enable numbering in the side
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
+The goal of this workshop is to discover GitHub Copilot features, from Code suggestions to agent mode and have a quick overview on the impact it brings to developers and development teams?
 
 GitHub Copilot is an AI-powered code assistant that helps developers write better code faster. It uses machine learning models trained on billions of lines of code to suggest whole lines or entire functions based on the context of what you’re working on. By using GitHub Copilot, you can learn how to write better code and improve your productivity.
 
@@ -142,19 +142,6 @@ Once you start typing a prompt and copilot generate proposals, you can use the f
 
 <div>
 
-### Change completion model
-
-It's now possible to switch from the standard Github Copilot completion model, based on GPT-4o mini, to another one. The completion model has been specifically trained on over 275,000 high-quality public repositories in over 30 popular programming languages, including JavaScript, TypeScript, Python, Java, C#, C++, and many more for better results. However, you are able to switch to another model if your administrator has activated this feature.
-
-In **VS Code** To get started, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
-
-![alt text](assets/chg-comp-model.png)
-
-<div class="info" data-title="info">
-
-> These instructions are for VS Code. If you are using JetBrains or other supported IDE, you can find instructions on [GitHub Copilot documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-code-completion?tool=jetbrains).
-
-<div>
 
 ## Let's start with the basics
 
@@ -169,35 +156,6 @@ Create a new `album-viewer/utils/validators.ts` file and start with the prompt:
 
 ```ts
 // validate date from text input in french format and convert it to a date object
-```
-
-Copilot can help you also to write `RegExp patterns`. Try these:
-
-```ts
-// function that validates the format of a GUID string
-
-// function that validates the format of a IPV6 address string
-```
-
-<br>
-
-**More complex code generation**
-
-In the `albums-api/Controllers/AlbumController.cs` file try to complete the `GetByID` method by replace the current return:
-
-```cs
-// GET api/<AlbumController>/5
-[HttpGet("{id}")]
-public IActionResult Get(int id)
-{
-    //here
-}
-```
-
-In the same file you can show other prompts like:
-
-```cs
-// function that sort albums by name, artist or genre
 ```
 
 ### Next edit suggestion
@@ -221,221 +179,6 @@ Then, open the `albums-api/Models/Album.cs` file and, on the Album contructor, a
 
 ![Next Edit Suggestion](assets/next-edit-sug.png)
 
-## Everyday developer's tasks
-
-### Write Tests
-
-Copilot can help generate all kind of tests that are written with code. It Includes `unit tests, integration tests, end to end tests, and load testing` tests with JMeter scripts for example.
-
-- Add a new file `validators.test.ts` in the `albums-viewer/tests` folder
-
-- To have good test suggestion, you hould provide some basic informations to Copilot such as the test framework you want to use:
-
-```ts
-import { describe }
-```
-
-When you start typing the `describe` function, copilot will see you're in test file in TS and suggest you to import the `describe` and `it` functions from Mochai which is a famous test framework for JS/TS.
-Accept the suggestion and it will automatically suggest also the `expect` function from Chai: accept it also.
-
-```ts
-import {describe, it} from 'mocha';
-import {expect} from 'chai';
-```
-
-You have your test framework in place! Now just import the functions you want to test by starting a new line by `import` keyword copilot will see you are in a test file, to test some `validators` because of the name and it will suggest something like that:
-
-```ts
-import {validateAlbumId} from '../src/validators';
-```
-
-It looks ok but because Copilot doesn't have access to all your code, only the open tab and limited informations, you can see that both the path and the function name are wrong.
-<br>
-... At least he tried ...
-<br>
-but it's a good way to show that Copilot is not magic and you have to use it with your other IDE feature and your brain :)
-
-- Accept the suggestion and change the path. You will be able to have VS Code to give you the available function with the `ctrl+space` shortcut.
-
-- Add a comment with the first function you want to test and let the magic happen:
-
-```ts
-import {describe, it} from 'mocha';
-import {expect} from 'chai';
-
-import {validateDate, validateIPV6} from '../utils/validators';
-
-// test the validateDate function
-```
-
-Boom!
-
-```ts
-describe('validateDate', () => {
-    it('should return a date object when given a valid date string', () => {
-        const date = '01/01/2019';
-        const expectedDate = new Date(2019, 0, 1);
-        expect(validateDate(date)).to.deep.equal(expectedDate);
-    });
-
-    it('should throw an error when given an invalid date string', () => {
-        const date = 'invalid-date';
-        expect(() => validateDate(date)).to.throw();
-    });
-});
-```
-
-*You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws and error when given en empty string.*
-
-### Write CI pipelines
-
-*Copilot will help you in writing your pipeline definition files to generate the code for the different steps and tasks. Here are some examples of what it can do:*
-
-- *generate a pipeline definition file `from scratch`*
-- *accelerate the writing of a pipeline definition file by `generating the code` for the different `steps, tasks and pieces of script`*
-- *help `discover marketplace tasks and extensions` that match your need*
-
-#### Step 1: generate from scratch
-
-- Create a new file `pipeline.yml` in the `.github/workflows` folder of the project and start typing the following prompt:
-
-```yml
-# Github Action pipeline that runs on push to main branch
-# Docker build and push the album-api image to ACR
-```
-
-*Copilot will generate the pipeline block by block. When generating pipeline YAML, you may need to press Enter to move to a new line to prompt the generation of the next block, which is more frequent compared to other types of code.*
-
-*It will often generate a task with a few errores coming from bad indentation or missing quote around a task name. You can easily fix these with your IDE and your developer skills :)*
-
-#### Step 2: add tasks from prompts
-
-- You probably have a github action workflow with at least a "login" task to your container registry and a "docker build and deploy" task. Add a new comment after those tasks to tag the docker image with the github run id and push it to the registry:
-
-```yml
-# tag the image with the github run id and push to docker hub
-```
-
-you can play with other prompts like:
-
-```yml
-# run tests on the album-api image
-
-# deploy the album-api image to the dev AKS cluster
-```
-
-#### Step 3: add scripts from prompts
-
-- Copilot is also very usefull when you need to write custom script like the following example:
-
-```yml
-# find and replace the %%VERSION%% by the github action run id in every appmanifest.yml file
-```
-
-### Infrastructure As Code
-
-Copilot can also help you write Infrastructure as code. It can generate code for `Terraform, ARM, Bicep, Pulumi, etc...` and also `Kubernetes manifest files`.
-
-#### Bicep
-
-Open the `main.bicep`file in `iac/bicep` folder and start typing prompts at the end of the file to add new resources:
-
-```js
-// Container Registry
-
-// Azure Cognitive Services Custom Vision resource
-```
-
-#### Terraform
-
-Open the `app.tf`file in `iac/terraform` folder and start typing prompts at the end of the file to add new resources:
-
-```yml
-# Container Registry
-
-# Azure Cognitive Services Custom Vision resource
-```
-
-## Big tasks vs small tasks
-
-Copilot will probably will always more effective with prompt to generate small but precisely described pieces of code rather than a whole class with a unique multiple lines prompt.
-
-Copilot completion is even more effective when you use it to generate small pieces of code step by step. For more complex task, we will see in the next section that Copilot Chat is more powerfull.
-
-This is because completion must be almost "instant" to be natural to use where a chat request can take a few seconds to be processed without being annoying.
-
-<div class="tip" data-title="tip">
-
-> The best strategy to generate big piece of code, is always starting by the basic shell of your code with a simple prompt and then adding small pieces one by one.
-
-</div>
-
-**Big prompts that *could* works**
-
-- Back in the `albums-viewer/utils` add a new file `viz.ts` to create a function that generates a graphe. Here is a sample of prompt to do that:
-
-```ts
-// generate a plot with D3.js of the selling price of the album by year
-// x-axis are the month series and y-axis show the numbers of albums sold
-// data from the sales of album are loaded in from an external source and are in json format
-```
-
-<div class="info" data-title="info">
-
->Copilot will probably try to complete the prompt by adding more details. You can try to add more details yourself or follow copilot's suggestions. When you want it to stop and start generating the code just jump on another line and let the copilot do its work.
-
-</div>
-
-- Once you achieved to generate the code for the chart you probably see that your IDE warn you about the d3 object that is unknown. For that also Copilot helps.
-Return on top of the file and start typing `import d3` to let copilot autocomplete
-
-```ts
-import d3 from "d3";
-```
-
-Look at what Copilot has been able to generate. It's possible that the code is working fine and does everything you asked for but also you probably hit the token limit and Copilot was not able to generate the whole code.
-
-It's because Copilot for autocompletion is not made for creating big pieces of code at once, but is more specialized in generating small pieces step by step.
-
-
-**Try again by build it step by step**
-
-Try to generate the code for the plot by cutting it into small pieces following the steps below:
-
-```ts
-import * as d3 from 'd3';
-
-// load the data from a json file and create the d3 svg in the then function
-```
-
-Inside the then function, starts by setting up the basics of the plot
-
-```ts
-// create the svg
-```
-
-```ts
-// create the scales for the x and y axis
-// x-axis are the month series and y-axis show the numbers of album selled
-```
-
-```ts
-// create axes for the x and y axis
-```
-
-From there you can just ask to copilot to complete the chart
-
-```ts
-// generate a line chart based on the albums sales data
-```
-
-<div class="tip" data-title="tip">
-
->You will **always** get better results by cutting big task into small chunks with copilot autocomplete. It's also a good way to show that copilot is not magic and you have to use it with your other IDE feature and your developer logic.
-
-</div>
-
-
 ## Side Quest #1: Generate Git Commit comment
 
 Yes, writing a comment should be mandatory and developers tend to be lazy. GitHub Copilot can help with that.
@@ -449,59 +192,6 @@ Yes, writing a comment should be mandatory and developers tend to be lazy. GitHu
 3. Admire Copilot having generated a comment for you
 
     ![Generated comment](assets/git-commit2.png)
-
-## Side Quest #2: Writing documentation
-
-Copilot can understand a natural language prompt and generate code and because it's just language to it, it can also `understand code and explain it in natural language` to help you document your code.
-So it can help you in all your documentation tasks. It can generate simple documentation comment or standardized documentation comment like JavaDoc, JsDoc, etc... it can also help you translate your documentation in different languages. Let's see how it works.
-
-### Simple documentation comment
-
-To see that just put you pointer on top of a Class, a method or any line of code and start typing the comment handler for the selected language to trigger copilot. In language like Java, C# or TS for example, just type `// `and let the magic happen.
-
-Here is an example in the `albums-viewer/routes/index.js` file. Insert a line and start typing on line 13 inside the `try block`
-
-```js
-router.get("/", async function (req, res, next) {
-  try {
-    // Invoke the album-api via Dapr
-    const url = `http://127.0.0.1:${DaprHttpPort}/v1.0/invoke/${AlbumService}/method/albums`;
-
-```
-
-Continue to play with it and see what happens on other pieces of code.
-
-### Standardized documentation comment (JavaDoc, JsDoc, etc...)
-
-For this one, to trigger the documentation comment generation, you need to respect the specific comment format:
-
--  `/**` (for JS/TS) in the `index.js` file for example
-- `///` for C# in the `AlbumController.cs` of the AlbumApi file for example
-
-```cs
-/// <summary>
-/// function that returns a single album by id
-/// </summary>
-/// <param name="id"></param>
-/// <returns></returns>
-[HttpGet("{id}")]
-public IActionResult Get(int id)
-```
-
-### Writing markdown and html documentation
-
-Copilot is also very powerfull to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your readme.md files like for this one for example.
-
-You can show that by creating a new file `demo.md` in the root of the project and start typing the following prompt:
-
-```md
-# Github Copilot documentation
-This documentation is generated with Github Copilot to show what the tool can do.
-
-##
-```
-
-From there by starting a new line with a secondary level title it will start generating the content of the documentation and it will showcase how it will accelerate the documentation writing process.
 
 ---
 
@@ -535,7 +225,6 @@ Try it with a few questions like:
 
 ```text
 > How to generate a random number in C#?
-> What is the best way to secure a route is ASP.NET Core?
 > What is the easiest way to generate a static website with NodeJS?
 ```
 
@@ -543,8 +232,6 @@ Try it then with some of your code files in the repository. Open a file a try as
 
 ```text
 > Can you explain me what this code does?
-> (with only part of the code selected) Can you explain me what the selected code does?
-> Can you generate a function that returns a random number between 1 and 10?
 > Can you add documentation comments to this function?
 ```
 
@@ -562,22 +249,9 @@ On the GitHub Copilot Chat, you can switch between three modes: **Ask**, **Edit*
 
 **Agent Mode** and **Edit Mode** are detailed in next level. This level focus on playing with **Ask mode**.
 
-
-### Inline Chat
-
-GitHub Copilot Chat is very helpful but for a developer, leaving the keyboard and having to take the mouse to open the Chat tab can be boring. You can directly call the Chat inside the code editor.
-
-1- Open any file containing code
-
-2- Use the shortcut **Ctrl + i**. It should open the Quick chat popup, a small chat windows where you put your cursor
-
-![GitHub Copilot Quick Chat](assets/quickchat.png)
-
-3- Type any command to generate some code (i.e. "Create a C# class named Toto). You can do the same actions as in the chat view but directly targeting a very specific line of code. It's also more focused on generating code and less on explanation.
-
 ### Model Selection
 
-LLMs capabilities evolves pretty fast and we tend to see more and more models specifically optimized for specific tasks. In order to always provide the best performances for your usage, GitHub Copilot now integrate multiple model that you can switch between on Ask, Edit & Agent modes. 
+LLMs capabilities evolves pretty fast and we tend to see more and more models specifically optimized for specific tasks. In order to always provide the best performances for your usage, GitHub Copilot now integrate multiple model that you can switch between on Chat / Edit modes. 
 
 ![Model Selection capture](assets/model-selection.png)
 
@@ -602,30 +276,6 @@ You can prepend your chat inputs with a specific topic name to help Copilot give
 - **/tests**: Generate unit tests for the selected code.
 - **/vscode**: Questions about VS Code commands and settings.
 - **/clear**: Clear the session.
-
-### Chat participants
-
-Chat participants are like specialized experts who can assist you with specific tasks. You can mention them in the chat using the @ symbol. Currently, there are three Chat participants available for Visual Studio Code:
-
-- **@workspace**: This chat participant has knowledge about the code in your workspace and can help you navigate it by finding relevant files or classes. The @workspace chat participant uses a meta prompt to determine what information to collect from the workspace to help answer your question.
-- **@vscode**: This chat participant is knowledgeable about commands and features in the VS Code editor itself, and can assist you in using them.
-- **@terminal**: This chat participant has context about the Visual Studio Code terminal shell and its contents.
-- **@azure**: This chat participant has knowledge about Azure and can help you with Azure-related tasks.
-- **@github**: This chat participant can assist with GitHub-related queries and tasks.
-
-This list of agents can be extended by installing extensions in your IDE.
-
-They may not be super rich for the moment but their features will continue to grow over the time. Here are some example
-
-Open the side Chat panel and type **@workspace /New* to specify that you want to create a new project. For instance, try to create an Asp.Net project
-
-```text
-> @workspace /new create a new ASP.NET core 9.0 project, with three views Index, Users and products.
-```
-
-It should create a structured project and even a new button to create the file. Click on "Create workspace" to see files being created.
-
-![GitHub Copilot Chat Participants](assets/agents.png)
 
 ### Context Manipulation
 
@@ -717,17 +367,15 @@ Open file `album-viewer/lang/translations.json` and ask in the chat to add some 
 Copilot can also help you generate tests for your code. It can generate `unit tests, integration tests, end to end tests, and load testing` tests with JMeter scripts for example.
 
 Open the `album-api/Controllers/UnsecuredController.cs` file and type questions like these to the chat
-*Why not trying inline with `Ctrl + i` first and again with the chat view after to see the difference?*
 
 ```text
 > Generate a unit tests class for this code
 ```
 
-You can also use copilot to help you generate Stubs and Mocks for your tests.
+You can also use copilot to help you run this tests
 
 ```text
-> Generate a mock for FileStream class
-> Use that mock in the unit tests
+> How can i run these tests?
 ```
 
 <div class="info" data-title="note">
@@ -753,28 +401,11 @@ You can also use Copilot to generate documentation at a high level as it'sc flue
 > complete my README by adding step to deploy solution on azure
 ```
 
-You can also ask Copilot what are the standard MD files to have in a project on GitHub and generate them for you.
-
-
-### Code Refactoring
-
-More impressive, Copilot chat can help you refactor your code. It can help you `rename variables, extract methods, extract classes, etc...`.
-
-You can try some of these commands on the `album-api/Controllers/UnsecuredController.cs` file:
-
-```text
-> extract methods
-> create Async version of each methods when it makes sense
-```
-
 ### Code Translation
 
 *Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`*
 
-To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. For example open the `validators.ts` file created in the first section dedicated to Copilot autocompletion and ask to translate it to C for example.
-
-In case of dealing with Legacy code like COBOL for example it can be very useful. Open the `legacy/albums.cbl` file and try translating the code to Python.
-
+To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. In case of dealing with Legacy code like COBOL for example it can be very useful. Open the `legacy/albums.cbl` file and try asking Copilot to translate the code to Python.
 
 ### Secure your code
 
@@ -795,10 +426,6 @@ Once you have the answer, you can ask to fix the issues by typing:
 
 When you have the fix in the code you choose to **copy it or inject it directy in the file** by hovering the code block in the chat and selecting the right option on the top left.
 
-
-### Debug with Copilot *
-
-\* Coming soon: VS Code and Visual Studio
 
 ### Ask copilot to review your code
 
@@ -905,7 +532,7 @@ Again, Copilot Edits is very strong to write complex code but this is also his l
 
 **What if... it can do all that for you?**
 
-## Agent mode
+## Agents mode
 
 The Agent mode is the evolution of edit mode, with capabilities to directly run commands on the terminal and correct errors on the fly on top of just editing code. It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
 
@@ -966,233 +593,6 @@ Create a splashscreen, a view for all routes, and a burger menu to navigate.
 
 Let's say that when running your app, you have an error message like this one: -->
 
----
-
-# Level 4: Copilot Advanced
-
-In the previous sections you discovered how to use all out-of-the-box features from GitHub Copilot. In this section you will learn techniques to get more accurate results, providing  Copilot what he doesn't know: your best practices, naming conventions, data model, internal APIs, etc...
-
-We will use advanced `reusable prompts` and `customization capabilities` to make Copilot act like a real co-worker and not just the copilot everyone is using. 
-
-## Prompt Engineering techniques
-
-### Provide examples: one-shot and few-shots programming
-
-Talking about prompt engineering, you can also use the chat to provide examples to Copilot. It's a good way to help Copilot understand what you want to do and generate better code. You can provide examples in the chat by typing with the validator.ts file open:
-
-```bash
-# one-shot programming
-
-Write me unit tests for phone number validators methods using mocha and chai in the current file.
-Use the following examples for positive test (test that should return true): 
-it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
-Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
-```
-
-```bash
-# few-shot programming
-
-Write me unit tests for all validators methods using mocha and chai in the current file.
-Use the following examples for positive test (test that should return true): 
-it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
-it('should return true if the phone number is a valid local american number', () => { expect(validatePhoneNumber('202-939-9889')).to.be.true; });
-it('should throw an error if the given phone number is empty', () => { expect(validatePhoneNumber('')).to.throw(); });
-Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
-```
-
-You can use this technique to **generate code that keeps the styling code from another file**. For example if you want to create sample records for music style like the Albums in albums-api>Models>Album.cs file, open it and type:
-
-```bash
-Write a MusicStyle record that contains a List<MusicStyle> with 6 sample values like in the Album.cs file.
-```
-
-### Role Prompting
-
-Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalize his behavior and setup your flavour of Copilot.
-
-This is probably the first thing to do when you start a new task with Copilot Chat: **provide a clear description of what you want to build and how do you want copilot to help you**.
-
-<div class="warning" data-title="Important">
-
-> **This is very powerfull when handled properly** so be sure to start every coding sessions with a role prompt and save your best prompt for future use.
-
-</div>
-
-***Structure of a role prompt***
-
-What can you include in a role prompt:
-
-- Provide solid context and background information on what you want to build.
-- Define GitHub Copilot’s role and setting expectations about what feedback we are looking for.
-- Be specific in the quality of answers and ask for reference and additional resources to learn more and ensure the answers you receive are correct
-- Resume the task and ask if the instructions are clear
-
-***Example of a role prompt***
-
-Start a new conversation and type the following prompt:
-
-```bash
-I'm working on a new mobile application that is built on React Native. 
-I need to build a new feature that will allow the user to upload a picture of a dog and get the breed of the dog. 
-I will need to use the following set of APIs to work on the breeds: https://dog.ceo/api/breeds. I need to be sure that my code is secured against at least the OWASP Top 10 treats (https://owasp.org/Top10/). 
-I need to have unit tests for the code using Jest framework.
-I need you to act as my own code coach to ensure that my code fits all these requirements. 
-When possible, please provide links and references for additional learning. 
-Do you understand these instructions? 
-```
-
-From there you can start asking questions and from time to time, ensure Copilot still follows the instructions by asking:
-
-```bash
-Are you still using the instructions I provided?
-```
-
-***Test your role prompt***
-
-You can test your role prompt by asking questions about best practices for accessibility on React Native Apps and OWASP Top 10 treats. You can also ask to generate code for the upload feature and check if the generated code is secured and accessible.
-
-Try these questions for example:
-
-```bash
-how can i make my app accessible with react native?
-
-what is the most secure way to upload a photo from my app?
-```
-
-## Custom Instructions
-
-<div class="warning" data-title="note">
-
-> This feature is available only on VS Code, Visual Studio and the GitHub Website for the moment
-
-</div>
-
-This feature is easing the customization of copilot by providing an instruction file that will be:
-- used as **meta instructions** for all you chat/edit requests
-- stored in the repo as code which means it will be automatically **shared among team members**
-
-It very powerful to add context for copilot specifically dedicated for the current codebase.
-
-Start using it by simply creating a `.github/copilot-instructions.md`. Start simple by adding these simple instructions and make a few requests to copilot chat to see the impact:
-
-```md
-Please answer in french but provide code in English.
-We code in TypeScript and use Jest for testing our code.
-When possible, please provide links and references for additional learning.
-```
-
-This is a very basic example. By the way you can provide more advanced information on your project to improve responses by Copilot. Here is a few examples:
-
-Example 1:
-```md
-The backend code is using NestJS in TypeScript, Prisma as our ORM, and PostgreSQL as our database.
-The frontend code is using VueJS in TypeScript with Vue Router and Vuex for state management.
-We use Docker for containerization and deploy on Azure.
-We use GitHub Actions for CI/CD.
-
-We write tests for our code with Jest.
-Use the following examples for positive test (test that should return true): 
-it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
-Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
-```
-Example 2:
-
-```md
-This is our SQL database schema for Music Albums management:
-
-    ```sql
-    CREATE TABLE artists (
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        genre VARCHAR(100),
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-
-    CREATE TABLE albums (
-        id SERIAL PRIMARY KEY,
-        title VARCHAR(255) NOT NULL,
-        artist VARCHAR(255) NOT NULL,
-        price DECIMAL(10, 2) NOT NULL,
-        image_url VARCHAR(2083),
-        release_date DATE,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-    ```
-```
-
-
-## Reusable prompts
-
-As you can see with the previous examples of `custom-instructions`, putting everything in the same file will soon bring complexity and maybe even have bad impact on copilot reponse quality.
-
-This is why it's also possible to create specialized prompt files, to give specific instructions, for specific tasks.
-
-<div class="warning" data-title="note">
-
-> This feature is available in preview only on VS Code for the moment
-
-</div>
-
-Instructions to activate and use reusable prompts are [available here](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode#about-prompt-files)
-
-
-## Tools integration with Model Context Protocol *
-
-\* Coming Soon
-
-## Advanced Context Manipulations
-
-### Fetch Web Pages
-
-The chat copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
-
-<div class="warning" data-title="note">
-
-> This feature is available only on **VS Code** for the moment
-
-</div>
-
-Example 1:
-```text
-what are the new features of the last version on Angular? #fetch 
-```
-
-![Fetch info last version of angular](assets/fetch-angular.png)
-
-<div class="info" data-title="note">
-
-> The `#fetch` is essential to ask to copilot to fetch data on the web
-
-</div>
-
-Example 2:
-```text
-Write a TS function that retrieves all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
-```
-
-\* *you can see below that it might request validation depending on the domain for the request*
-
-![Fetch Web Dogs API](assets/fetch-dogs-api.png)
-
-Copilot will use the given external reference to generate the code. You will see that he will generate the Breed interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
-
-```ts
-interface Breed {
-  name: string;
-  subBreeds: string[];
-}
-```
-
-<div class="tips" data-title="tip">
-
-> You can also provide links to external documentations like SDK, libraries, etc... or event normative documents like RFCs, etc...
-
-</div>
-
-
-### Pass Images as context
-
-Coming Soon
 
 ---
 
@@ -1200,8 +600,9 @@ Coming Soon
 
 Well done, you made it 'till the end :)
 
-If you want more challenge, or specific use cases, here a a list of great content for you:
+If you want more challenge, more details and specific use cases, here a a list of great content for you:
 
+- [GitHub Copilot Ultimate tutorial](https://aka.ms/github-copilot-hol) The longer version of this workshops, going deeper in details, use cases and features
 - [Copilot Adventures](https://github.com/microsoft/CopilotAdventures)
     A series of code adventures in fantastic worlds were Copilot will be your best ally
 - [Zero2Hero](https://github.com/Azure-Samples/zero2hero)
