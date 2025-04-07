@@ -23,7 +23,7 @@ navigation_numbering: false             # Optional. Enable numbering in the side
 #   - Section 2 title
 ---
 
-# The ultimate GitHub Copilot Tutorial for developers
+# A Vibe Coding with GitHub Copilot Tutorial
 
 The goal of this workshop is to discover GitHub Copilot features, from Code suggestions to agent mode and have a quick overview on the impact it brings to developers and development teams?
 
