@@ -7,10 +7,12 @@ description: Discover how to leverage GitHub Copilot to develop your project  # 
 level: beginner                         # Required. Can be 'beginner', 'intermediate' or 'advanced'
 authors:                                # Required. You can add as many authors as needed      
   - Philippe DIDIERGEORGES
+  - Damien AICHEH
 contacts:                               # Required. Must match the number of authors
   - '@philess'
+  - '@damienaicheh'
 duration_minutes: 180                    # Required. Estimated duration in minutes
-tags: javascript, .net, python, GitHub, IA, Copilot, AI          # Required. Tags for filtering and searching
+tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu         # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
 #video_url: https://youtube.com/link     # Optional. Link to a video of the workshop
 #audience: students                      # Optional. Audience of the workshop (students, pro devs, etc.)
