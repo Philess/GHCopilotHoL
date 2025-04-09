@@ -287,7 +287,7 @@ describe('validateDate', () => {
 
 *You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws an error when given en empty string.*
 
-### Write CI pipelines
+### Write CI workflows
 
 Copilot will help you in writing your pipeline definition files to generate the code for the different steps and tasks. Here are some examples of what it can do:
 
@@ -295,7 +295,9 @@ Copilot will help you in writing your pipeline definition files to generate the 
 - accelerate the writing of a pipeline definition file by `generating the code` for the different `steps`, `tasks` and `pieces of script`
 - help `discover marketplace tasks and extensions` that match your need
 
-#### Step 1: generate from scratch
+In this section you will add prompts to your workflows to generate it step by step.
+
+#### Step 1: Generate from scratch
 
 - Create a new file `workflow.yml` in the `.github/workflows` folder of the project and start typing the following prompt:
 
@@ -308,9 +310,9 @@ Copilot will generate the pipeline block by block. When generating pipeline YAML
 
 It will often generate a task with a few errors coming from bad indentation or missing quote around a task name. You can easily fix these with your IDE and your developer skills :)
 
-#### Step 2: add tasks from prompts
+#### Step 2: Add tasks from prompts
 
-- You probably have a github action workflow with at least a "login" task to your container registry and a "docker build and deploy" task. Add a new comment after those tasks to tag the docker image with the github run id and push it to the registry:
+- You probably have a Github Action workflow with at least a "login" task to your container registry and a "docker build and deploy" task. Add a new comment after those tasks to tag the docker image with the github run id and push it to the registry:
 
 ```yml
 # tag the image with the github run id and push to docker hub
@@ -324,7 +326,7 @@ you can play with other prompts like:
 # deploy the album-api image to the dev AKS cluster
 ```
 
-#### Step 3: add scripts from prompts
+#### Step 3: Add scripts from prompts
 
 - Copilot is also very usefull when you need to write custom script like the following example:
 
