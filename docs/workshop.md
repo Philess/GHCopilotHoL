@@ -205,7 +205,7 @@ In the same file you can show other prompts like:
 
 <div class="warning" data-title="note">
 
-> Preview feature available only on VS Code https://code.visualstudio.com/blogs/2025/02/12/next-edit-suggestions
+> Preview feature available only on [VS Code](https://code.visualstudio.com/blogs/2025/02/12/next-edit-suggestions)
 
 </div>
 
