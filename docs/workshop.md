@@ -1049,9 +1049,9 @@ You can test your role prompt by asking questions about best practices for acces
 Try these questions for example:
 
 ```bash
-how can i make my app accessible with react native?
+How can I make my app accessible with react native?
 
-what is the most secure way to upload a photo from my app?
+What is the most secure way to upload a photo from my app?
 ```
 
 ## Custom Instructions
@@ -1068,7 +1068,7 @@ This feature is easing the customization of Copilot by providing an instruction 
 
 It very powerful to add context for Copilot specifically dedicated for the current codebase.
 
-Start using it by simply creating a `.github/Copilot-instructions.md`. Start simple by adding these simple instructions and make a few requests to Copilot chat to see the impact:
+Start using it by simply creating a `.github/copilot-instructions.md`. Start simple by adding these simple instructions and make a few requests to Copilot chat to see the impact:
 
 ```md
 Please answer in french but provide code in English.
@@ -1076,9 +1076,10 @@ We code in TypeScript and use Jest for testing our code.
 When possible, please provide links and references for additional learning.
 ```
 
-This is a very basic example. By the way you can provide more advanced information on your project to improve responses by Copilot. Here is a few examples:
+This is a very basic example. By the way you can provide more advanced information on your project to improve responses of Copilot. Here is a few examples:
 
 Example 1:
+
 ```md
 The backend code is using NestJS in TypeScript, Prisma as our ORM, and PostgreSQL as our database.
 The frontend code is using VueJS in TypeScript with Vue Router and Vuex for state management.
@@ -1090,6 +1091,7 @@ Use the following examples for positive test (test that should return true):
 it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
 Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
 ```
+
 Example 2:
 
 ```md
@@ -1209,10 +1211,25 @@ Write a TS function that retrieves all dog breeds from the following API and ret
 Copilot will use the given external reference to generate the code. You will see that he will generate the Breed interface (or class) with a subBreeds property. It's coming from the API given by the external reference.
 
 ```ts
-interface Breed {
+export interface Breed {
+  id: string;
   name: string;
-  subBreeds: string[];
+  description: string;
+  hypoallergenic: boolean;
+  lifeSpan: {
+    min: number;
+    max: number;
+  };
+  maleWeight: {
+    min: number;
+    max: number;
+  };
+  femaleWeight: {
+    min: number;
+    max: number;
+  };
 }
+...
 ```
 
 <div class="tips" data-title="tip">
