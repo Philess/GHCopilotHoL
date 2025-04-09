@@ -48,7 +48,7 @@ These are the very minimal pre-requisites to run this workshop:
 | | |
 |----------------|-----------------|
 | A GitHub account | [Create free GitHub account](https://github.com/join) |
-| GitHub Copilot Access activated | [Get Access to Github Copilot](#get-access-to-github-Copilot) |
+| GitHub Copilot Access activated | Get Access to Github Copilot (section below) |
 | A web browser  | [Download Microsoft Edge](https://www.microsoft.com/edge) or any other one ;-)|
 
 
