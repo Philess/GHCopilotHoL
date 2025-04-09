@@ -732,16 +732,15 @@ You can also use Copilot to help you generate Stubs and Mocks for your tests.
 You can use Copilot Chat to explain code to you. It can `explain you the code in natural language or generate documentation comments for you`. Let's try that with the following commands:
 
 ```text
-> /explain
-> Generate documentation comments for this code
+/explain Generate documentation comments for this code
 ```
 
 It can be very useful to understand legacy code or code you don't know. Give it a try with files in the `legacy` folder of the repo.
 
-You can also use Copilot to generate documentation at a high level as it'sc fluent in markdown. For example, you can ask to complete `README.md` file (ensure you have the file in the context):
+You can also use Copilot to generate documentation at a high level as it is fluent in markdown. For example, you can ask to complete `README.md` file (ensure you have the file in the context):
 
 ```text
-> complete my README by adding step to deploy solution on azure
+> complete my #file:README.md  by adding step to deploy solution on Azure
 ```
 
 You can also ask Copilot what are the standard MD files to have in a project on GitHub and generate them for you.
@@ -762,7 +761,7 @@ You can try some of these commands on the `album-api/Controllers/UnsecuredContro
 
 *Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`*
 
-To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. For example open the `validators.ts` file created in the first section dedicated to Copilot autocompletion and ask to translate it to C for example.
+To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. For example open the ``album-viewer/utils/validators.ts` file created in the first section dedicated to Copilot autocompletion and ask to translate it to C for example.
 
 In case of dealing with Legacy code like COBOL for example it can be very useful. Open the `legacy/albums.cbl` file and try translating the code to Python.
 
@@ -789,7 +788,11 @@ When you have the fix in the code you choose to **copy it or inject it directy i
 
 ### Debug with Copilots *
 
-\* Coming soon: VS Code and Visual Studio
+<div class="warning" data-title="note">
+
+> Coming soon: VS Code and Visual Studio
+
+</div>
 
 ### Ask Copilot to review your code
 
@@ -803,7 +806,7 @@ You can also ask Copilot to do a review of your code. It will check your code fo
 
 Open again the `album-api/Controllers/UnsecuredController.cs`, right-click in the code window, and then in the `Copilot` menu select `Review and Comment` option. 
 
-![VS Code Copilot code review menu](assets/vscode-Copilot-review.png)
+![VS Code Copilot code review menu](assets/vscode-copilot-review.png)
 
 It will start a review of your code and provide explanations and suggestions to improve your code that you can choose to apply or not with the same experience with code review comments integration.
 - in red below: Copilot comment and suggestions with buttons to directly accept or discard change and go to next comment
