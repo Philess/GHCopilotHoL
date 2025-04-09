@@ -510,19 +510,19 @@ From there by starting a new line with a secondary level title it will start gen
 GitHub Copilot is a generative AI and thus, perfect to generate code, but it has powerfull analysis capabilities on your code that can be used in several case to improve code quality like: find security issues, bad practices in your code and generate a fix, refactor and add comment to legacy code, generate tests, etc...
 
 
-## Start playing with the Chat
+## Start playing with Copilot Chat
 
 Once Copilot Chat is setup, you can start using it:
 
-- by clicking the **Copilot Icon** on the top next to the search bar *or* pressing `Ctrl` + `Alt` + `i` shortcut to open the **Chat view**
+- by clicking the **Copilot Icon** on the top right of the search bar *or* pressing `Ctrl` + `Alt` + `i` shortcut to open the **Chat view**
 - by pressing `Ctrl` + `i` shortcut for a quick **inline question** to the chat
 - by pressing `Ctrl` + `Shift` + `i` shortcut to open the **Edit view**
 
-The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to copilot.
-The **Inline Chat** is a quick way to ask a question and get an answer precisely in the context of the line you are working on.
-The **Edit View** is a more advanced version of the chat view that allows you to edit the code directly in the chat.
+- The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to Copilot.
+- The **Inline Chat** is a quick way to ask a question and get an answer precisely in the context of the line you are working on.
+- The **Edit View** is a more advanced version of the chat view that allows you to edit the code directly in the chat.
 
-We'll see examples of both in the next sections to let you choose which one you prefer depending on the situation.
+We'll see examples in the next sections to let you choose which one you prefer depending on the situation.
 
 ### Chat View
 
@@ -558,11 +558,11 @@ GitHub Copilot Chat is very handful but for a developer, leaving the keyboard an
 
 1- Open any file containing code
 
-2- Use the shortcut **Ctrl + i**. It should open the Quick chat popup, a small chat windows where you put your cursor
+2- Use the shortcut `Ctrl` + `i`. It should open the Quick chat popup, a small chat windows where you put your cursor
 
 ![GitHub Copilot Quick Chat](assets/quickchat.png)
 
-3- Type any command to generate some code (i.e. "Create a C# class named Toto). You can do the same actions as in the chat view but directly targeting a very specific line of code. It's also more focused on generating code and less on explanation.
+3- Ask to generate some code (i.e. "Create a C# class named Toto). You can do the same actions as in the chat view but directly targeting a very specific line of code. It's also more focused on generating code and less on explanation.
 
 ### Model Selection
 
@@ -573,8 +573,8 @@ LLMs capabilities evolves pretty fast and we tend to see more and more models sp
 <div class="tip" data-title="Available models">
 
 > The list of available models will depend on multiple parameters:
-> - which IDE are you using
-> - which mode are you using (Chat / Inline / Edit)
+> - which IDE you are using
+> - which mode you are using (Chat / Inline / Edit)
 > - what are the model authorized by your Copilot Administrator
 
 </div>
@@ -589,7 +589,7 @@ We will see that in the next level.
 
 To further help Copilot give you more relevant answers, you can choose a topic for your questions through "slash commands."
 
-You can prepend your chat inputs with a specific topic name to help Copilot give you a more relevant response. When you start typing /, you’ll see the list of possible topics:
+You can prepend your chat inputs with a specific topic name to help Copilot give you a more relevant response. When you start typing `/`, you’ll see the list of possible topics:
 
 - **/explain**: Explain step-by-step how the selected code works.
 - **/fix**: Propose a fix for the bugs in the selected code.
@@ -597,21 +597,22 @@ You can prepend your chat inputs with a specific topic name to help Copilot give
 - **/tests**: Generate unit tests for the selected code.
 - **/vscode**: Questions about VS Code commands and settings.
 - **/clear**: Clear the session.
+More commands are added as the product evolves, so you can have more
 
 ### Chat participants
 
-Chat participants are like specialized experts who can assist you with specific tasks. You can mention them in the chat using the @ symbol. Currently, there are three Chat participants available for Visual Studio Code:
+Chat participants are like specialized experts who can assist you with specific tasks. You can mention them in the chat using the **@** symbol. Currently, there are three Chat participants available for Visual Studio Code:
 
-- **@workspace**: This chat participant has knowledge about the code in your workspace and can help you navigate it by finding relevant files or classes. The @workspace chat participant uses a meta prompt to determine what information to collect from the workspace to help answer your question.
+- **@workspace**: This chat participant has knowledge about the code in your workspace and can help you navigate into it by finding relevant files or classes. The @workspace chat participant uses a meta prompt to determine what information to collect from the workspace to help answer your question.
 - **@vscode**: This chat participant is knowledgeable about commands and features in the VS Code editor itself, and can assist you in using them.
 - **@terminal**: This chat participant has context about the Visual Studio Code terminal shell and its contents.
 
-They may not be super rich for the moment but their features will continue to grow over the time. Here are some example
+Let's try it!
 
 Open the side Chat panel and type **@workspace /New* to specify that you want to create a new project. For instance, try to create an Asp.Net project
 
 ```text
-> @workspace /new create a new ASP.NET core 9.0 project, with three views Index, Users and products.
+@workspace /new create a new ASP.NET core 9.0 project, with three views Index, Users and products.
 ```
 
 It should create a structured project and even a new button to create the file. Click on "Create workspace" to see files being created.
