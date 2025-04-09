@@ -870,27 +870,29 @@ It's very powerfull for tasks that needs a lot of operations while keeping track
 
 ### Code Generation
 
-Let's start by rebuilding the existing webapp, which is very basic by using a more powerfull framework like Vue for exemple.
+Let's start by rebuilding the existing webapp (`album-viewer`), which is very basic by using a more powerfull framework like Vue for exemple.
 
-After **committing your code**, to keep a valid starting point to potentially rollback to, **remove** the old `album-viewer` folder and then Open Copilot windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
+After **committing your code** the goal now is to **remove** the old `album-viewer` folder and then Open Copilot windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
 
 ![Open Edit Mode](assets/vscode-edit-mode.png)
 
-Add the `AlbumController.cs` and `Album.cs` files from the API folder in the Working Set, by clicking *Add file* button or simply by pasting it, and then type the following request to Copilot Edit:
+Add the `AlbumController.cs` and `Album.cs` files from the `albums-api` folder as context for your prompt, by clicking *Add Context* button or simply by drag and drop them into the chat windows.
+Then type the following request to Copilot Chat Edit:
 
 ```text
-Create a album-app client project in vuejs with screen to list, 
-display, create, update and delete albums using the AlbumAPI
+Create a album-app client project in vuejs with screen to list, display, create, update and delete albums using the AlbumAPI
 ```
 
 ![edit mode code generation](assets/edit-mode-codegen.png)
 
 It will create an execute a plan to (probably):
 - Add missing route to existing API controller
-- create a new Vue from scratch with all the required code
-- provide explaination and details on all the code created
+- Create a new Vue from scratch with all the required code
+- Provide explaination and details on all the code created
 
-When the job is done you'll a working set enriched with all new files. You'll be able to stop there by just clicking **Done** button to end the edit process and keep it, iterate by continuing giving instructions in the current session, or rollbakc everything by clicking on the **Undo** arrow on top to come back to the previous state.
+When the job is done you'll a working set enriched with all new files. You'll be able to stop there by just clicking **Done** button to end the edit process and keep it, iterate by continuing giving instructions in the current session, or rollback everything by clicking on the **Undo** arrow on top to come back to the previous state.
+
+If some files are missing, you can ask directly Copilot to add them. He will reevaluate the entire chat and provide the missing one based on your ask.
 
 ![edit mode result](assets/edit-mode-result.png)
 
