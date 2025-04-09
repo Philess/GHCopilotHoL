@@ -336,31 +336,31 @@ you can play with other prompts like:
 
 ### Infrastructure As Code
 
-Copilot can also help you write Infrastructure as code. It can generate code for `Terraform, ARM, Bicep, Pulumi, etc...` and also `Kubernetes manifest files`.
+Copilot can also help you write Infrastructure as code. It can generate code for `Terraform`, `ARM`, `Bicep`, `Pulumi`, etc... and also `Kubernetes manifest files`.
 
 #### Bicep
 
-Open the `main.bicep`file in `iac/bicep` folder and start typing prompts at the end of the file to add new resources:
+Open the `main.bicep` file in `iac/bicep` folder and start typing prompts at the end of the file to add new resources:
 
 ```js
 // Container Registry
 
-// Azure Cognitive Services Custom Vision resource
+// Azure Open AI resource
 ```
 
 #### Terraform
 
-Open the `app.tf`file in `iac/terraform` folder and start typing prompts at the end of the file to add new resources:
+Open the `app.tf` file in `iac/terraform` folder and start typing prompts at the end of the file to add new resources:
 
 ```yml
 # Container Registry
 
-# Azure Cognitive Services Custom Vision resource
+# Azure Open AI resource
 ```
 
 ## Big tasks vs small tasks
 
-Copilot will probably will always more effective with prompt to generate small but precisely described pieces of code rather than a whole class with a unique multiple lines prompt.
+Copilot will probably be always more effective with prompts to generate small but precisely described pieces of code rather than a whole class with a unique multiple lines prompt.
 
 Copilot completion is even more effective when you use it to generate small pieces of code step by step. For more complex task, we will see in the next section that Copilot Chat is more powerfull.
 
