@@ -981,6 +981,8 @@ can you add the instructions to a readme.md file
 
 Clic on `Keep` and `Done` to validate your modification and commit your changes.
 
+Do not hesitate to play with the different models that are available to you, you can find the differences in the [documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
+
 ### Step 2: Create a new web app
 
 Now that we have a new API, let's take the opportunity to rewrite our frontend app, based on this new API. 
