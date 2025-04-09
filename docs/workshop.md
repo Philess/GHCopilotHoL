@@ -368,13 +368,13 @@ This is because completion must be almost "instant" to be natural to use where a
 
 <div class="tip" data-title="tip">
 
-> The best strategy to generate big piece of code, is always starting by the basic shell of your code with a simple prompt and then adding small pieces one by one.
+> The best strategy to generate big piece of code, is always starting by the basic structure of your code with a simple prompt and then add small pieces one by one.
 
 </div>
 
 **Big prompts that *could* works**
 
-- Back in the `albums-viewer/utils` add a new file `viz.ts` to create a function that generates a graphe. Here is a sample of prompt to do that:
+- Back in the `albums-viewer/utils` add a new file `viz.ts` to create a function that generates a graph. Here is a sample of prompt to do that:
 
 ```ts
 // generate a plot with D3.js of the selling price of the album by year
@@ -384,7 +384,7 @@ This is because completion must be almost "instant" to be natural to use where a
 
 <div class="info" data-title="info">
 
->Copilot will probably try to complete the prompt by adding more details. You can try to add more details yourself or follow copilot's suggestions. When you want it to stop and start generating the code just jump on another line and let the copilot do its work.
+> Copilot will probably try to complete the prompt by adding more details. You can try to add more details yourself or follow copilot's suggestions. When you want it to stop and start generating the code just jump on another line and let the copilot do its work.
 
 </div>
 
@@ -433,7 +433,7 @@ From there you can just ask to copilot to complete the chart
 
 <div class="tip" data-title="tip">
 
->You will **always** get better results by cutting big task into small chunks with copilot autocomplete. It's also a good way to show that copilot is not magic and you have to use it with your other IDE feature and your developer logic.
+> You will **always** get better results by cutting big task into small chunks with copilot autocomplete. It's also a good way to show that copilot is not magic and you have to use it with your other IDE feature and your developer logic.
 
 </div>
 
@@ -448,7 +448,7 @@ Yes, writing a comment should be mandatory and developers tend to be lazy. GitHu
 
     ![GitHub Copilot Git comment generator](assets/git-commit.png)
 
-3. Admire Copilot having generated a comment for you
+3. Look at the git commit message Copilot have generated for you
 
     ![Generated comment](assets/git-commit2.png)
 
@@ -478,23 +478,21 @@ Continue to play with it and see what happens on other pieces of code.
 For this one, to trigger the documentation comment generation, you need to respect the specific comment format:
 
 -  `/**` (for JS/TS) in the `index.js` file for example
-- `///` for C# in the `AlbumController.cs` of the AlbumApi file for example
+- `///` for C# in the `AlbumController.cs` of the `albums-api` file for example
 
 ```cs
 /// <summary>
-/// function that returns a single album by id
+/// AlbumController is responsible for handling HTTP requests related to albums.
+/// It provides endpoints to retrieve all albums, a specific album by ID, and sort albums by name, artist, or genre.
 /// </summary>
-/// <param name="id"></param>
-/// <returns></returns>
-[HttpGet("{id}")]
-public IActionResult Get(int id)
+public class AlbumController : ControllerBase
 ```
 
-### Writing markdown and html documentation
+### Writing Markdown and HTML documentation
 
-Copilot is also very powerfull to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your readme.md files like for this one for example.
+Copilot is also very powerfull to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
 
-You can show that by creating a new file `demo.md` in the root of the project and start typing the following prompt:
+You can show that by creating a new file `DOCS.md` in the root of the project and start typing the following prompt:
 
 ```md
 # Github Copilot documentation
