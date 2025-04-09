@@ -209,11 +209,11 @@ In the same file you can show other prompts like:
 
 </div>
 
-Next Edit suggestion is an evolution of the standard completion in Github Copilot. When you are modifying code and accepting a code suggestion can will probably have impact on other part of your code, it will automatically suggest the next change in your code, and not only directly where your pointer is but where your natural next action will probably be.
+*Next edit suggestion* is an evolution of the standard completion in Github Copilot. When you are modifying code and accepting a code suggestion, it can have an impact on other part of your code, it will automatically suggest the next change in your code, and not only directly where your pointer is but where your natural next action will probably be.
 
 An example is better than a thousands words so let's try that!
 
-First, be sure to activate the feature on your copilot settings. Select the `Preferences: Open User Settings` command in the Command Palette (`Ctrl+Shift+P`) and search for the `Next Edit Suggestions` seetings:
+First, be sure to activate the feature on your copilot settings. Select the `Preferences: Open User Settings` command in the Command Palette (`Ctrl+Shift+P`) and search for the *Next edit suggestion* settings:
 
 ![Next Edit Suggestions in settings](assets/nes-setting.png)
 
@@ -225,7 +225,7 @@ Then, open the `albums-api/Models/Album.cs` file and, on the Album contructor, a
 
 ### Write Tests
 
-Copilot can help generate all kind of tests that are written with code. It Includes `unit tests, integration tests, end to end tests, and load testing` tests with JMeter scripts for example.
+Copilot can help generate all kind of tests that are written with code. It Includes `unit tests`, `integration tests`, `end to end tests`, and `load testing` tests with JMeter scripts for example.
 
 - Add a new file `validators.test.ts` in the `albums-viewer/tests` folder
 
