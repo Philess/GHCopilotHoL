@@ -161,11 +161,11 @@ In **VS Code** To get started, open the Copilot menu in the VS Code title bar, s
 ### Write code
 
 **What is a prompt?**
-In the context of Copilot, a prompt is a piece of natural language description that is used to generate code suggestions. It's the input that Copilot uses to generate code. It can be a single line or a multiple lines description.
+In the context of Copilot, a prompt is a piece of natural language description that is used to generate code suggestions. It can be a single line or a multiple lines description.
 
 **Generate code from prompt**
 
-Create a new `album-viewer/utils/validators.ts` file and start with the prompt:
+Create a new `album-viewer/utils/validators.ts` file and try the different following prompts to see the different suggestions:
 
 ```ts
 // validate date from text input in french format and convert it to a date object
