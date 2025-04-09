@@ -873,11 +873,9 @@ We already seen in the previous example that the edit mode is able to create new
 Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code with this consecutive requests:
 
 ```text
-> Add a new Artist model with Name, Birthdate, BirthPlace properties
+Add a new Artist model with Name, Birthdate, BirthPlace properties
 
-> Use the Artist class in the Album object
-
-
+Use the Artist class in the Album object
 ```
 
 ![Edit mode code refactoring](assets/edit-mode-refactoring.png)
@@ -890,7 +888,7 @@ Another use case where we can take advantage of this powerfull edit mode is writ
 Add the `AlbumController.cs`, `Album.cs` and `Artist.cs` files and Let's add some unit tests for our API:
 
 ```text
-> Add unit test to my api
+Add unit test to my api
 ```
 
 ![Edit mode generate tests](assets/edit-mode-testsgen.png)
@@ -975,7 +973,7 @@ We will use advanced `reusable prompts` and `customization capabilities` to make
 
 ### Provide examples: one-shot and few-shots programming
 
-Talking about prompt engineering, you can also use the chat to provide examples to Copilot. It's a good way to help Copilot understand what you want to do and generate better code. You can provide examples in the chat by typing with the validator.ts file open:
+Talking about prompt engineering, you can also use the chat to provide examples to Copilot. It's a good way to help Copilot understand what you want to do and generate better code. You can provide examples in the chat by typing with the `validator.ts` file open:
 
 ```bash
 # one-shot programming
@@ -997,7 +995,7 @@ it('should throw an error if the given phone number is empty', () => { expect(va
 Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
 ```
 
-You can use this technique to **generate code that keeps the styling code from another file**. For example if you want to create sample records for music style like the Albums in albums-api>Models>Album.cs file, open it and type:
+You can use this technique to **generate code that keeps the styling code from another file**. For example if you want to create sample records for music style like the Albums in `albums-api` > `Models` > `Album.cs` file, open it and type:
 
 ```bash
 Write a MusicStyle record that contains a List<MusicStyle> with 6 sample values like in the Album.cs file.
