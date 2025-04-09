@@ -872,7 +872,7 @@ It's very powerfull for tasks that needs a lot of operations while keeping track
 
 Let's start by rebuilding the existing webapp (`album-viewer`), which is very basic by using a more powerfull framework like Vue for exemple.
 
-After **committing your code** the goal now is to **remove** the old `album-viewer` folder and then Open Copilot windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
+After **committing your code** the goal is to **remove** the old `album-viewer` folder and replace it with the new implementation you will do now. Open Copilot Chat windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
 
 ![Open Edit Mode](assets/vscode-edit-mode.png)
 
@@ -906,18 +906,14 @@ If some files are missing, you can ask directly Copilot to add them. He will ree
 
 We already seen in the previous example that the edit mode is able to create new code but also refactor existing files in the process of implementing new behavior.
 
-Let's continue to explore this:
-
-**Add a new Artist model on the API**
-
-Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code with this 3 consecutive requests:
+Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code with this consecutive requests:
 
 ```text
-> Add the missing function to the Album Class
-
 > Add a new Artist model with Name, Birthdate, BirthPlace properties
 
-> User the Artist class in the Album object
+> Use the Artist class in the Album object
+
+
 ```
 
 ![Edit mode code refactoring](assets/edit-mode-refactoring.png)
@@ -954,7 +950,7 @@ The Agent mode is the evolution of edit mode, with capabilities to directly run 
 
 Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
 
-Again, after **commiting your code**, to keep a new starting point to potentially rollback to, **remove** the old `album-api` folder and then Open Copilot windows on Edit Mode but then select the `Agent` mode:
+Again, after **commiting your code**, to keep a new starting point to potentially rollback to, this time, **remove** the old `album-api` folder and then Open Copilot Chat windows on Agent mode:
 
 ![Agent mode](assets/vscode-agent-mode.png)
 
