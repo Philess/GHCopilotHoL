@@ -183,7 +183,7 @@ Copilot can help you also to write `RegExp patterns`. Try these:
 
 **More complex code generation**
 
-In the `albums-api/Controllers/AlbumController.cs` file try to complete the `GetByID` method by replace the current return:
+In the `albums-api/Controllers/AlbumController.cs` file try to complete the `Get(int id)` method by replace the current return:
 
 ```cs
 // GET api/<AlbumController>/5
