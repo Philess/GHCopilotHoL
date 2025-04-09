@@ -1156,8 +1156,7 @@ Voila! This prompt will be used to tailor Copilot's responses to your personal p
 
 ## Reusable prompts
 
-As you can see with the previous examples of `custom-instructions`, putting everything in the same file will soon bring complexity and maybe even have bad impact on Copilot reponse quality.
-
+As you can see with the previous examples of `custom-instructions`, putting everything in the same file will soon bring complexity and maybe even have bad impact on Copilot response quality.
 This is why it's also possible to create specialized prompt files, to give specific instructions, for specific tasks.
 
 <div class="warning" data-title="note">
