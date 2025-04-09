@@ -621,7 +621,7 @@ It should create a structured project and even a new button to create the file. 
 
 ### Context Manipulation
 
-As you saw in previous examples, passing the right instructions is key for good copilot results. The other big factor is the context your are passing to Copilot with that instructions.
+As you saw in previous examples, passing the right instructions is key for good Copilot results. The other big factor is the context your are passing to Copilot with that instructions.
 
 In the Chat or Edit mode you can see the files passed in the context by default in the chat field:
 ![current file in chat context](assets/chat-context1.png)
@@ -644,6 +644,7 @@ Depending on the IDE, there is other options already availables like:
 - Fetch data from the web
 - Tests failure for unit test runs that have failed
 - Problems identified in the VS Code windows
+- Folders, for instance to target a specific code base from another project or framework to get the latest classes or methods as examples for Copilot.
 - other to come and try...
 
 Here are a few basic examples to understand how it works. More complex example are available in ***Level 4: Copilot Advanced*** part of this workshop. 
@@ -653,7 +654,7 @@ You can add multiple reference in context in a single request. Feel free to chal
 **Pass a file**
 
 ```text
-> @workspace /tests generate unit tests for #Albu
+@workspace /tests generate unit tests for #AlbumController
 ```
 
 And then select `AlbumController.cs` to add the file as reference.
@@ -673,7 +674,7 @@ And then select `AlbumController.cs` to add the file as reference.
 Open the `AlbumController.cs` file and select one or many functions. Then in the chat add all the album-api folder to the contect by **drag-and-dropping** the folder from the file explorer on the left.
 
 ```text
-> @workspace /tests generate unit tests for the function in #selection 
+@workspace /tests generate unit tests for the function in #selection 
 ```
 
 ![Selection in context](assets/chat-context-selection.png)
