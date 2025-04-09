@@ -229,13 +229,13 @@ Copilot can help generate all kind of tests that are written with code. It Inclu
 
 - Add a new file `validators.test.ts` in the `albums-viewer/tests` folder
 
-- To have good test suggestion, you hould provide some basic informations to Copilot such as the test framework you want to use:
+- To have good test suggestion, you should provide some basic informations to Copilot such as the test framework you want to use:
 
 ```ts
 import { describe }
 ```
 
-When you start typing the `describe` function, copilot will see you're in test file in TS and suggest you to import the `describe` and `it` functions from Mochai which is a famous test framework for JS/TS.
+When you start typing the `describe` function, Copilot will see you're in test file in TS and suggest you to import the `describe` and `it` functions from Mochai which is a famous test framework for JS/TS.
 Accept the suggestion and it will automatically suggest also the `expect` function from Chai: accept it also.
 
 ```ts
@@ -243,7 +243,7 @@ import {describe, it} from 'mocha';
 import {expect} from 'chai';
 ```
 
-You have your test framework in place! Now just import the functions you want to test by starting a new line by `import` keyword copilot will see you are in a test file, to test some `validators` because of the name and it will suggest something like that:
+You have your test framework in place! Now just import the functions you want to test by starting a new line by the `import` keyword, Copilot will see you are in a test file, to test some `validators` because of the name and it will suggest something like that:
 
 ```ts
 import {validateAlbumId} from '../src/validators';
@@ -255,9 +255,9 @@ It looks ok but because Copilot doesn't have access to all your code, only the o
 <br>
 but it's a good way to show that Copilot is not magic and you have to use it with your other IDE feature and your brain :)
 
-- Accept the suggestion and change the path. You will be able to have VS Code to give you the available function with the `ctrl+space` shortcut.
+- Accept the suggestion and change the path. You will be able to have VS Code to give you the available function with the `ctrl+space` shortcut. Import `validateDate`, `validateIPV6`.
 
-- Add a comment with the first function you want to test and let the magic happen:
+- Then, add a comment with the first function you want to test and let the magic happen:
 
 ```ts
 import {describe, it} from 'mocha';
@@ -285,28 +285,28 @@ describe('validateDate', () => {
 });
 ```
 
-*You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws and error when given en empty string.*
+*You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws an error when given en empty string.*
 
 ### Write CI pipelines
 
-*Copilot will help you in writing your pipeline definition files to generate the code for the different steps and tasks. Here are some examples of what it can do:*
+Copilot will help you in writing your pipeline definition files to generate the code for the different steps and tasks. Here are some examples of what it can do:
 
-- *generate a pipeline definition file `from scratch`*
-- *accelerate the writing of a pipeline definition file by `generating the code` for the different `steps, tasks and pieces of script`*
-- *help `discover marketplace tasks and extensions` that match your need*
+- generate a pipeline definition file `from scratch`
+- accelerate the writing of a pipeline definition file by `generating the code` for the different `steps`, `tasks` and `pieces of script`
+- help `discover marketplace tasks and extensions` that match your need
 
 #### Step 1: generate from scratch
 
-- Create a new file `pipeline.yml` in the `.github/workflows` folder of the project and start typing the following prompt:
+- Create a new file `workflow.yml` in the `.github/workflows` folder of the project and start typing the following prompt:
 
 ```yml
-# Github Action pipeline that runs on push to main branch
+# Github Action workflow that runs on push to main branch
 # Docker build and push the album-api image to ACR
 ```
 
-*Copilot will generate the pipeline block by block. When generating pipeline YAML, you may need to press Enter to move to a new line to prompt the generation of the next block, which is more frequent compared to other types of code.*
+Copilot will generate the pipeline block by block. When generating pipeline YAML, you may need to press `Enter` to move to a new line to prompt the generation of the next block and `Tab` to validate it, which is more frequent compared to other types of code.
 
-*It will often generate a task with a few errores coming from bad indentation or missing quote around a task name. You can easily fix these with your IDE and your developer skills :)*
+It will often generate a task with a few errors coming from bad indentation or missing quote around a task name. You can easily fix these with your IDE and your developer skills :)
 
 #### Step 2: add tasks from prompts
 
