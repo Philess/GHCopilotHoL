@@ -872,7 +872,7 @@ Let's start by rebuilding the existing webapp, which is very basic by using a mo
 
 After **committing your code**, to keep a valid starting point to potentially rollback to, **remove** the old `album-viewer` folder and then Open Copilot windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
 
-![Open Edit Mode](assets/open-edit-mode.png)
+![Open Edit Mode](assets/vscode-edit-mode.png)
 
 Add the `AlbumController.cs` and `Album.cs` files from the API folder in the Working Set, by clicking *Add file* button or simply by pasting it, and then type the following request to Copilot Edit:
 
@@ -952,7 +952,7 @@ Here is an example in NodeJS but you can try it in Java or Python or any other s
 
 Again, after **commiting your code**, to keep a new starting point to potentially rollback to, **remove** the old `album-api` folder and then Open Copilot windows on Edit Mode but then select the `Agent` mode:
 
-![Agent mode](assets/agent-mode.png)
+![Agent mode](assets/vscode-agent-mode.png)
 
 Then type:
 
