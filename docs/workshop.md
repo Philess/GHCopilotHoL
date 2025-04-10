@@ -105,9 +105,7 @@ You first need to install the following tools locally:
     npm install --global mocha
     npm install axios
     ```
-
-7. Install [Docker](https://docs.docker.com/engine/install/)
-8. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
+6. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
 
 Then, clone your forked repository and open it in VS Code.
 
