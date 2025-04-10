@@ -56,16 +56,16 @@ These are the very minimal pre-requisites to run this workshop:
 
 There are different ways to get access to GitHub Copilot:
 
-- **As an individual**, you can sign up to use [Copilot Free](https://github.com/github-Copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/Copilot/about-github-Copilot/subscription-plans-for-github-Copilot).
+- **As an individual**, you can sign up to use [Copilot Free](https://github.com/github-copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/copilot/about-github-Copilot/subscription-plans-for-github-copilot).
 
-- **As an individual**, sign up for a [paid subscription](https://github.com/github-Copilot/signup/Copilot_individual) to get unlimited completions and chat interactions. You can try GitHub Copilot for free with a one-time 30-day trial.
+- **As an individual**, sign up for a [paid subscription](https://github.com/github-copilot/signup/copilot_individual) to get unlimited completions and chat interactions. You can try GitHub Copilot for free with a one-time 30-day trial.
 
-- **As a member of an organization or enterprise** that has a subscription to GitHub Copilot, you can request access to Copilot by going to [https://github.com/settings/Copilot](https://github.com/settings/Copilot) and requesting access under "Get Copilot from an organization."
+- **As a member of an organization or enterprise** that has a subscription to GitHub Copilot, you can request access to Copilot by going to [https://github.com/settings/copilot](https://github.com/settings/copilot) and requesting access under "Get Copilot from an organization."
 
 
 ## Fork the repository
 
-This workshop uses the following GitHub Repository: [Github Copilot Demo](https://github.com/Philess/gh-Copilot-demo)
+This workshop uses the following GitHub Repository: [Github Copilot Demo](https://github.com/Philess/gh-copilot-demo)
 
 This repository is a code starter that will help you experiment all capabilities with GitHub Copilot. Take the time to look at the architecture design displayed.
 
@@ -96,8 +96,8 @@ You can choose to work locally on your computer for this workshop and take that 
 You first need to install the following tools locally:
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/)
-2. Install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.Copilot) extension
-3. Install the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.Copilot-chat) extension
+2. Install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
+3. Install the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extension
 4. Install [Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 5. Install mocha
 
@@ -110,8 +110,8 @@ You first need to install the following tools locally:
 Then, clone your forked repository and open it in VS Code.
 
 ``` bash
-git clone https://github.com/<YourUser>/gh-Copilot-demo
-cd gh-Copilot-demo
+git clone https://github.com/<YourUser>/gh-copilot-demo
+cd gh-copilot-demo
 code .
 ```
 
@@ -152,7 +152,7 @@ In **VS Code** To get started, open the Copilot menu in the VS Code title bar, s
 
 <div class="info" data-title="info">
 
-> These instructions are for VS Code. If you are using JetBrains or other supported IDE, you can find instructions on [GitHub Copilot documentation](https://docs.github.com/en/Copilot/using-github-Copilot/ai-models/changing-the-ai-model-for-Copilot-code-completion?tool=jetbrains).
+> These instructions are for VS Code. If you are using JetBrains or other supported IDE, you can find instructions on [GitHub Copilot documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-code-completion?tool=jetbrains).
 
 <div>
 
@@ -1163,7 +1163,7 @@ This is why it's also possible to create specialized prompt files, to give speci
 
 </div>
 
-Instructions to activate and use reusable prompts are [available here](https://docs.github.com/en/Copilot/customizing-Copilot/adding-repository-custom-instructions-for-github-Copilot?tool=vscode#about-prompt-files)
+Instructions to activate and use reusable prompts are [available here](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode#about-prompt-files)
 
 
 ## Tools integration with Model Context Protocol *
