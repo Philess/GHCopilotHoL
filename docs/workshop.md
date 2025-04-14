@@ -213,7 +213,7 @@ In the same file you can show other prompts like:
 
 An example is better than a thousands words so let's try that!
 
-First, be sure to activate the feature on your Copilot settings. Select the `Preferences: Open User Settings` command in the Command Palette (`Ctrl+Shift+P`) and search for the *Next edit suggestion* settings:
+First, be sure to activate the feature on your Copilot settings. Select the `Preferences: Open User Settings` command in the Command Palette (`Ctrl+Shift+P`) and search for the *Next Edit Suggestions* settings:
 
 ![Next Edit Suggestions in settings](assets/nes-setting.png)
 
@@ -286,6 +286,7 @@ describe('validateDate', () => {
 ```
 
 *You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws an error when given an empty string.*
+
 ### Write CI workflows
 
 Copilot will help you in writing your pipeline definition files to generate the code for the different steps and tasks. Here are some examples of what it can do:
@@ -785,7 +786,7 @@ Once you have the answer, you can ask to fix the issues by typing:
 When you have the fix in the code you choose to **copy it or inject it directy in the file** by hovering the code block in the chat and selecting the right option on the top left.
 
 
-### Debug with Copilots *
+### Debug with Copilot *
 
 <div class="warning" data-title="note">
 
@@ -1168,7 +1169,11 @@ Instructions to activate and use reusable prompts are [available here](https://d
 
 ## Tools integration with Model Context Protocol *
 
-\* Coming Soon
+<div class="warning" data-title="note">
+
+> Coming soon
+
+</div>
 
 ## Advanced Context Manipulations
 
@@ -1237,7 +1242,11 @@ export interface Breed {
 
 ### Pass Images as context
 
-Coming Soon
+<div class="warning" data-title="note">
+
+> Coming soon
+
+</div>
 
 ---
 
