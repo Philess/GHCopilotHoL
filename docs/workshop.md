@@ -205,7 +205,7 @@ In the same file you can show other prompts like:
 
 <div class="warning" data-title="note">
 
-> Preview feature available only on [VS Code](https://code.visualstudio.com/blogs/2025/02/12/next-edit-suggestions)
+> Feature available only on VS Code https://code.visualstudio.com/updates/v1_99#_next-edit-suggestions-general-availability
 
 </div>
 
@@ -514,13 +514,11 @@ GitHub Copilot is a generative AI and thus, perfect to generate code, but it has
 
 Once Copilot Chat is setup, you can start using it:
 
-- by clicking the **Copilot Icon** on the top right of the search bar *or* pressing `Ctrl` + `Alt` + `i` shortcut to open the **Chat view**
+- by clicking the **Copilot Icon** on the top next to the search bar *or* pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
 - by pressing `Ctrl` + `i` shortcut for a quick **inline question** to the chat
-- by pressing `Ctrl` + `Shift` + `i` shortcut to open the **Edit view**
 
-- The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to Copilot.
-- The **Inline Chat** is a quick way to ask a question and get an answer precisely in the context of the line you are working on.
-- The **Edit View** is a more advanced version of the chat view that allows you to edit the code directly in the chat.
+The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to copilot.
+The **Inline Chat** is a quick way to ask a question and get an answer precisely in the context of the line you are working on.
 
 We'll see examples in the next sections to let you choose which one you prefer depending on the situation.
 
@@ -552,9 +550,22 @@ Try it then with some of your code files in the repository. Open a file a try as
 
 Try also using the questions suggestions that appears along the way.
 
+### Ask, Edit & Agent modes
+
+On the GitHub Copilot Chat, you can switch between three modes: **Ask**, **Edit**, and **Agent**. The mode you are in is displayed in the chat view.
+
+![chat mode selection](assets/chat-mode-selection.png)
+
+- **Ask mode**: This is the default mode. In this mode, you can ask questions and get answers from Copilot. You can also ask Copilot to generate code for you. You can switch to this mode by clicking the **Ask** button in the chat view.
+- **Edit mode**: This mode is specifically optimized for editing code and specifically working on a set of modifications, in a multi-step process. It's very powerfull to generate code in a more interactive way and will guide you by providing guidance to run the commands but not executing it by itself.
+- **Agent mode**: This mode is the agentic (or multi-agents) version of **Edit mode**. It's a more advanced version of the **Edit mode** that can also run the commands for you, catch the error and correct itself before continuing the process. It changes the way the developer is writing code by moving the cursor closer to the feature than the code itself. This is what the community also calls **Vibe Coding**.
+
+**Agent Mode** and **Edit Mode** are detailed in next level. This level focus on playing with **Ask mode**.
+
+
 ### Inline Chat
 
-GitHub Copilot Chat is very handful but for a developer, leaving the keyboard and having to take the mouse to open the Chat tab can be boring. You can directly call the Chat inside the code editor.
+GitHub Copilot Chat is very helpful but for a developer, leaving the keyboard and having to take the mouse to open the Chat tab can be boring. You can directly call the Chat inside the code editor.
 
 1- Open any file containing code
 
@@ -566,7 +577,7 @@ GitHub Copilot Chat is very handful but for a developer, leaving the keyboard an
 
 ### Model Selection
 
-LLMs capabilities evolves pretty fast and we tend to see more and more models specifically optimized for specific tasks. In order to always provide the best performances for your usage, GitHub Copilot now integrate multiple model that you can switch between on Chat / Edit modes. 
+LLMs capabilities evolves pretty fast and we tend to see more and more models specifically optimized for specific tasks. In order to always provide the best performances for your usage, GitHub Copilot now integrate multiple model that you can switch between on Ask, Edit & Agent modes. 
 
 ![Model Selection capture](assets/model-selection.png)
 
@@ -578,12 +589,6 @@ LLMs capabilities evolves pretty fast and we tend to see more and more models sp
 > - what are the model authorized by your Copilot Administrator
 
 </div>
-
-### Edit View
-
-The Edit view is a more advanced chat experience that allows you to edit the code directly in a working set, iterate on it, and even use multiple agents working together autonomously to solve very complex tasks that require multiple steps.
-
-We will see that in the next level.
 
 ### Slash Commands
 
@@ -606,6 +611,8 @@ Chat participants are like specialized experts who can assist you with specific 
 - **@workspace**: This chat participant has knowledge about the code in your workspace and can help you navigate into it by finding relevant files or classes. The @workspace chat participant uses a meta prompt to determine what information to collect from the workspace to help answer your question.
 - **@vscode**: This chat participant is knowledgeable about commands and features in the VS Code editor itself, and can assist you in using them.
 - **@terminal**: This chat participant has context about the Visual Studio Code terminal shell and its contents.
+
+This list of agents can be extended by installing extensions in your IDE.
 
 Let's try it!
 
@@ -826,7 +833,7 @@ It's very powerfull for tasks that needs a lot of operations while keeping track
 
 <div class="warning" data-title="note">
 
-> This feature is available only on **VS Code** and **JetBrains IDEs** for the moment
+> This feature is available only on **VS Code**, **Visual Studio** and **JetBrains IDEs** for the moment
 
 </div>
 
@@ -860,7 +867,7 @@ If some files are missing, you can ask directly Copilot to add them. He will ree
 
 <div class="tip" data-title="tips">
 
-> The default model of Copilot will probably already do the job but if you're not 100% satisfied, you can try a different one here to leverage more power and achieve more complex tasks. Try and make your own opinion on your favorite model!
+> The default model of Copilot will probably help to do the job but you can also take this as an opportunity to try a different one, among the premium models here to leverage more power and achieve more complex tasks. Try and make your own opinion on your favorite model in the premium models like Claude 3.7 or GPT4.5 for instance.
 
 </div>
 
@@ -895,14 +902,13 @@ Again, Copilot Edits is very strong to write complex code but this is also his l
 
 **What if... it can do all that for you?**
 
-## Agents mode
+## Agent mode
 
 The Agent mode is the evolution of edit mode, with capabilities to directly run commands on the terminal and correct errors on the fly on top of just editing code. It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
 
 <div class="warning" data-title="note">
 
-> This feature is available only on **VS Code Insiders** for the moment. The insiders version of VS Code is the *nighly build* or *canary* version. It means that it can be less stable but you can experiment cutting edge features like this one.
-[Download VS Code Insiders](https://code.visualstudio.com/insiders/)
+> This feature is available only on **VS Code** for the moment.
 
 </div>
 
@@ -1183,7 +1189,7 @@ The chat Copilot can use external references to build more accurate suggestions.
 
 <div class="warning" data-title="note">
 
-> This feature is available in preview only on VS Code Insiders for the moment
+> This feature is available only on **VS Code** for the moment
 
 </div>
 
