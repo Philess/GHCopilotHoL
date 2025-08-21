@@ -165,7 +165,7 @@ In the context of Copilot, a prompt is a piece of natural language description t
 
 **Generate code from prompt**
 
-Create a new `album-viewer/utils/validators.ts` file and try the different following prompts to see the different suggestions:
+Create a new `album-viewer/src/utils/validators.ts` file and try the different following prompts to see the different suggestions:
 
 ```ts
 // validate date from text input in french format and convert it to a date object
@@ -227,7 +227,7 @@ Then, open the `albums-api/Models/Album.cs` file and, on the Album contructor, a
 
 Copilot can help generate all kind of tests that are written with code. It Includes `unit tests`, `integration tests`, `end to end tests`, and `load testing` tests with JMeter scripts for example.
 
-- Add a new file `validators.test.ts` in the `albums-viewer/tests` folder
+- Add a new file `validators.test.ts` in the `albums-viewer/src/utils` alongside the previously created file.
 
 - To have good test suggestion, you should provide some basic informations to Copilot such as the test framework you want to use:
 
@@ -246,7 +246,7 @@ import {expect} from 'chai';
 You have your test framework in place! Now just import the functions you want to test by starting a new line by the `import` keyword, Copilot will see you are in a test file, to test some `validators` because of the name and it will suggest something like that:
 
 ```ts
-import {validateAlbumId} from '../src/validators';
+import {validateAlbumId} from './validators';
 ```
 
 It looks ok but because Copilot doesn't have access to all your code, only the open tab and limited informations, you can see that both the path and the function name are wrong.
@@ -263,7 +263,7 @@ but it's a good way to show that Copilot is not magic and you have to use it wit
 import {describe, it} from 'mocha';
 import {expect} from 'chai';
 
-import {validateDate, validateIPV6} from '../utils/validators';
+import {validateDate, validateIPV6} from './validators';
 
 // test the validateDate function
 ```
@@ -374,7 +374,7 @@ This is because completion must be almost "instant" to be natural to use where a
 
 **Big prompts that *could* works**
 
-- Back in the `albums-viewer/utils` add a new file `viz.ts` to create a function that generates a graph. Here is a sample of prompt to do that:
+- Back in the `albums-viewer/src/utils` add a new file `viz.ts` to create a function that generates a graph. Here is a sample of prompt to do that:
 
 ```ts
 // generate a plot with D3.js of the selling price of the album by year
@@ -768,7 +768,7 @@ You can try some of these commands on the `album-api/Controllers/UnsecuredContro
 
 *Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`*
 
-To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. For example open the ``album-viewer/utils/validators.ts` file created in the first section dedicated to Copilot autocompletion and ask to translate it to C for example.
+To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. For example open the ``album-viewer/src/utils/validators.ts` file created in the first section dedicated to Copilot autocompletion and ask to translate it to C for example.
 
 In case of dealing with Legacy code like COBOL for example it can be very useful. Open the `legacy/albums.cbl` file and try translating the code to Python.
 
