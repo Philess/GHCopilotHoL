@@ -908,7 +908,7 @@ The Agent mode is the evolution of edit mode, with all the missing capabilities 
 
 It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
 
-### Rewrite the API from scratch
+### Step 1: Rewrite the API from scratch
 
 Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
 
@@ -925,7 +925,7 @@ Create all basic routes to list, get, add, update and delete albums.
 Create a collection with sample data. 
 Data are kept in memory for the moment no need to database.
 
-Write the code in TypeScript and configure the routes to match the existing calls of the VueJS App.
+Write the code in TypeScript, start it on port 3000 and configure the routes to match the existing calls of the VueJS App.
 
 Add unit tests and run it
 ```
@@ -968,21 +968,96 @@ Once installed, you can start the server from the list in VSCode:
 
 Start your GitHub and Playwright MCP server and provide the configuration when prompted. When both server are running we are ready to continue.
 
-### Step 2: Create a new web app
+### Step 2: Create an issue
 
-Now that we have a new API, let's take the opportunity to rewrite our frontend app, based on this new API. 
+Now that we have the MCP servers started, let's start working with GitHub. We will implement the Cart management feature on our Vue App. Open GitHub Copilot in agent mode and type the following prompt:
 
-First, **remove** the old `album-app` folder, start a new session in `Agent Mode` and type (reference your created file in context):
-
-```text
-Create a new Vue app named album-app to manage music albums, using the album api #file:albumRoutes.js #file:albumModel.js  
-Create a splashscreen, a view for all routes, and a burger menu to navigate.
 ```
-![Agent Mode Vue App](assets/agent-mode-vue-app.png)
+Help me draft an issue for my github project tu add a feature tu my Vue App: Cart Management. 
 
-<!-- ### Debug with agent mode and Vision
+As a user on the list of albums i want to be able to add or remove albums to my cart. For that i can:
+- see the number of albums on my cart display on a cart icon on the header
+- display the content of my cart by clicking on the cart icon
+- add albums from the list by clicking on the 'add to cart button'
+- remove albums from the cart on the cart detail
 
-Let's say that when running your app, you have an error message like this one: -->
+Help me create the issue with a detailed description, implementation details and acceptance criteria
+```
+
+It will generate something like this:
+![draft issue with copilot](assets/draft-issue.png)
+
+You can continue to iterate until the result match your criteria and then ask to copilot to create it on GitHub:
+
+```
+Add the issue on my GitHub project
+```
+
+Copilot automatically map the operation with an available tool from his configured MCP Server and ask for the authorisation to run it:
+
+![Add issue with mcp server tool](assets/mcp-tool-add-issue.png)
+
+Accept it and the issue is now created on your project.
+
+![Issue created confirmation](assets/add-issue-confirmation.png)
+
+### Step 3: Implement the cart feature
+
+Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here), add the app folder for better context targeting and simply ask to implement the issue.
+
+![Start implementation](assets/implement-issue.png)
+
+After some work your application should have a functionnal cart feature:
+![Cart feature implementer](assets/cart-feature-implemented.png)
+
+Once again, once you reached a new milestone, don't forget to validate the changes by clicking `Keep` and commit the changes.
+
+### Debug with agent mode and Vision
+
+Let's say that when running your app, and you have an error message on the Vue App, or maybe you're struggling to apply some changes with CSS.
+
+You can use the vision capabilities of some models with Copilot to help debug by providing a screen capture of the error message / the visual change you want to apply.
+
+Select a model that have vision capabilities in agent mode - like GPT 4.1, or Claude Sonnet 3.7 - ask, add an annoted capture like the following (by copy/pasting or drag/dropping it) and ask Copilot:
+
+```
+When hovering the card, it move up. I don't want it to move at all. Just resize 90% when clicking to simulate a button instead.
+```
+Images:
+![Vision Debug Capture](assets/vision-debug-capture.png)
+
+
+### Step 4: Test the feature with Playwright
+
+Now that our feature is ready, it's time to create the tests for it. We are working on a front end application so testing logic with unit test is intersting but does not allow to validate UI interractions.
+
+<div class="warning" data-title="Important">
+
+> To tests the UI behavior end-to-end we can use specific tools like **Playwright** which allow to automate test on browser with multiple configurations. https://playwright.dev/
+
+</div>
+
+You have setup an Playwright MCP previously and we will use it to write and test simultaneously our test.
+
+Open a new GitHub Copilot Chat session on Agent mode with a premium model (the latest the better) and type the following prompt:
+
+```
+Please use Playwright tools to generate a test for this scenario:
+
+1. Open the [Album App](http://localhost:3001).
+2. Click on the **Add to cart** on the first tile.
+3. Click on the cart button on the top right to display the cart.
+4. Check that the cart contains the added album.
+5. Take a screenshot of the cart.
+
+Check each step of the test and don't move forward until you succeed.
+```
+
+GitHub Copilot will use the MCP tool to directly execute the test step by step. What really makes the difference is that, because he's executing it, he's able to see when something is not working and will coreect it immediately.
+
+Like this you will have better success rate in generating your end-to-end tests. During the test he will start a browser and take screenshots so you will be able to see the impact of each action.
+
+At the end you will have a test file generated and Copilot can help you configure playwright for the project, your pipeline and complete your documentation accordingly. You just need to ask.
 
 ---
 
