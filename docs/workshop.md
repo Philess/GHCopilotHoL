@@ -202,13 +202,6 @@ In the same file you can show other prompts like:
 
 ### Next edit suggestion
 
-
-<div class="warning" data-title="note">
-
-> Feature available only on VS Code https://code.visualstudio.com/updates/v1_99#_next-edit-suggestions-general-availability
-
-</div>
-
 *Next edit suggestion* is an evolution of the standard completion in Github Copilot. When you are modifying code and accepting a code suggestion, it can have an impact on other part of your code, it will automatically suggest the next change in your code, and not only directly where your pointer is but where your natural next action will probably be.
 
 An example is better than a thousands words so let's try that!
@@ -807,10 +800,14 @@ You can also ask Copilot to do a review of your code. It will check your code fo
 
 <div class="warning" data-title="note">
 
-> This feature is available only on VS Code BUT you can simply ask to Copilot chat to review your code and he will give you feedbacks and fix suggestions.
+> This feature can be integrated in different ways depending on your IDE but you should be able to trigger the review on the git changes view for all your changes, or like in the following example just on a single file.
 
 </div>
 
+- Review all your git changes:
+![Review button on git changes window](assets/review_git_changes.png)
+
+- Review on a single file
 Open again the `album-api/Controllers/UnsecuredController.cs`, right-click in the code window, and then in the `Copilot` menu select `Review and Comment` option. 
 
 ![VS Code Copilot code review menu](assets/vscode-copilot-review.png)
@@ -827,13 +824,13 @@ It will start a review of your code and provide explanations and suggestions to 
 
 ## Edit mode
 
-The Edit Mode of GitHub Copilot is redefining the way you code with Copilot by transitioning from an `AI Infused` mode to an `AI-Native` approach. What it means is that instead of just answering questions, Copilot is taking actions, and is able now to achieve more complex, multi-steps tasks.
+The Edit Mode of GitHub Copilot appeared first in VS Code and was the first step in redefining the way you code with Copilot by transitioning from an `AI Infused` mode to an `AI-Native` approach. What it means is that instead of just answering questions, Copilot is taking actions, and is able now to achieve more complex, multi-steps tasks.
 
 It's very powerfull for tasks that needs a lot of operations while keeping track and context on a longer term, like code refactoring for example. Let's try that!
 
 <div class="warning" data-title="note">
 
-> This feature is available only on **VS Code**, **Visual Studio** and **JetBrains IDEs** for the moment
+> This mode is available only on **VS Code**. If you follow this tutorial with another editor, you can directly jump to the Agent mode part.
 
 </div>
 
@@ -904,15 +901,14 @@ Again, Copilot Edits is very strong to write complex code but this is also his l
 
 ## Agent mode
 
-The Agent mode is the evolution of edit mode, with capabilities to directly run commands on the terminal and correct errors on the fly on top of just editing code. It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
+The Agent mode is the evolution of edit mode, with all the missing capabilities like:
+- running commands for you on the terminal
+- correct errors on the fly
+- use MCP servers to extend his capabilitieson top
 
-<div class="warning" data-title="note">
+It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
 
-> This feature is available only on **VS Code** for the moment.
-
-</div>
-
-### Step 1: Rewrite the API from scratch
+### Rewrite the API from scratch
 
 Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
 
@@ -928,6 +924,8 @@ Create all basic routes to list, get, add, update and delete albums.
 
 Create a collection with sample data. 
 Data are kept in memory for the moment no need to database.
+
+Write the code in TypeScript and configure the routes to match the existing calls of the VueJS App.
 
 Add unit tests and run it
 ```
@@ -948,6 +946,27 @@ can you add the instructions to a readme.md file
 Clic on `Keep` and `Done` to validate your modification and commit your changes.
 
 Do not hesitate to play with the different models that are available to you, you can find the differences in the [documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
+
+### Setup MCP Servers
+
+**What are MCP Server?** - according to https://modelcontextprotocol.io/
+
+*"MCP is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."*
+
+With the full support of MCP server in GitHub Copilot, you will have ability to use Tools, Prompts and Resources provided by the MCP servers. It will give copilot an whole new set of capabilities.
+
+**Let's configure our first MCP Servers!**
+
+For VSCode, the integrations has been very simplified. You can find all your MCP server configured in the Extesnions view, and you even have a direct link to the dedicated marketplace on https://code.visualstudio.com/mcp
+
+From the marketplace, click to install the `GitHub` and `Playwright` MCP servers.
+
+![MCP servers gallery on VSCode Marketplace](assets/mcp-servers-marketplace.png)
+
+Once installed, you can start the server from the list in VSCode:
+![Start MCP Server](assets/start-mcp-server.png)
+
+Start your GitHub and Playwright MCP server and provide the configuration when prompted. When both server are running we are ready to continue.
 
 ### Step 2: Create a new web app
 
