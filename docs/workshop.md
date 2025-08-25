@@ -912,17 +912,18 @@ It accelerate even more the coding process. As action is worth thousand words, l
 
 Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
 
-Again, after **commiting your code**, to keep a new starting point to potentially rollback to, this time, **remove** the old `album-api` folder and then Open Copilot Chat windows on Agent mode:
+Again, after **commiting your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS. 
+Open an ew Copilot Chat on Agent mode and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
 
 ![Agent mode](assets/vscode-agent-mode.png)
-
 Then type:
 
 ```text
-Create a new nodejs api named album-api to manage music albums. 
+Create a new nodejs api named album-api-v2 to manage music albums. 
+This is a rewrite of the previous `albums-api` API in DotNet.
 Create all basic routes to list, get, add, update and delete albums.
 
-Create a collection with sample data. 
+Create a collection with the exact same sample data from the previous albums-api.
 Data are kept in memory for the moment no need to database.
 
 Write the code in TypeScript, start it on port 3000 and configure the routes to match the existing calls of the VueJS App.
@@ -937,13 +938,17 @@ Follow the step, validate each step to continue or give different instructions a
 
 ![Agent mode continue or keep](assets/agent-mode-keep.png)
 
+Once finished, check that you the Vue Application is able to work with that new API. You will not need to change anything on the application side since you asked that the API run on the same port.
+
+At this step, if there is any error, ask Copilot for help to fix it. If everything works fine, you can delete the previous API folder `albums-api`.
+
 The last step before committing it and share it with you team is documenting. Try to ask this to Copilot again:
 
 ```text
 can you add the instructions to a readme.md file
 ```
 
-Clic on `Keep` and `Done` to validate your modification and commit your changes.
+Clic on `Keep` and `Done` to validate your modification. and commit your changes.
 
 Do not hesitate to play with the different models that are available to you, you can find the differences in the [documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
 
