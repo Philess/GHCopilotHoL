@@ -904,7 +904,7 @@ Again, Copilot Edits is very strong to write complex code but this is also his l
 The Agent mode is the evolution of edit mode, with all the missing capabilities like:
 - running commands for you on the terminal
 - correct errors on the fly
-- use MCP servers to extend his capabilitieson top
+- use MCP servers to extend his capabilities on top
 
 It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
 
@@ -956,7 +956,7 @@ Do not hesitate to play with the different models that are available to you, you
 
 **What are MCP Server?** - according to https://modelcontextprotocol.io/
 
-*"MCP is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."*
+*"MCP stands for **Model Context Protocol**. It's is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."*
 
 With the full support of MCP server in GitHub Copilot, you will have ability to use Tools, Prompts and Resources provided by the MCP servers. It will give copilot an whole new set of capabilities.
 
@@ -1016,21 +1016,6 @@ After some work your application should have a functionnal cart feature:
 ![Cart feature implementer](assets/cart-feature-implemented.png)
 
 Once again, once you reached a new milestone, don't forget to validate the changes by clicking `Keep` and commit the changes.
-
-### Debug with agent mode and Vision
-
-Let's say that when running your app, and you have an error message on the Vue App, or maybe you're struggling to apply some changes with CSS.
-
-You can use the vision capabilities of some models with Copilot to help debug by providing a screen capture of the error message / the visual change you want to apply.
-
-Select a model that have vision capabilities in agent mode - like GPT 4.1, or Claude Sonnet 3.7 - ask, add an annoted capture like the following (by copy/pasting or drag/dropping it) and ask Copilot:
-
-```
-When hovering the card, it move up. I don't want it to move at all. Just resize 90% when clicking to simulate a button instead.
-```
-Images:
-![Vision Debug Capture](assets/vision-debug-capture.png)
-
 
 ### Step 4: Test the feature with Playwright
 
@@ -1171,6 +1156,8 @@ This feature is easing the customization of Copilot by providing an instruction 
 
 It very powerful to add context for Copilot specifically dedicated for the current codebase.
 
+### The copilot-instructions.md file
+
 Start using it by simply creating a `.github/copilot-instructions.md`. Start simple by adding these simple instructions and make a few requests to Copilot chat to see the impact:
 
 ```md
@@ -1188,11 +1175,6 @@ The backend code is using NestJS in TypeScript, Prisma as our ORM, and PostgreSQ
 The frontend code is using VueJS in TypeScript with Vue Router and Vuex for state management.
 We use Docker for containerization and deploy on Azure.
 We use GitHub Actions for CI/CD.
-
-We write tests for our code with Jest.
-Use the following examples for positive test (test that should return true): 
-it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
-Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
 ```
 
 Example 2:
@@ -1220,77 +1202,111 @@ This is our SQL database schema for Music Albums management:
     ```
 ```
 
+### Split instructions on multiple files
 
-## Personal instructions
+Obviously, the `copilot-instructions.md` file is unique and it's not very effective to put all your insctructions at the same place, specially when you deal with different technologies and languages.
 
-[Personal instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-personal-custom-instructions-for-github-copilot) are a way to tailor Copilot Response to your personal preferences and only apply to you.
+For this reason, it's also possible to create multiple specialized instructions files and specify when they should apply. You just need to respect the `.instructions.md` suffix in the naming and put it on the `.github/instructions` folder.
 
-There are currently two ways to add personal instructions:
-- In VSCode
-- In the Web version of Github Copilot Chat
+Add a new file named `.github/instructions/jstest.instructions.md` and put the following content on it:
 
-#### VSCode
-
-In VSCode, you can add personal instructions by pressing `Ctrl + Shift + P` and typing `Preferences: Open Settings (UI)`. Then, in the search bar, type `github.copilot.chat.codeGeneration.instructions` and click on `Edit in settings.json`. 
-
-![Copilot Personal Instructions](assets/vscode-copilot-personal-instructions.png)
-
-For example: 
-
-```json
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "text": "Always add a comment: 'Generated by Copilot'."
-    },
-    {
-      "text": "In TypeScript always use underscore for private field names."
-    },
-    {
-      "file": "code-style.md" // import instructions from file `code-style.md`
-    }
-  ],
+```
+---
+description: this is a file that defines the instruction for JS Testing
+applyTo: "*.js, *.ts"
+---
+We write tests for our code with Jest.
+Use the following examples for positive test (test that should return true): 
+it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
+Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
 ```
 
-#### GitHub Copilot chat on the web
+The first part between the `---` is where you put the metadata and specially the `applyTo` metadata that let's you filter on which files your instructions will automaticaaly apply.
 
-Open the [GitHub Copilot Chat](https://github.com/copilot) and click on the `Settings` icon in the top right corner. Then, select `Personal Instructions` from the dropdown menu.
+To test it in action, remove the previously created `validators.test.ts` file, open the `validators.ts` file and ask copilot to write some tests. You will see it read your instructions file in the process.
 
-Voila! This prompt will be used to tailor Copilot's responses to your personal preferences throughout all your queries on the web version of Copilot Chat.
+![copilot reading instructions file](assets/tests-instructions.png)
 
+<div class="info" data-title="note">
 
-## Reusable prompts
-
-As you can see with the previous examples of `custom-instructions`, putting everything in the same file will soon bring complexity and maybe even have bad impact on Copilot response quality.
-This is why it's also possible to create specialized prompt files, to give specific instructions, for specific tasks.
-
-<div class="warning" data-title="note">
-
-> This feature is available in preview only on VS Code for the moment
+> Checkout https://github.com/github/awesome-copilot/tree/main/instructions to get a lot of community built examples of instructions files to inspire you.
 
 </div>
 
-Instructions to activate and use reusable prompts are [available here](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode#about-prompt-files)
+## Build your prompts library
 
+### Reusable prompts
 
-## Tools integration with Model Context Protocol *
+We saw how to define `custom-instructions` that will seemlessly apply when using GitHub Copilot. In your developer life you will also have some task for which you want to be able to have an easy-to-call, very effective set of dedicated prompts.
 
-<div class="warning" data-title="note">
+This is where reusable prompts come into play.
 
-> Coming soon
+You can define a set of prompts, with the `.prompt.md` suffix in the file name, save it in the `.github/prompts` folder, and you'll be able to just call them as slash commands.
+
+Create a new file in `.github/prompts` folder with the name `get-my-issues.prompt.md` and add the following content:
+
+```
+---
+mode: 'agent'
+tools: ['githubRepo', 'github', 'get_issue', 'get_issue_comments', 'get_me', 'list_issues']
+description: 'List my issues in the current repository'
+---
+
+Search the current repo (using #githubRepo for the repo info) and list any issues you find (using #list_issues) that are assigned to me.
+
+Suggest issues that I might want to focus on based on their age, the amount of comments, and their status (open/closed).
+```
+
+You can see how you can setup this prompt to be available for specific **mode**, and what **tools** are automatically available for it. It's very powerful to customize the way Copilot will handle the task.
+
+You can call it using the slash command: `/get-my-issues` and BTW you can add instructions and context with it.
+![Reusable prompt command in action](assets/reusable-prompt-command.png)
+
+<div class="info" data-title="note">
+
+> Checkout https://github.com/github/awesome-copilot/blob/main/prompts/ for amazing examples of reusable prompts to start with.
 
 </div>
+
+### Custom Chat Modes
+
+We've already seen the built-in chat modes of GitHub Copilot (Ask, Edit & Agent). You can also create your own custom chat modes to tailor the interaction to your specific needs.
+
+Custom chat modes are defined in a `.chatmode.md` Markdown file, and can be stored in your workspace for others to use, or in your user profile, where you can reuse them across different workspaces.
+
+To create your first custom chat mode, just create a new file `.github/chatmodes/Planning.chatmode.md` or click on the **Configure Modes** in the mode selection of GitHub Copilot window.
+
+![Add chat mode menu](assets/add-chatmode-menu.png)
+
+Add the following content to the file:
+
+```markdown
+---
+description: Generate an implementation plan for new features or refactoring existing code.
+tools: ['codebase', 'fetch', 'findTestFiles', 'githubRepo', 'search', 'usages']
+model: Claude Sonnet 4
+---
+# Planning mode instructions
+You are in planning mode. Your task is to generate an implementation plan for a new feature or for refactoring existing code.
+Don't make any code edits, just generate a plan.
+
+The plan consists of a Markdown document that describes the implementation plan, including the following sections:
+
+* Overview: A brief description of the feature or refactoring task.
+* Requirements: A list of requirements for the feature or refactoring task.
+* Implementation Steps: A detailed list of steps to implement the feature or refactoring task.
+* Testing: A list of tests that need to be implemented to verify the feature or refactoring task.
+```
+
+Back in the Copilot window you'll be able to select the chat mode:
+![Select planning mode](assets/select-planning-mode.png)
+
 
 ## Advanced Context Manipulations
 
 ### Fetch Web Pages
 
 The chat Copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
-
-<div class="warning" data-title="note">
-
-> This feature is available only on **VS Code** for the moment
-
-</div>
 
 Example 1:
 ```text
@@ -1347,11 +1363,41 @@ export interface Breed {
 
 ### Pass Images as context
 
-<div class="warning" data-title="note">
+You can provide images as context for Copilot. It's very useful when you want to generate code that is related to a specific image, like a UI design, a diagram, etc...
 
-> Coming soon
+You just need to be sure to upload the image to the chat and reference it in your prompt.
+
+<div class="info" data-title="note">
+
+> To be sure to select a model with Vision capabilities checkout this page https://docs.github.com/en/copilot/reference/ai-models/model-comparison#recommended-models-by-task
 
 </div>
+
+**Use image as specification**
+
+Let's say you just had an issue to update the datamodel use for albums on our app. Start a new Copilot Session in Agent mode and add the following image as context and ask copilot help to implement the changes.
+
+![DataModel Diagram](assets/datamodel-diagram.png)
+
+Ask copilot:
+```markdown
+Can you help me update the data model for albums in my app?
+```
+
+**Debug with vision**
+
+Let's say that when running your app, and you have an error message on the Vue App, or maybe you're struggling to apply some changes with CSS.
+
+You can use the vision capabilities of some models with Copilot to help debug by providing a screen capture of the error message / the visual change you want to apply.
+
+Select a model that have vision capabilities in agent mode and add an annoted capture like the following (by copy/pasting or drag/dropping it) and ask Copilot:
+
+```
+When hovering the card, it move up. I don't want it to move at all. Just resize 90% when clicking to simulate a button instead.
+```
+Images:
+![Vision Debug Capture](assets/vision-debug-capture.png)
+
 
 ---
 
@@ -1359,10 +1405,16 @@ export interface Breed {
 
 Well done, you made it 'till the end :)
 
+If you want content to go deeper, here are some suggestions:
+
+- Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts
+
+
 If you want more challenge, or specific use cases, here a a list of great content for you:
 
 - [Copilot Adventures](https://github.com/microsoft/CopilotAdventures)
     A series of code adventures in fantastic worlds were Copilot will be your best ally
+
 - [Zero2Hero](https://github.com/Azure-Samples/zero2hero)
     A set of short challenges to test your ability with GitHub Copilot
 
