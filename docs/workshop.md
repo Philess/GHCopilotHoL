@@ -119,6 +119,10 @@ Finally, you need login to your GitHub account in Visual Studio Code to activate
 
 ![alt text](assets/gh-login.png)
 
+## How to run the code?
+
+Everything is detailed on the **README.MD** file in the root folder of the repository. Take a look at it ;)
+
 ---
 
 # Level 1: Code Completion with GitHub Copilot
@@ -684,25 +688,6 @@ It will improve result by targeting a very specific part of the code for the act
 
 ## Everyday developer's tasks
 
-### Natural Language Translations
-
-**Automate text completion**
-
-Open file `album-viewer/lang/translations.json` and ask in the chat to add some new languages like french and german for example
-
-```json
-[
-    {
-        "language": "en",
-        "values": {
-            "main-title": "Welcome to the world of the future",
-            "main-subtitle": "The future is now with Copilot",
-            "main-button": "Get started"
-        }
-    }
-]
-```
-
 ### Write Tests
 
 Copilot can also help you generate tests for your code. It can generate `unit tests`, `integration tests`, `end to end tests`, and `load testing` tests with JMeter scripts for example.
@@ -836,9 +821,9 @@ It's very powerfull for tasks that needs a lot of operations while keeping track
 
 ### Code Generation
 
-Let's start by rebuilding the existing webapp (`album-viewer`), which is very basic by using a more powerfull framework like Vue for exemple.
+Let's start by completing the API implementation and adding the missing routes and method to complete the CRUD of Albums.
 
-After **committing your code** the goal is to **remove** the old `album-viewer` folder and replace it with the new implementation you will do now. Open Copilot Chat windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
+Open Copilot Chat windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
 
 ![Open Edit Mode](assets/vscode-edit-mode.png)
 
@@ -846,21 +831,23 @@ Add the `AlbumController.cs` and `Album.cs` files from the `albums-api` folder a
 Then type the following request to Copilot Chat Edit:
 
 ```text
-Create a album-app client project in vuejs with screen to list, display, create, update and delete albums using the AlbumAPI
+Complete the AlbumsAPI by adding the following routes
+- create, update and delete albums
+- search albums by year (added previously)
 ```
 
-![edit mode code generation](assets/edit-mode-codegen.png)
 
 It will create an execute a plan to (probably):
 - Add missing route to existing API controller
-- Create a new Vue from scratch with all the required code
+- Create the code to executed the requests for the new routes
 - Provide explaination and details on all the code created
+
+![edit mode result](assets/edit-mode-result.png)
 
 When the job is done you'll a working set enriched with all new files. You'll be able to stop there by just clicking **Done** button to end the edit process and keep it, iterate by continuing giving instructions in the current session, or rollback everything by clicking on the **Undo** arrow on top to come back to the previous state.
 
 If some files are missing, you can ask directly Copilot to add them. He will reevaluate the entire chat and provide the missing one based on your ask.
 
-![edit mode result](assets/edit-mode-result.png)
 
 <div class="tip" data-title="tips">
 
@@ -913,7 +900,7 @@ It accelerate even more the coding process. As action is worth thousand words, l
 Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
 
 Again, after **commiting your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS. 
-Open an ew Copilot Chat on Agent mode and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
+Open a new Copilot Chat on Agent mode and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
 
 ![Agent mode](assets/vscode-agent-mode.png)
 Then type:
@@ -952,6 +939,17 @@ Clic on `Keep` and `Done` to validate your modification. and commit your changes
 
 Do not hesitate to play with the different models that are available to you, you can find the differences in the [documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
 
+### Step 2: advanced code editing
+
+Copilot in Agent mode can help you run heavy code editing tasks. As it's based on LLM that can naturally talk multiple languages, it's a great opportunity to help add multi-language support to our application.
+
+Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
+
+```markdown
+Add multi-language support to the album viewer app. Use translations files to define values for each language and add a selector for the language on the header of the application. The default language remain English but we also want to add French and German support.
+```
+
+
 ### Setup MCP Servers
 
 **What are MCP Server?** - according to https://modelcontextprotocol.io/
@@ -973,7 +971,7 @@ Once installed, you can start the server from the list in VSCode:
 
 Start your GitHub and Playwright MCP server and provide the configuration when prompted. When both server are running we are ready to continue.
 
-### Step 2: Create an issue
+### Step 3: Create an issue
 
 Now that we have the MCP servers started, let's start working with GitHub. We will implement the Cart management feature on our Vue App. Open GitHub Copilot in agent mode and type the following prompt:
 
@@ -1006,7 +1004,7 @@ Accept it and the issue is now created on your project.
 
 ![Issue created confirmation](assets/add-issue-confirmation.png)
 
-### Step 3: Implement the cart feature
+### Step 4: Implement the cart feature
 
 Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here), add the app folder for better context targeting and simply ask to implement the issue.
 
@@ -1017,7 +1015,7 @@ After some work your application should have a functionnal cart feature:
 
 Once again, once you reached a new milestone, don't forget to validate the changes by clicking `Keep` and commit the changes.
 
-### Step 4: Test the feature with Playwright
+### Step 5: Test the feature with Playwright
 
 Now that our feature is ready, it's time to create the tests for it. We are working on a front end application so testing logic with unit test is intersting but does not allow to validate UI interractions.
 
@@ -1395,7 +1393,7 @@ Select a model that have vision capabilities in agent mode and add an annoted ca
 ```
 When hovering the card, it move up. I don't want it to move at all. Just resize 90% when clicking to simulate a button instead.
 ```
-Images:
+Image you can use (Copy and paste it on the chat window):
 ![Vision Debug Capture](assets/vision-debug-capture.png)
 
 
