@@ -48,11 +48,11 @@ These are the very minimal pre-requisites to run this workshop:
 | | |
 |----------------|-----------------|
 | A GitHub account | [Create free GitHub account](https://github.com/join) |
-| GitHub Copilot Access activated | Get Access to Github Copilot (section below) |
+| GitHub Copilot Access activated | Get Access to GitHub Copilot (section below) |
 | A web browser  | [Download Microsoft Edge](https://www.microsoft.com/edge) or any other one ;-)|
 
 
-## Get Access to Github Copilot
+## Get Access to GitHub Copilot
 
 There are different ways to get access to GitHub Copilot:
 
@@ -65,7 +65,7 @@ There are different ways to get access to GitHub Copilot:
 
 ## Fork the repository
 
-This workshop uses the following GitHub Repository: [Github Copilot Demo](https://github.com/Philess/gh-copilot-demo)
+This workshop uses the following GitHub Repository: [GitHub Copilot Demo](https://github.com/Philess/gh-copilot-demo)
 
 This repository is a code starter that will help you experiment all capabilities with GitHub Copilot. Take the time to look at the architecture design displayed.
 
@@ -81,13 +81,13 @@ To start programming just start a new codespace and you are ready to go, don't n
 
 <div class="info" data-title="note">
 
-> Every individual users of Github has a free plan to run the codespace to let you try it with a free 120 core-hours per month [See Pricing](https://github.com/settings/billing/summary)
+> Every individual users of GitHub has a free plan to run the codespace to let you try it with a free 120 core-hours per month [See Pricing](https://github.com/settings/billing/summary)
 
 </div>
 
 ![create codespace](assets/create-codespace.png)
 
-After a few seconds, you will be redirected to the Codespace environment. You can start coding right away, your Github Copilot extensions are already installed and configured.
+After a few seconds, you will be redirected to the Codespace environment. You can start coding right away, your GitHub Copilot extensions are already installed and configured.
 
 ## OPTION 2: Work locally
 
@@ -115,13 +115,19 @@ cd gh-copilot-demo
 code .
 ```
 
-Finally, you need login to your GitHub account in Visual Studio Code to activate the GitHub Copilot extensions. The extensions will ask you to login, but if you don't see the prompt, you can login by clicking on the user icon in the bottom left sidebar where you will see the logins for Github and Github Copilot Chat.
+Finally, you need login to your GitHub account in Visual Studio Code to activate the GitHub Copilot extensions. The extensions will ask you to login, but if you don't see the prompt, you can login by clicking on the user icon in the bottom left sidebar where you will see the logins for GitHub and GitHub Copilot Chat.
 
 ![alt text](assets/gh-login.png)
 
 ## How to run the code?
 
 Everything is detailed on the **README.MD** file in the root folder of the repository. Take a look at it ;)
+
+## Help us improve this Workshop
+
+If you face any challenge or bug running this workshop, please let us know. Your help will be invaluable in making this workshop better, specially as we try to maintain it on a regular basis to keep it up-to-date.
+
+[Report any problem here.](https://github.com/Philess/GHCopilotHoL/issues/new)
 
 ---
 
@@ -148,7 +154,7 @@ Once you start typing a prompt and Copilot generate proposals, you can use the f
 
 ### Change completion model
 
-It's now possible to switch from the standard Github Copilot completion model, based on GPT-4o mini, to another one. The completion model has been specifically trained on over 275,000 high-quality public repositories in over 30 popular programming languages, including JavaScript, TypeScript, Python, Java, C#, C++, and many more for better results. However, you are able to switch to another model if your administrator has activated this feature otherwise you may have only the latest one.
+It's now possible to switch from the standard GitHub Copilot completion model, based on GPT-4o mini, to another one. The completion model has been specifically trained on over 275,000 high-quality public repositories in over 30 popular programming languages, including JavaScript, TypeScript, Python, Java, C#, C++, and many more for better results. However, you are able to switch to another model if your administrator has activated this feature otherwise you may have only the latest one.
 
 In **VS Code** To get started, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
 
@@ -206,7 +212,7 @@ In the same file you can show other prompts like:
 
 ### Next edit suggestion
 
-*Next edit suggestion* is an evolution of the standard completion in Github Copilot. When you are modifying code and accepting a code suggestion, it can have an impact on other part of your code, it will automatically suggest the next change in your code, and not only directly where your pointer is but where your natural next action will probably be.
+*Next edit suggestion* is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, it can have an impact on other part of your code, it will automatically suggest the next change in your code, and not only directly where your pointer is but where your natural next action will probably be.
 
 An example is better than a thousands words so let's try that!
 
@@ -299,7 +305,7 @@ In this section you will add prompts to your workflows to generate it step by st
 - Create a new file `workflow.yml` in the `.github/workflows` folder of the project and start typing the following prompt:
 
 ```yml
-# Github Action workflow that runs on push to main branch
+# GitHub Action workflow that runs on push to main branch
 # Docker build and push the album-api image to ACR
 ```
 
@@ -309,10 +315,10 @@ It will often generate a task with a few errors coming from bad indentation or m
 
 #### Step 2: Add tasks from prompts
 
-- You probably have a Github Action workflow with at least a "login" task to your container registry and a "docker build and deploy" task. Add a new comment after those tasks to tag the docker image with the github run id and push it to the registry:
+- You probably have a GitHub Action workflow with at least a "login" task to your container registry and a "docker build and deploy" task. Add a new comment after those tasks to tag the docker image with the GitHub run id and push it to the registry:
 
 ```yml
-# tag the image with the github run id and push to docker hub
+# tag the image with the GitHub run id and push to docker hub
 ```
 
 you can play with other prompts like:
@@ -328,7 +334,7 @@ you can play with other prompts like:
 - Copilot is also very usefull when you need to write custom script like the following example:
 
 ```yml
-# find and replace the %%VERSION%% by the github action run id in every appmanifest.yml file
+# find and replace the %%VERSION%% by the GitHub action run id in every appmanifest.yml file
 ```
 
 ### Infrastructure As Code
@@ -492,8 +498,8 @@ Copilot is also very powerfull to help you write documentation. It can generate 
 You can show that by creating a new file `DOCS.md` in the root of the project and start typing the following prompt:
 
 ```md
-# Github Copilot documentation
-This documentation is generated with Github Copilot to show what the tool can do.
+# GitHub Copilot documentation
+This documentation is generated with GitHub Copilot to show what the tool can do.
 
 ##
 ```
@@ -514,7 +520,7 @@ Once Copilot Chat is setup, you can start using it:
 - by clicking the **Copilot Icon** on the top next to the search bar *or* pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
 - by pressing `Ctrl` + `i` shortcut for a quick **inline question** to the chat
 
-The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to copilot.
+The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to Copilot.
 The **Inline Chat** is a quick way to ask a question and get an answer precisely in the context of the line you are working on.
 
 We'll see examples in the next sections to let you choose which one you prefer depending on the situation.
@@ -956,7 +962,7 @@ Add multi-language support to the album viewer app. Use translations files to de
 
 *"MCP stands for **Model Context Protocol**. It's is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."*
 
-With the full support of MCP server in GitHub Copilot, you will have ability to use Tools, Prompts and Resources provided by the MCP servers. It will give copilot an whole new set of capabilities.
+With the full support of MCP server in GitHub Copilot, you will have ability to use Tools, Prompts and Resources provided by the MCP servers. It will give Copilot an whole new set of capabilities.
 
 **Let's configure our first MCP Servers!**
 
@@ -966,17 +972,17 @@ From the marketplace, click to install the `GitHub` and `Playwright` MCP servers
 
 ![MCP servers gallery on VSCode Marketplace](assets/mcp-servers-marketplace.png)
 
-Once installed, you can start the server from the list in VSCode:
+Once installed, you can start the servers from the list in VSCode:
 ![Start MCP Server](assets/start-mcp-server.png)
 
-Start your GitHub and Playwright MCP server and provide the configuration when prompted. When both server are running we are ready to continue.
+Start your GitHub and Playwright MCP servers and provide the configuration when prompted. When both servers are running we are ready to continue.
 
 ### Step 3: Create an issue
 
 Now that we have the MCP servers started, let's start working with GitHub. We will implement the Cart management feature on our Vue App. Open GitHub Copilot in agent mode and type the following prompt:
 
 ```
-Help me draft an issue for my github project tu add a feature tu my Vue App: Cart Management. 
+Help me draft an issue for my github project to add a feature to my Vue App: Cart Management. 
 
 As a user on the list of albums i want to be able to add or remove albums to my cart. For that i can:
 - see the number of albums on my cart display on a cart icon on the header
@@ -988,9 +994,9 @@ Help me create the issue with a detailed description, implementation details and
 ```
 
 It will generate something like this:
-![draft issue with copilot](assets/draft-issue.png)
+![draft issue with Copilot](assets/draft-issue.png)
 
-You can continue to iterate until the result match your criteria and then ask to copilot to create it on GitHub:
+You can continue to iterate until the result match your criteria and then ask to Copilot to create it on GitHub:
 
 ```
 Add the issue on my GitHub project
@@ -1017,7 +1023,7 @@ Once again, once you reached a new milestone, don't forget to validate the chang
 
 ### Step 5: Test the feature with Playwright
 
-Now that our feature is ready, it's time to create the tests for it. We are working on a front end application so testing logic with unit test is intersting but does not allow to validate UI interractions.
+Now that our feature is ready, it's time to create the tests for it. We are working on a front end application so testing logic with unit test is interesting but does not allow to validate UI interactions.
 
 <div class="warning" data-title="Important">
 
@@ -1202,7 +1208,7 @@ This is our SQL database schema for Music Albums management:
 
 ### Split instructions on multiple files
 
-Obviously, the `copilot-instructions.md` file is unique and it's not very effective to put all your insctructions at the same place, specially when you deal with different technologies and languages.
+Obviously, the `copilot-instructions.md` file is unique and it's not very effective to put all your instructions at the same place, especially when you deal with different technologies and languages.
 
 For this reason, it's also possible to create multiple specialized instructions files and specify when they should apply. You just need to respect the `.instructions.md` suffix in the naming and put it on the `.github/instructions` folder.
 
@@ -1221,9 +1227,9 @@ Organize test in logic suites and generate at least 4 positives tests and 2 nega
 
 The first part between the `---` is where you put the metadata and specially the `applyTo` metadata that let's you filter on which files your instructions will automaticaaly apply.
 
-To test it in action, remove the previously created `validators.test.ts` file, open the `validators.ts` file and ask copilot to write some tests. You will see it read your instructions file in the process.
+To test it in action, remove the previously created `validators.test.ts` file, open the `validators.ts` file and ask Copilot to write some tests. You will see it read your instructions file in the process.
 
-![copilot reading instructions file](assets/tests-instructions.png)
+![Copilot reading instructions file](assets/tests-instructions.png)
 
 <div class="info" data-title="note">
 
@@ -1373,11 +1379,11 @@ You just need to be sure to upload the image to the chat and reference it in you
 
 **Use image as specification**
 
-Let's say you just had an issue to update the datamodel use for albums on our app. Start a new Copilot Session in Agent mode and add the following image as context and ask copilot help to implement the changes.
+Let's say you just had an issue to update the datamodel use for albums on our app. Start a new Copilot Session in Agent mode and add the following image as context and ask Copilot help to implement the changes.
 
 ![DataModel Diagram](assets/datamodel-diagram.png)
 
-Ask copilot:
+Ask Copilot:
 ```markdown
 Can you help me update the data model for albums in my app?
 ```
@@ -1418,3 +1424,9 @@ If you want more challenge, or specific use cases, here a a list of great conten
 
 - [Mastering GitHubCopilot for paired programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming)
     A set of technology-focused lesson for developers, sharing best practices and recipices for adressing code, sql, deployment, and modernization tasks with GitHub Copilot
+
+## Help us improve this Workshop
+
+If you faced any challenge or bug running this workshop, please let us know. Your help will be invaluable in making this workshop better, specially as we try to maintain it on a regular basis to keep it up-to-date.
+
+[Report any problem here.](https://github.com/Philess/GHCopilotHoL/issues/new)
