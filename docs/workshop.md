@@ -7,10 +7,8 @@ description: Discover how to leverage GitHub Copilot to develop your project  # 
 level: beginner                         # Required. Can be 'beginner', 'intermediate' or 'advanced'
 authors:                                # Required. You can add as many authors as needed      
   - Philippe DIDIERGEORGES
-  - Damien AICHEH
 contacts:                               # Required. Must match the number of authors
   - '@philess'
-  - '@damienaicheh'
 duration_minutes: 180                    # Required. Estimated duration in minutes
 tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu         # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
@@ -121,7 +119,9 @@ Finally, you need login to your GitHub account in Visual Studio Code to activate
 
 ## How to run the code?
 
-Everything is detailed on the **README.MD** file in the root folder of the repository. Take a look at it ;)
+Everything is detailed on the **README.MD** file in the root folder of the code repository. 
+
+Take a look at it, and be sure to run at least the front-end app before going further, it will be mandatory to complete the tutorial.
 
 ## Help us improve this Workshop
 
@@ -400,7 +400,9 @@ import d3 from "d3";
 
 Look at what Copilot has been able to generate. It's possible that the code is working fine and does everything you asked for but also you probably hit the token limit and Copilot was not able to generate the whole code.
 
-It's because Copilot for autocompletion is not made for creating big pieces of code at once, but is more specialized in generating small pieces step by step.
+In any case it probably won't be perfect and you will have to fix some issues but it will be more complicated as you are generating big pieces of code with a very simple instructions.
+
+It's because Copilot for autocompletion is not made for creating big pieces of code at once. It's a good practice to cut big tasks in small pieces you write going step by step.
 
 
 **Try again by build it step by step**
@@ -495,6 +497,15 @@ public class AlbumController : ControllerBase
 
 Copilot is also very powerfull to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
 
+<div class="warning" data-title="important">
+
+> Completion is deactivated by default on markdown and text files. You can activate it by clicking on the Copilot icon in the bottom right corner of your IDE and select `Enable for Markdown` or `Enable for Plain Text`.
+
+![activate completion on markdown files](assets/activate-markdown-completion.png)
+
+</div>
+
+
 You can show that by creating a new file `DOCS.md` in the root of the project and start typing the following prompt:
 
 ```md
@@ -505,6 +516,7 @@ This documentation is generated with GitHub Copilot to show what the tool can do
 ```
 
 From there by starting a new line with a secondary level title it will start generating the content of the documentation and it will showcase how it will accelerate the documentation writing process.
+
 
 ---
 
