@@ -158,6 +158,7 @@ It's now possible to switch from the standard GitHub Copilot completion model, b
 
 In **VS Code** To get started, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
 
+![alt text](assets/cfg-comp-model.png)
 ![alt text](assets/chg-comp-model.png)
 
 <div class="info" data-title="info">
