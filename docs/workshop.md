@@ -992,6 +992,16 @@ Start your GitHub and Playwright MCP servers and provide the configuration when 
 
 ### Step 3: Create an issue
 
+<div class="tips" data-title="tip">
+
+> Before creating an issue, make sure that issues are enabled for your project.  
+Go to your project settings and activate issue creation if it is not already enabled.
+
+![project settings](assets/settings.png)
+![enable issue](assets/cfg-issue.png)
+
+<div>
+
 Now that we have the MCP servers started, let's start working with GitHub. We will implement the Cart management feature on our Vue App. Open GitHub Copilot in agent mode and type the following prompt:
 
 ```
