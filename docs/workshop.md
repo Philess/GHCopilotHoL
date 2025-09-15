@@ -38,7 +38,10 @@ GitHub Copilot is an AI-powered code assistant that helps developers write bette
 ## Minimal Pre-requisites
 
 There are two ways to run this workshop:
-- online with **GitHub Codespaces**: fastest and easiest way to start playing immediately
+- online with **GitHub Codespaces**: fastest and easiest way to start playing immediately. For a better experience, we recommand you to open the codespace on vscode
+
+![open codespace in vscode](assets/open-codespace-vscode.png)
+
 - locally on **your computer**: the best way to install and configure the tools you need to work with GitHub Copilot on every projects
 
 These are the very minimal pre-requisites to run this workshop:
@@ -990,17 +993,54 @@ Once installed, you can start the servers from the list in VSCode:
 
 Start your GitHub and Playwright MCP servers and provide the configuration when prompted. When both servers are running we are ready to continue.
 
+<div class="warning" data-title="Important">
+
+> If you open your Codespace in the browser, you need to install the MCP server locally.  
+To do this, add an `mcp.json` file inside the `.vscode` folder with the following configuration:
+
+</div>
+
+```json
+{
+  "servers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+```
+
+Make sure you have a valid GitHub Personal Access Token stored in your environment as GITHUB_TOKEN.
+
+<div class="tip" data-title="Tips">
+
+> Using VS Code simplifies MCP configuration.  
+With the dedicated extensions, you can install and manage MCP servers directly from the editor,  without manually editing the `mcp.json` file.
+
+</div>
+
 ### Step 3: Create an issue
 
-<div class="tips" data-title="tip">
+<div class="info" data-title="note">
 
 > Before creating an issue, make sure that issues are enabled for your project.  
 Go to your project settings and activate issue creation if it is not already enabled.
+<div>
 
 ![project settings](assets/settings.png)
 ![enable issue](assets/cfg-issue.png)
 
-<div>
+
 
 Now that we have the MCP servers started, let's start working with GitHub. We will implement the Cart management feature on our Vue App. Open GitHub Copilot in agent mode and type the following prompt:
 
