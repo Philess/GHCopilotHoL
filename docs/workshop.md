@@ -1021,7 +1021,7 @@ To do this, add an `mcp.json` file inside the `.vscode` folder with the followin
     "playwright": {
       "command": "npx",
       "args": [
-        "@playwright/mcp@latest"
+        "@playwright/mcp@latest --vision"
       ]
     }
   }
