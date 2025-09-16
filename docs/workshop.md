@@ -25,6 +25,8 @@ navigation_numbering: false             # Optional. Enable numbering in the side
 
 # The ultimate GitHub Copilot Tutorial for developers
 
+*Version 1.3 - September 2025*
+
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
 GitHub Copilot is an AI-powered code assistant that helps developers write better code faster. It uses machine learning models trained on billions of lines of code to suggest whole lines or entire functions based on the context of what you’re working on. By using GitHub Copilot, you can learn how to write better code and improve your productivity.
@@ -408,11 +410,11 @@ Return on top of the file and start typing `import d3` to let Copilot autocomple
 import d3 from "d3";
 ```
 
-Look at what Copilot has been able to generate. It's possible that the code is working fine and does everything you asked for but also you probably hit the token limit and Copilot was not able to generate the whole code.
+Look at what Copilot has been able to generate. It's possible that the code is working fine and does everything you asked for but with some unwanted behavior or logic you didn't expected.
 
-In any case it probably won't be perfect and you will have to fix some issues but it will be more complicated as you are generating big pieces of code with a very simple instructions.
+In any case it probably won't be perfect and you will have to fix some issues but it will always be more complicated to control the code when you are generating large pieces of code with very basic instructions.
 
-It's because Copilot for autocompletion is not made for creating big pieces of code at once. It's a good practice to cut big tasks in small pieces you write going step by step.
+It's because Copilot for autocompletion is not made to achieve complex work at once but more as an predictive writing tool for developers. It's a good practice to cut big tasks in small pieces you write going step by step.
 
 
 **Try again by build it step by step**
