@@ -1,6 +1,6 @@
 # GitHub Copilot Ultimate Hands-on lab repository
 
-This repository is the home repository for the [GitHub Copilot Ultimate Hands-on lab on MOAW : https://aka.ms/github-copilot-hol)](https://aka.ms/github-opilot-hol).
+This repository is the home repository for the [GitHub Copilot Ultimate Hands-on lab on MOAW : https://aka.ms/github-copilot-hol)](https://aka.ms/github-copilot-hol).
 
 This is a very complete 3 hours workshop to master GitHub Copilot on your IDE, packed with real-world scenarios and best practices.
 
