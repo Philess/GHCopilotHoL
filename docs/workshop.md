@@ -38,9 +38,7 @@ GitHub Copilot is an AI-powered code assistant that helps developers write bette
 ## Minimal Pre-requisites
 
 There are two ways to run this workshop:
-- online with **GitHub Codespaces**: fastest and easiest way to start playing immediately. For a better experience, we recommand you to open the codespace on vscode
-
-![open codespace in vscode](assets/open-codespace-vscode.png)
+- online with **GitHub Codespaces**: fastest and easiest way to start playing immediately with a hosted environment ready to go in seconds. 
 
 - locally on **your computer**: the best way to install and configure the tools you need to work with GitHub Copilot on every projects
 
@@ -88,7 +86,15 @@ To start programming just start a new codespace and you are ready to go, don't n
 
 ![create codespace](assets/create-codespace.png)
 
-After a few seconds, you will be redirected to the Codespace environment. You can start coding right away, your GitHub Copilot extensions are already installed and configured.
+After just a few seconds, you will be redirected to your Codespace environment, a full developement environment ready to go in the browser.
+**You can start coding right away**, your GitHub Copilot extensions are already installed and configured.
+
+For an even better experience, and if you have VS Code installed on your local computer, you can open the Codespace in your local Visual Studio Code by clicking on the `Open in VS Code` button on the top left menu of your Codespace interface.
+![open codespace in vs code menu](assets/codespace-open-vscode.png)
+
+Once the Codespace created, you will be able to choose if you want to open codespace in the browser or in your local VS Code from the GitHub repository page directly.
+
+![open codespace in vscode](assets/open-codespace-vscode.png)
 
 ## OPTION 2: Work locally
 
