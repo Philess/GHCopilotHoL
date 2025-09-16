@@ -988,7 +988,7 @@ With the full support of MCP server in GitHub Copilot, you will have ability to 
 
 **Let's configure our first MCP Servers!**
 
-For VSCode, the integrations has been very simplified. You can find all your MCP server configured in the Extesnions view, and you even have a direct link to the dedicated marketplace on https://code.visualstudio.com/mcp
+For VSCode, the integrations has been very simplified. You can find all your MCP server configured in the Extensions view, and you even have a direct link to the dedicated [VSCode marketplace](https://code.visualstudio.com/mcp)
 
 From the marketplace, click to install the `GitHub` and `Playwright` MCP servers.
 
@@ -1001,7 +1001,7 @@ Start your GitHub and Playwright MCP servers and provide the configuration when 
 
 <div class="warning" data-title="Important">
 
-> If you open your Codespace in the browser, you need to install the MCP server locally.  
+> If you are using your Codespace on your browser and not on VSCode, the marketplace link will not work. But don't worry, you still can to install the MCP server locally.  
 To do this, add an `mcp.json` file inside the `.vscode` folder with the following configuration:
 
 </div>
@@ -1047,6 +1047,7 @@ Go to your project settings and activate issue creation if it is not already ena
 ![enable issue](assets/cfg-issue.png)
 
 
+**Working with GitHub MCP Server**
 
 Now that we have the MCP servers started, let's start working with GitHub. We will implement the Cart management feature on our Vue App. Open GitHub Copilot in agent mode and type the following prompt:
 
