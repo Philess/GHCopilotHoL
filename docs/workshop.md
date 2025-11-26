@@ -25,7 +25,7 @@ navigation_numbering: false             # Optional. Enable numbering in the side
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-*Version 1.3 - September 2025*
+*Version 1.4 - November 2025*
 
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
@@ -33,7 +33,7 @@ GitHub Copilot is an AI-powered code assistant that helps developers write bette
 
 <div class="warning" data-title="warning">
 
-> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the different features of the different extensions you are going to use. Please be clever if it's not exactly the same.
+> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the different features of the various extensions you are going to use. Please be adapatable if it's not exactly the same.
 
 </div>
 
@@ -108,16 +108,8 @@ You first need to install the following tools locally:
 2. Install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
 3. Install the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extension
 4. Install [Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-5. Install mocha
-
-    ``` bash
-    npm install --global mocha
-    npm install axios
-    ```
-6. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
-
-Then, clone your forked repository and open it in VS Code.
-
+5. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
+6. Clone your forked repository and open it in VS Code:
 ``` bash
 git clone https://github.com/<YourUser>/gh-copilot-demo
 cd gh-copilot-demo
@@ -167,7 +159,7 @@ Once you start typing a prompt and Copilot generate proposals, you can use the f
 
 It's possible to switch from the standard GitHub Copilot completion model, to another one. The completion model has been specifically trained on over 275,000 high-quality public repositories in over 30 popular programming languages, including JavaScript, TypeScript, Python, Java, C#, C++, and many more for better results. However, you are able to switch to another model if your administrator has activated this feature otherwise you may have only the latest one.
 
-In **VS Code** to check the completion model configuration, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
+In **VS Code** to check the completion model configuration, open the Copilot menu in the VS Code title bar, select `Configure Inline Suggestions...` > `Change Completions Model...`. 
 
 ![alt text](assets/cfg-comp-model.png)
 ![alt text](assets/chg-comp-model.png)
@@ -183,29 +175,29 @@ In **VS Code** to check the completion model configuration, open the Copilot men
 ### Write code
 
 **What is a prompt?**
-In the context of Copilot, a prompt is a piece of natural language description that is used to generate code suggestions. It can be a single line or a multiple lines description.
+In the context of Copilot, a prompt is a natural language description used to generate code suggestions. It can be a single line or a multiple line description.
 
 **Generate code from prompt**
 
 Create a new `album-viewer/src/utils/validators.ts` file and try the different following prompts to see the different suggestions:
 
 ```ts
-// validate date from text input in french format and convert it to a date object
+// validate date from text input in french format and convert it to a date object. Name this function `validateDate`.
 ```
 
-Copilot can help you also to write `RegExp patterns`. Try these:
+Copilot can help you also to write Regular Expressions. Try these:
 
 ```ts
 // function that validates the format of a GUID string
 
-// function that validates the format of a IPV6 address string
+// function that validates the format of a IPV6 address string. Name this function `validateIPV6`.
 ```
 
 <br>
 
 **More complex code generation**
 
-In the `albums-api/Controllers/AlbumController.cs` file try to complete the `Get(int id)` method by replace the current return:
+In the `albums-api/Controllers/AlbumController.cs` file try to complete the `Get(int id)` method by replacing the current return:
 
 ```cs
 // GET api/<AlbumController>/5
@@ -219,18 +211,14 @@ public IActionResult Get(int id)
 In the same file you can show other prompts like:
 
 ```cs
-// function that sort albums by name, artist or genre
+// function that sort albums by title, artist or price
 ```
 
 ### Next edit suggestion
 
-*Next edit suggestion* is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, it can have an impact on other part of your code, it will automatically suggest the next change in your code, and not only directly where your pointer is but where your natural next action will probably be.
+*Next edit suggestion* is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, if it can have an impact on another part of your code, it will automatically suggest the next change in your code, and not only directly where your cursor is, but also anticipating where your next edit might be.
 
-An example is better than a thousands words so let's try that!
-
-First, be sure to activate the feature on your Copilot settings. Select the `Preferences: Open User Settings` command in the Command Palette (`Ctrl+Shift+P`) and search for the *Next Edit Suggestions* settings:
-
-![Next Edit Suggestions in settings](assets/nes-setting.png)
+An example is better than a thousands words, so let's try that!
 
 Then, open the `albums-api/Models/Album.cs` file and, on the Album contructor, add a new input parameter `Year` of type `int` and see the Next Edit Suggestion propose to change the body of the method accordingly:
 
@@ -244,46 +232,48 @@ Copilot can help generate all kind of tests that are written with code. It Inclu
 
 - Add a new file `validators.test.ts` in the `albums-viewer/src/utils` alongside the previously created file.
 
-- To have good test suggestion, you should provide some basic informations to Copilot such as the test framework you want to use:
+- To receive a good test suggestion, you should provide some basic information to Copilot, such as the test framework you want to use:
 
 ```ts
 import { describe }
 ```
 
-When you start typing the `describe` function, Copilot will see you're in test file in TS and suggest you to import the `describe` and `it` functions from Mochai which is a famous test framework for JS/TS.
-Accept the suggestion and it will automatically suggest also the `expect` function from Chai: accept it also.
+When you start typing the `describe` function, Copilot will see you are in a TypeScript (*.ts) test file and because the project uses the Vite tool, it will suggest the import of the `describe` and `it` functions from vitest, which is a test framework commonly used with VueJS/Vite applications.
 
 ```ts
-import {describe, it} from 'mocha';
-import {expect} from 'chai';
+import { describe, expect, it } from 'vitest';
 ```
 
-You have your test framework in place! Now just import the functions you want to test by starting a new line by the `import` keyword, Copilot will see you are in a test file, to test some `validators` because of the name and it will suggest something like that:
+You have your test framework in place! 
+
+Copilot may already move on to suggesting the import of validators from the `validators.ts` file because it resides in the same folder. It might suggest something like the following:
 
 ```ts
 import {validateAlbumId} from './validators';
 ```
 
-It looks ok but because Copilot doesn't have access to all your code, only the open tab and limited informations, you can see that both the path and the function name are wrong.
+It looks ok but because Copilot doesn't have access to all your code, only the open tab and limited information, you can see that both the path and the function name are wrong.
 <br>
-... At least he tried ...
+... At least it tried ...
 <br>
-but it's a good way to show that Copilot is not magic and you have to use it with your other IDE feature and your brain :)
+but it's a good way to show that Copilot is not magic and you have to use it with your other IDE features and your brain :)
 
-- Accept the suggestion and change the path. You will be able to have VS Code to give you the available function with the `ctrl+space` shortcut. Import `validateDate`, `validateIPV6`.
+- Start writing `import { validateDate }` and accept the automatic IDE suggestion or use the `ctrl+space` shortcut. 
+
+- Import both `validateDate` and `validateIPV6`.
 
 - Then, add a comment with the first function you want to test and let the magic happen:
 
 ```ts
-import {describe, it} from 'mocha';
-import {expect} from 'chai';
-
-import {validateDate, validateIPV6} from './validators';
+import { describe, expect, it } from 'vitest';
+import { validateDate, validateIPV6 } from './validators';
 
 // test the validateDate function
 ```
 
 Boom!
+
+You should see something like the following (but your test may vary):
 
 ```ts
 describe('validateDate', () => {
