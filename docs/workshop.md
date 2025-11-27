@@ -1357,36 +1357,34 @@ You can call it using the slash command: `/get-my-issues` and BTW you can add in
 
 </div>
 
-### Custom Chat Modes
+### Custom Agents
 
-We've already seen the built-in chat modes of GitHub Copilot (Ask, Edit & Agent). You can also create your own custom chat modes to tailor the interaction to your specific needs.
+We've already seen the built-in Agents of GitHub Copilot (Ask, Edit, Plan & Agent). You can also create your own custom agents to tailor the interaction to your specific needs.
 
-Custom chat modes are defined in a `.chatmode.md` Markdown file, and can be stored in your workspace for others to use, or in your user profile, where you can reuse them across different workspaces.
+Custom agents are defined in an `.agent.md` Markdown file, and can be stored in your workspace for others to use, or in your user profile, where you can reuse them across different workspaces.
 
-To create your first custom chat mode, just create a new file `.github/chatmodes/Planning.chatmode.md` or click on the **Configure Modes** in the mode selection of GitHub Copilot window.
+To create your first custom agent which will use the Playwright MCP server to test the Album Web UI, either create a new file `.github/agents/WebTester.agent.md` or click on the **Configure Custom Agents** in the agent selection of GitHub Copilot window.
 
 ![Add chat mode menu](assets/add-chatmode-menu.png)
 
-Add the following content to the file:
+Add the following content to the agent file:
 
 ```markdown
 ---
-description: Generate an implementation plan for new features or refactoring existing code.
-tools: ['codebase', 'fetch', 'findTestFiles', 'githubRepo', 'search', 'usages']
-model: Claude Sonnet 4
+description: "Playwright Web Testing Agent"
+name: "WebTester"
+tools: ["changes", "codebase", "edit/editFiles", "fetch", "findTestFiles", "problems", "runCommands", "runTasks", "runTests", "search", "searchResults", "terminalLastCommand", "terminalSelection", "testFailure", "playwright"]
+model: Claude Sonnet 4.5
 ---
-# Planning mode instructions
-You are in planning mode. Your task is to generate an implementation plan for a new feature or for refactoring existing code.
-Don't make any code edits, just generate a plan.
 
-The plan consists of a Markdown document that describes the implementation plan, including the following sections:
+## Core Responsibilities
 
-* Overview: A brief description of the feature or refactoring task.
-* Requirements: A list of requirements for the feature or refactoring task.
-* Implementation Steps: A detailed list of steps to implement the feature or refactoring task.
-* Testing: A list of tests that need to be implemented to verify the feature or refactoring task.
+1.  **Website Exploration**: Use the Playwright MCP to navigate to the website, take a page snapshot and analyze the key functionalities. Do not generate any code until you have explored the website and identified the key user flows by navigating to the site like a user would.
+2.  **Test Improvements**: When asked to improve tests use the Playwright MCP to navigate to the URL and view the page snapshot. Use the snapshot to identify the correct locators for the tests. You may need to run the development server first.
+3.  **Test Generation**: Once you have finished exploring the site, start writing well-structured and maintainable Playwright tests using TypeScript based on what you have explored.
+4.  **Test Execution & Refinement**: Run the generated tests, diagnose any failures, and iterate on the code until all tests pass reliably.
+5.  **Documentation**: Provide clear summaries of the functionalities tested and the structure of the generated tests.
 ```
-
 Back in the Copilot window you'll be able to select the chat mode:
 ![Select planning mode](assets/select-planning-mode.png)
 
@@ -1395,7 +1393,7 @@ Back in the Copilot window you'll be able to select the chat mode:
 
 ### Fetch Web Pages
 
-The chat Copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
+The Copilot Chat agent can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
 
 Example 1:
 ```text
