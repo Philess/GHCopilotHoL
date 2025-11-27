@@ -497,7 +497,7 @@ public class AlbumController : ControllerBase
 
 ### Writing Markdown and HTML documentation
 
-Copilot is also very powerfull to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
+Copilot is also very powerful to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
 
 <div class="warning" data-title="important">
 
@@ -823,9 +823,7 @@ It will start a review of your code and provide explanations and suggestions to 
 
 ---
 
-# Level 3: Copilot Edit & Agent
-
-## Edit agent
+# Level 3: Copilot Edit Agent
 
 The Edit agent in GitHub Copilot appeared first in VS Code and was the first step in redefining the way you code with Copilot by transitioning from an `AI Infused` mode to an `AI-Native` approach. What it means is that instead of just answering questions, Copilot is taking actions, and is able now to achieve more complex, multi-steps tasks.
 
@@ -899,28 +897,36 @@ Add unit test to my api
 
 ![Edit mode generate tests](assets/edit-mode-testsgen.png)
 
-Again, the Copilot Edit agent is very capable at writing complex code but the Edit agent has a limitation: running commands, such as running commands in the terminal to install a package, run tests, etc. The Edit agent can give you the instructions to perform these actions manually but is unable to perform them on your behalf.
+The Copilot Edit agent is very capable at writing complex code but it has a limitation: running commands, such as running commands in the terminal to install a package, run tests, etc. The Edit agent can give you the instructions to perform these actions manually but is unable to perform them on your behalf. The Edit agent also has limitations when it comes to making and planning a large number of changes, or more complex changes.
 
 **What if... it can do all that for you?**
 
-## Agent
+---
 
-The Agent mode is the evolution of edit mode, with all the missing capabilities like:
+# Level 4: Copilot Plan & Agent
+
+Agent is the evolution of the Edit agent, with all the missing capabilities like:
 - running commands for you on the terminal
-- correct errors on the fly
-- use MCP servers to extend his capabilities on top
+- correcting errors on the fly
+- using tools from MCP servers to extend capabilities
 
-It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
+It can accelerate the coding process even more than the Edit agent, particularly for larger and more complex changes.
 
-### Step 1: Rewrite the API from scratch
+The Agent is a powerful feature of Github Copilot, but as we all know: with great power, comes great responsibility. The fact that Agent can perform large tasks autonomously means we have to be even more careful with our prompt.
 
-Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
+This is where the Plan Agent can help. It can help us to create a detailed plan and specification which is useful for tackling large, complex tasks, particularly when completing these tasks using Agent. The Plan agent can help to plan a large task and break the implementation of this task down into smaller steps.
+
+Let's get started by rebuilding the API, and you have the choice of the stack. 
+
+### Step 1: Create a Plan to rewrite the API from scratch
+
+Here is an example in NodeJS, but you can try it in Java or Python, or any other stack you prefer.
 
 Again, after **commiting your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS. 
-Open a new Copilot Chat on Agent mode and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
 
-![Agent mode](assets/vscode-agent-mode.png)
-Then type:
+Open a new Copilot Chat in **Plan agent** and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
+
+Then copy the prompt below:
 
 ```text
 Create a new nodejs api named album-api-v2 to manage music albums. 
@@ -937,7 +943,25 @@ When the application is built, start it on port 3000 and configure the routes to
 Add unit tests and run them.
 ```
 
-Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample data and even unit tests** and Copilot will list all actions completed. From there, you can choose to:
+The Plan agent will begin by completing a detailed analysis of the existing codebase and will use this information to generate a plan for the new API.
+
+When the Plan agent is completed, it should present you with a series of steps required to build the new API and it may also ask you to make some implementation choices. These choices can vary but might include what test framework to use and clarifications on how to implement the API with the existing Album model and controller.
+
+![Plan agent](assets/vscode-plan-agent-impl.png)
+
+You can choose whether to answer these questions to add more detail to the plan. You can even choose to write out the complete plan to see the detail the Plan agent has generated for this task. If you want to do this, copy the following in:
+
+``` text
+Write the complete plan out in markdown format. 
+```
+
+### Step 2: Use Agent to implement the plan
+
+Click on the **Start Implementation** when you are ready to begin the implementation phase. If you chose to write the plan out or provided clarifications, you can proceed with the implementation manually by selecting the "Agent" and by sending a request to **Start Implementation**. The plan will be'handed off' to the Agent, which will implement this plan autonomously for you.
+
+![Plan agent](assets/vscode-agent-impl.png)
+
+When the Agent has finished, you should have **a new API that can run with all services, sample data and even unit tests**. Copilot will list all the actions completed. From there, you can choose to:
 - **Keep** changes to validate this set of modifications
 - **Undo** to rollback to before this set of modifications
 - **Give new instructions** & continue to iterate
@@ -958,7 +982,7 @@ Click on `Keep` to validate your modification. and commit your changes.
 
 Do not hesitate to play with the different models that are available to you, you can find the differences in the [documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
 
-### Step 2: advanced code editing
+### Step 3: Advanced code editing
 
 Copilot in Agent mode can help you run heavy code editing tasks. As it's based on LLM that can naturally talk multiple languages, it's a great opportunity to help add multi-language support to our application.
 
@@ -1073,7 +1097,7 @@ Accept it and the issue is now created on your project.
 
 ### Step 4: Implement the cart feature
 
-Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here), add the app folder for better context targeting and simply ask to implement the issue.
+Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here but similar models are fine), add the app folder for better context targeting and simply ask to implement the issue.
 
 ![Start implementation](assets/implement-issue.png)
 
@@ -1116,9 +1140,9 @@ At the end you will have a test file generated and Copilot can help you configur
 
 ---
 
-# Level 4: Copilot Advanced
+# Level 5: Advanced Copilot Concepts
 
-In the previous sections you discovered how to use all out-of-the-box features from GitHub Copilot. In this section you will learn techniques to get more accurate results, providing  Copilot what he doesn't know: your best practices, naming conventions, data model, internal APIs, etc...
+In the previous sections you discovered how to use all out-of-the-box features from GitHub Copilot. In this section you will learn techniques to get more accurate results, providing Copilot what it doesn't know, including: your best practices, naming conventions, data model, internal APIs, etc...
 
 We will use advanced `reusable prompts` and `customization capabilities` to make Copilot act like a real co-worker and not just the Copilot everyone is using. 
 
