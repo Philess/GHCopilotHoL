@@ -839,7 +839,7 @@ It's very powerful for tasks that needs a lot of operations while keeping track 
 
 Let's start by completing the API implementation and adding the missing routes and method to complete the CRUD of Albums.
 
-Open Copilot Chat windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
+Open Copilot Chat window and select **Edit** or using the `Ctrl+Shift+I` shortcut:
 
 ![Open Edit Mode](assets/vscode-edit-mode.png)
 
@@ -855,7 +855,7 @@ Complete the AlbumsAPI by adding the following routes
 It will create an execution plan to (probably):
 - Add missing route to existing API controller
 - Create the code to executed the requests for the new routes
-- Provide explaination and details on all the code created
+- Provide explanation and details on all the code created
 
 ![edit mode result](assets/edit-mode-result.png)
 
@@ -866,7 +866,7 @@ If some files are missing, you can ask directly Copilot to add them. Github Copi
 
 <div class="tip" data-title="tips">
 
-> The default model of Copilot will probably help to do the job but you can also take this as an opportunity to try a different one, among the premium models here to leverage more power and achieve more complex tasks. Try and make your own opinion on your favorite model in the premium models like Claude 4.5 or GPT5 for instance.
+> The default model of Copilot will probably help to do the job but you can also take this as an opportunity to try a different one, such as a premium model like Claude 4.5 or GPT5, to leverage more power and tackle more complex tasks. Try different models and form your own opinion on which is your favorite model.
 
 </div>
 
@@ -912,7 +912,7 @@ Agent is the evolution of the Edit agent, with all the missing capabilities like
 
 It can accelerate the coding process even more than the Edit agent, particularly for larger and more complex changes.
 
-The Agent is a powerful feature of Github Copilot, but as we all know: with great power, comes great responsibility. The fact that Agent can perform large tasks autonomously means we have to be even more careful with our prompt.
+The Agent is a powerful feature of Github Copilot, but as we all know: with great power, comes great responsibility! The fact that Agent can perform large tasks autonomously means we have to be even more careful with our prompts, or we may have to undo and refactor the code that Agent generates if we haven't been clear with what we want it to achieve.
 
 This is where the Plan Agent can help. It can help us to create a detailed plan and specification which is useful for tackling large, complex tasks, particularly when completing these tasks using Agent. The Plan agent can help to plan a large task and break the implementation of this task down into smaller steps.
 
@@ -957,7 +957,7 @@ Write the complete plan out in markdown format.
 
 ### Step 2: Use Agent to implement the plan
 
-Click on the **Start Implementation** when you are ready to begin the implementation phase. If you chose to write the plan out or provided clarifications, you can proceed with the implementation manually by selecting the "Agent" and by sending a request to **Start Implementation**. The plan will be'handed off' to the Agent, which will implement this plan autonomously for you.
+Click on the **Start Implementation** when you are ready to begin the implementation phase. If you chose to write the plan out or provided clarifications, you can proceed with the implementation manually by selecting the "Agent", typing **Start Implementation** and sending this request. The plan will be'handed off' to the Agent, which will implement this plan autonomously for you.
 
 ![Plan agent](assets/vscode-agent-impl.png)
 
@@ -1025,11 +1025,8 @@ To do this, add an `mcp.json` file inside the `.vscode` folder with the followin
 {
   "servers": {
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
-      }
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
     },
     "playwright": {
       "command": "npx",
@@ -1041,7 +1038,7 @@ To do this, add an `mcp.json` file inside the `.vscode` folder with the followin
 }
 ```
 
-Make sure you have a valid GitHub Personal Access Token stored in your environment as GITHUB_TOKEN.
+This definition uses OAuth to authenticate the Github MCP Server access using your Github login. You will be asked to log in to Github through the Web Browser to authenticate when running a tool from the server for the first time.
 
 <div class="tip" data-title="Tips">
 
@@ -1069,13 +1066,13 @@ Now that we have the MCP servers started, let's start working with GitHub. We wi
 ```
 Help me draft an issue for my github project to add a feature to my Vue App: Cart Management. 
 
-As a user on the list of albums i want to be able to add or remove albums to my cart. For that i can:
+As a user on the list of albums I want to be able to add or remove albums to my cart. For that I can:
 - see the number of albums on my cart display on a cart icon on the header
 - display the content of my cart by clicking on the cart icon
 - add albums from the list by clicking on the 'add to cart button'
 - remove albums from the cart on the cart detail
 
-Help me create the issue with a detailed description, implementation details and acceptance criteria
+Help me create the issue with a detailed description, implementation details and acceptance criteria.
 ```
 
 It will generate something like this:
@@ -1086,6 +1083,8 @@ You can continue to iterate until the result match your criteria and then ask to
 ```
 Add the issue on my GitHub project
 ```
+
+Note: When running for the first time, you may need to re-run the command to add the issue after you have authenticated.
 
 Copilot automatically map the operation with an available tool from his configured MCP Server and ask for the authorisation to run it:
 
@@ -1359,11 +1358,13 @@ You can call it using the slash command: `/get-my-issues` and BTW you can add in
 
 ### Custom Agents
 
-We've already seen the built-in Agents of GitHub Copilot (Ask, Edit, Plan & Agent). You can also create your own custom agents to tailor the interaction to your specific needs.
+We've already seen the built-in Agents of GitHub Copilot (Ask, Edit, Plan & Agent). You can also create your own custom agent to enable you to configure the AI to adopt different personas tailored to specific development roles and tasks. For example, you might create agents for a security reviewer, planner, solution architect, or other specialized roles. Each persona can have its own behavior, available MCP tools, and instructions.
+
+You can also use handoffs to create guided workflows between agents, allowing you to transition seamlessly from one specialized agent to another with a single click. For example, you could move from a planning agent directly into the implementation agent, as you saw with the previous example when we re-wrote the Album API.
 
 Custom agents are defined in an `.agent.md` Markdown file, and can be stored in your workspace for others to use, or in your user profile, where you can reuse them across different workspaces.
 
-To create your first custom agent which will use the Playwright MCP server to test the Album Web UI, either create a new file `.github/agents/WebTester.agent.md` or click on the **Configure Custom Agents** in the agent selection of GitHub Copilot window.
+To create your first custom agent, which will use the Playwright MCP server to create and document a frontend test suite for the Album Web UI, either create a new file `.github/agents/WebTester.agent.md` or click on the **Configure Custom Agents** in the agent selection of GitHub Copilot window.
 
 ![Add chat mode menu](assets/add-chatmode-menu.png)
 
@@ -1386,7 +1387,7 @@ model: Claude Sonnet 4.5
 5.  **Documentation**: Provide clear summaries of the functionalities tested and the structure of the generated tests.
 ```
 Back in the Copilot window you'll be able to select the chat mode:
-![Select planning mode](assets/select-planning-mode.png)
+![Select Web Tester mode](assets/select-tester-mode.png)
 
 
 ## Advanced Context Manipulations
