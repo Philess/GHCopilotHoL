@@ -7,8 +7,10 @@ description: Discover how to leverage GitHub Copilot to develop your project  # 
 level: beginner                         # Required. Can be 'beginner', 'intermediate' or 'advanced'
 authors:                                # Required. You can add as many authors as needed      
   - Philippe DIDIERGEORGES
+  - Ross BOAST
 contacts:                               # Required. Must match the number of authors
   - '@philess'
+  - '@rossboast'
 duration_minutes: 180                    # Required. Estimated duration in minutes
 tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu         # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
@@ -182,15 +184,15 @@ In the context of Copilot, a prompt is a natural language description used to ge
 Create a new `album-viewer/src/utils/validators.ts` file and try the different following prompts to see the different suggestions:
 
 ```ts
-// validate date from text input in french format and convert it to a date object. Name this function `validateDate`.
+// function named `validateDate` which validates a date from text input in a french format and converts it to a date object.
 ```
 
 Copilot can help you also to write Regular Expressions. Try these:
 
 ```ts
-// function that validates the format of a GUID string
+// function that validates the format of a GUID string.
 
-// function that validates the format of a IPV6 address string. Name this function `validateIPV6`.
+// function that validates the format of a IPV6 address string and is named `validateIPV6`.
 ```
 
 <br>
