@@ -1160,7 +1160,7 @@ Talking about prompt engineering, you can also use the chat to provide examples 
 ```bash
 # one-shot programming
 
-Write me unit tests for phone number validators methods using mocha and chai in the current file.
+Write me unit tests for phone number validators methods in the current file.
 Use the following examples for positive test (test that should return true): 
 it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
 Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
@@ -1169,7 +1169,7 @@ Organize test in logic suites and generate at least 4 positives tests and 2 nega
 ```bash
 # few-shot programming
 
-Write me unit tests for all validators methods using mocha and chai in the current file.
+Write me unit tests for all validators methods in the current file.
 Use the following examples for positive test (test that should return true): 
 it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
 it('should return true if the phone number is a valid local american number', () => { expect(validatePhoneNumber('202-939-9889')).to.be.true; });
@@ -1185,7 +1185,7 @@ Write a MusicStyle record that contains a List<MusicStyle> with 6 sample values 
 
 ### Role Prompting
 
-Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalize his behavior and setup your flavour of Copilot.
+Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personalize behavior and setup your flavour of Copilot.
 
 This is probably the first thing to do when you start a new task with Copilot Chat: **provide a clear description of what you want to build and how do you want Copilot to help you**.
 
@@ -1341,7 +1341,7 @@ Create a new file in `.github/prompts` folder with the name `get-my-issues.promp
 
 ```
 ---
-mode: 'agent'
+agent: 'agent'
 tools: ['githubRepo', 'github', 'get_issue', 'get_issue_comments', 'get_me', 'list_issues']
 description: 'List my issues in the current repository'
 ---
