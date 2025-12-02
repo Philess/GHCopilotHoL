@@ -7,8 +7,10 @@ description: Discover how to leverage GitHub Copilot to develop your project  # 
 level: beginner                         # Required. Can be 'beginner', 'intermediate' or 'advanced'
 authors:                                # Required. You can add as many authors as needed      
   - Philippe DIDIERGEORGES
+  - Ross BOAST
 contacts:                               # Required. Must match the number of authors
   - '@philess'
+  - '@rossboast'
 duration_minutes: 180                    # Required. Estimated duration in minutes
 tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu         # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
@@ -25,7 +27,7 @@ navigation_numbering: false             # Optional. Enable numbering in the side
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-*Version 1.3 - September 2025*
+*Version 1.4 - November 2025*
 
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
@@ -33,7 +35,7 @@ GitHub Copilot is an AI-powered code assistant that helps developers write bette
 
 <div class="warning" data-title="warning">
 
-> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the different features of the different extensions you are going to use. Please be clever if it's not exactly the same.
+> GitHub Copilot is a quickly evolving product and thus this workshop may not be 100% up to date with the different features of the various extensions you are going to use. Please be adaptable if it's not exactly the same.
 
 </div>
 
@@ -108,16 +110,8 @@ You first need to install the following tools locally:
 2. Install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
 3. Install the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extension
 4. Install [Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-5. Install mocha
-
-    ``` bash
-    npm install --global mocha
-    npm install axios
-    ```
-6. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
-
-Then, clone your forked repository and open it in VS Code.
-
+5. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
+6. Clone your forked repository and open it in VS Code:
 ``` bash
 git clone https://github.com/<YourUser>/gh-copilot-demo
 cd gh-copilot-demo
@@ -167,7 +161,7 @@ Once you start typing a prompt and Copilot generate proposals, you can use the f
 
 It's possible to switch from the standard GitHub Copilot completion model, to another one. The completion model has been specifically trained on over 275,000 high-quality public repositories in over 30 popular programming languages, including JavaScript, TypeScript, Python, Java, C#, C++, and many more for better results. However, you are able to switch to another model if your administrator has activated this feature otherwise you may have only the latest one.
 
-In **VS Code** to check the completion model configuration, open the Copilot menu in the VS Code title bar, select `Configure Code Completions...` > `Change Completions Model...`. Alternatively, open the Command Palette and select GitHub Copilot: `Change Completions Model...`
+In **VS Code** to check the completion model configuration, open the Copilot menu in the VS Code title bar, select `Configure Inline Suggestions...` > `Change Completions Model...`. 
 
 ![alt text](assets/cfg-comp-model.png)
 ![alt text](assets/chg-comp-model.png)
@@ -183,29 +177,31 @@ In **VS Code** to check the completion model configuration, open the Copilot men
 ### Write code
 
 **What is a prompt?**
-In the context of Copilot, a prompt is a piece of natural language description that is used to generate code suggestions. It can be a single line or a multiple lines description.
+In the context of Copilot, a prompt is a natural language description used to generate code suggestions. It can be a single line or a multiple line description.
 
 **Generate code from prompt**
 
 Create a new `album-viewer/src/utils/validators.ts` file and try the different following prompts to see the different suggestions:
 
 ```ts
-// validate date from text input in french format and convert it to a date object
+// function named `validateDate` which validates a date from text input in a french format and converts it to a date object.
 ```
 
-Copilot can help you also to write `RegExp patterns`. Try these:
+Copilot can help you also to write Regular Expressions. Try the following:
 
 ```ts
-// function that validates the format of a GUID string
+// function that validates the format of a GUID string.
+```
 
-// function that validates the format of a IPV6 address string
+```ts
+// function that validates the format of a IPV6 address string and is named `validateIPV6`.
 ```
 
 <br>
 
 **More complex code generation**
 
-In the `albums-api/Controllers/AlbumController.cs` file try to complete the `Get(int id)` method by replace the current return:
+In the `albums-api/Controllers/AlbumController.cs` file try to complete the `Get(int id)` method by replacing the current return:
 
 ```cs
 // GET api/<AlbumController>/5
@@ -219,18 +215,14 @@ public IActionResult Get(int id)
 In the same file you can show other prompts like:
 
 ```cs
-// function that sort albums by name, artist or genre
+// function that retrieves albums and sorts them by title, artist or price
 ```
 
 ### Next edit suggestion
 
-*Next edit suggestion* is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, it can have an impact on other part of your code, it will automatically suggest the next change in your code, and not only directly where your pointer is but where your natural next action will probably be.
+*Next edit suggestion* is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, if it can have an impact on another part of your code, it will automatically suggest the next change in your code, and not only directly where your cursor is, but also anticipating where your next edit might be.
 
-An example is better than a thousands words so let's try that!
-
-First, be sure to activate the feature on your Copilot settings. Select the `Preferences: Open User Settings` command in the Command Palette (`Ctrl+Shift+P`) and search for the *Next Edit Suggestions* settings:
-
-![Next Edit Suggestions in settings](assets/nes-setting.png)
+An example is better than a thousands words, so let's try that!
 
 Then, open the `albums-api/Models/Album.cs` file and, on the Album contructor, add a new input parameter `Year` of type `int` and see the Next Edit Suggestion propose to change the body of the method accordingly:
 
@@ -244,46 +236,48 @@ Copilot can help generate all kind of tests that are written with code. It Inclu
 
 - Add a new file `validators.test.ts` in the `albums-viewer/src/utils` alongside the previously created file.
 
-- To have good test suggestion, you should provide some basic informations to Copilot such as the test framework you want to use:
+- To receive a good test suggestion, you should provide some basic information to Copilot, such as the test framework you want to use:
 
 ```ts
 import { describe }
 ```
 
-When you start typing the `describe` function, Copilot will see you're in test file in TS and suggest you to import the `describe` and `it` functions from Mochai which is a famous test framework for JS/TS.
-Accept the suggestion and it will automatically suggest also the `expect` function from Chai: accept it also.
+When you start typing the `describe` function, Copilot will see you are in a TypeScript (*.ts) test file and because the project uses the Vite tool, it will suggest the import of the `describe` and `it` functions from vitest, which is a test framework commonly used with VueJS/Vite applications.
 
 ```ts
-import {describe, it} from 'mocha';
-import {expect} from 'chai';
+import { describe, expect, it } from 'vitest';
 ```
 
-You have your test framework in place! Now just import the functions you want to test by starting a new line by the `import` keyword, Copilot will see you are in a test file, to test some `validators` because of the name and it will suggest something like that:
+You have your test framework in place! 
+
+Copilot may already move on to suggesting the import of validators from the `validators.ts` file because it resides in the same folder. It might suggest something like the following:
 
 ```ts
 import {validateAlbumId} from './validators';
 ```
 
-It looks ok but because Copilot doesn't have access to all your code, only the open tab and limited informations, you can see that both the path and the function name are wrong.
+It looks ok but because Copilot doesn't have access to all your code, only the open tab and limited information, you can see that both the path and the function name are wrong.
 <br>
-... At least he tried ...
+... At least it tried ...
 <br>
-but it's a good way to show that Copilot is not magic and you have to use it with your other IDE feature and your brain :)
+but it's a good way to show that Copilot is not magic and you have to use it with your other IDE features and your brain :)
 
-- Accept the suggestion and change the path. You will be able to have VS Code to give you the available function with the `ctrl+space` shortcut. Import `validateDate`, `validateIPV6`.
+- Start writing `import { validateDate }` and accept the automatic IDE suggestion or use the `ctrl+space` shortcut. 
+
+- Import both `validateDate` and `validateIPV6`.
 
 - Then, add a comment with the first function you want to test and let the magic happen:
 
 ```ts
-import {describe, it} from 'mocha';
-import {expect} from 'chai';
-
-import {validateDate, validateIPV6} from './validators';
+import { describe, expect, it } from 'vitest';
+import { validateDate, validateIPV6 } from './validators';
 
 // test the validateDate function
 ```
 
 Boom!
+
+You should see something like the following (but your test may vary):
 
 ```ts
 describe('validateDate', () => {
@@ -471,20 +465,22 @@ Yes, writing a comment should be mandatory and developers tend to be lazy. GitHu
 
 ## Side Quest #2: Writing documentation
 
-Copilot can understand a natural language prompt and generate code and because it's just language to it, it can also `understand code and explain it in natural language` to help you document your code.
+As you have seen, Github Copilot can understand a natural language prompt and generate code. Copilot can also generate documentation because it's another form of natural language. Copilot can also `understand code and explain it in natural language` to help you understand and document your code.
 So it can help you in all your documentation tasks. It can generate simple documentation comment or standardized documentation comment like JavaDoc, JsDoc, etc... it can also help you translate your documentation in different languages. Let's see how it works.
 
 ### Simple documentation comment
 
-To see that just put you pointer on top of a Class, a method or any line of code and start typing the comment handler for the selected language to trigger Copilot. In language like Java, C# or TS for example, just type `// `and let the magic happen.
+To see how Copilot can generate documentation, just put you pointer on top of a Class, a method or any line of code and start typing the comment handler for the selected language to trigger Copilot. In language like Java, C# or TS for example, just type `// `and let the magic happen.
 
-Here is an example in the `albums-viewer/routes/index.js` file. Insert a line and start typing on line 13 inside the `try block`
+Here is an example in the `album-viewer/src/App.vue` file. Insert a line and start typing "//" on line 40 before the `fetchAlbums` function to generate a doc similar to the sample below "Fetch albums from the API":
 
 ```js
-router.get("/", async function (req, res, next) {
+// Fetch albums from the API
+const fetchAlbums = async (): Promise<void> => {
   try {
-    // Invoke the album-api via Dapr
-    const url = `http://127.0.0.1:${DaprHttpPort}/v1.0/invoke/${AlbumService}/method/albums`;
+    loading.value = true
+    error.value = null
+    const response = await axios.get<Album[]>('/albums')
 
 ```
 
@@ -507,7 +503,7 @@ public class AlbumController : ControllerBase
 
 ### Writing Markdown and HTML documentation
 
-Copilot is also very powerfull to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
+Copilot is also very powerful at helping you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
 
 <div class="warning" data-title="important">
 
@@ -534,8 +530,7 @@ From there by starting a new line with a secondary level title it will start gen
 
 # Level 2: Use Copilot Chat to improve code quality
 
-GitHub Copilot is a generative AI and thus, perfect to generate code, but it has powerfull analysis capabilities on your code that can be used in several case to improve code quality like: find security issues, bad practices in your code and generate a fix, refactor and add comment to legacy code, generate tests, etc...
-
+GitHub Copilot is a generative AI and thus it is perfect to generate code and documentation. It also has powerful analysis capabilities and can be used for several analysis use cases to improve code quality such as: finding security issues and bad practices in your code before suggesting and generating a fix for each of these issues.
 
 ## Start playing with Copilot Chat
 
@@ -544,7 +539,7 @@ Once Copilot Chat is setup, you can start using it:
 - by clicking the **Copilot Icon** on the top next to the search bar *or* pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
 - by pressing `Ctrl` + `i` shortcut for a quick **inline question** to the chat
 
-The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to Copilot.
+The **Chat View** is a sticky version that is useful to keep the chat open and ask questions to Copilot.
 The **Inline Chat** is a quick way to ask a question and get an answer precisely in the context of the line you are working on.
 
 We'll see examples in the next sections to let you choose which one you prefer depending on the situation.
@@ -561,7 +556,7 @@ It's a more high level Copilot than the vanilla Copilot which is specialized on 
 Try it with a few questions like:
 
 ```text
-> How to generate a random number in C#?
+> How can I generate a random number in C#?
 > What is the best way to secure a route is ASP.NET Core?
 > What is the easiest way to generate a static website with NodeJS?
 ```
@@ -569,7 +564,7 @@ Try it with a few questions like:
 Try it then with some of your code files in the repository. Open a file a try asking:
 
 ```text
-> Can you explain me what this code does?
+> Can you explain what this code does?
 > (with only part of the code selected) Can you explain me what the selected code does?
 > Can you generate a function that returns a random number between 1 and 10?
 > Can you add documentation comments to this function?
@@ -577,22 +572,22 @@ Try it then with some of your code files in the repository. Open a file a try as
 
 Try also using the questions suggestions that appears along the way.
 
-### Ask, Edit & Agent modes
+### Built-in Agents: Ask, Edit, Plan & Agent
 
-On the GitHub Copilot Chat, you can switch between three modes: **Ask**, **Edit**, and **Agent**. The mode you are in is displayed in the chat view.
+On GitHub Copilot Chat, you can switch between four built-in agents: **Ask**, **Plan**, **Edit**, and **Agent**. The agent you are in is displayed in the chat view.
 
 ![chat mode selection](assets/chat-mode-selection.png)
 
-- **Ask mode**: This is the default mode. In this mode, you can ask questions and get answers from Copilot. You can also ask Copilot to generate code for you. You can switch to this mode by clicking the **Ask** button in the chat view.
-- **Edit mode**: This mode is specifically optimized for editing code and specifically working on a set of modifications, in a multi-step process. It's very powerfull to generate code in a more interactive way and will guide you by providing guidance to run the commands but not executing it by itself.
-- **Agent mode**: This mode is the agentic (or multi-agents) version of **Edit mode**. It's a more advanced version of the **Edit mode** that can also run the commands for you, catch the error and correct itself before continuing the process. It changes the way the developer is writing code by moving the cursor closer to the feature than the code itself. This is what the community also calls **Vibe Coding**.
+- **Ask**: This is the default agent. It enables you to ask questions and get answers from Copilot. You can also ask Copilot to generate code for you. You can switch to this mode by clicking the **Ask** button in the chat view.
+- **Plan**: The plan agent is optimized for creating a structured implementation plan for a coding task. Use the plan agent when you want to break down a complex feature or change into smaller, manageable steps before implementation.
+- **Edit**: The Edit agent is specifically optimized for editing code and specifically working on a set of modifications, in a multi-step process. It's very powerfull to generate code in a more interactive way and will guide you by providing guidance to run the commands but not executing it by itself.
+- **Agent**: This is the agentic (or multi-agent) version of **Edit**. It's a more advanced version of **Edit** that can run commands for you, catch any errors, and correct itself before continuing on with the process. It changes the way the developer builds applications by focusing on describing the feature and letting Github Copilot generate the code, rather than the user writing the code themselves. This is what the community calls **Vibe Coding**.
 
-**Agent Mode** and **Edit Mode** are detailed in next level. This level focus on playing with **Ask mode**.
-
+**Plan**, **Agent** and **Edit** are detailed in the next level. This level focuses on playing with **Ask**.
 
 ### Inline Chat
 
-GitHub Copilot Chat is very helpful but for a developer, leaving the keyboard and having to take the mouse to open the Chat tab can be boring. You can directly call the Chat inside the code editor.
+GitHub Copilot Chat is very helpful but for a developer, leaving the keyboard and having to take the mouse to open the Chat tab can be distracting. You can instead directly chat with Github Copilot inside the code editor alongside your code and within the context you are working.
 
 1- Open any file containing code
 
@@ -604,7 +599,8 @@ GitHub Copilot Chat is very helpful but for a developer, leaving the keyboard an
 
 ### Model Selection
 
-LLMs capabilities evolves pretty fast and we tend to see more and more models specifically optimized for specific tasks. In order to always provide the best performances for your usage, GitHub Copilot now integrate multiple model that you can switch between on Ask, Edit & Agent modes. 
+LLM capabilities evolves pretty fast and we tend to see more and more models specifically optimized for different tasks. GitHub Copilot integrates multiple models that you can use across each of the agents
+to provide the best performance for your use case.
 
 ![Model Selection capture](assets/model-selection.png)
 
@@ -612,8 +608,8 @@ LLMs capabilities evolves pretty fast and we tend to see more and more models sp
 
 > The list of available models will depend on multiple parameters:
 > - which IDE you are using
-> - which mode you are using (Chat / Inline / Edit)
-> - what are the model authorized by your Copilot Administrator
+> - which agent you are using (Chat / Inline / Edit / Agent)
+> - the models authorized by your Copilot Administrator
 
 </div>
 
@@ -655,7 +651,7 @@ It should create a structured project and even a new button to create the file. 
 
 ### Context Manipulation
 
-As you saw in previous examples, passing the right instructions is key for good Copilot results. The other big factor is the context your are passing to Copilot with that instructions.
+As you saw in previous examples, passing the right prompt is key for good Copilot results. The other big factor is the context you are passing to Copilot along with that prompt.
 
 In the Chat or Edit mode you can see the files passed in the context by default in the chat field:
 ![current file in chat context](assets/chat-context1.png)
@@ -681,34 +677,32 @@ Depending on the IDE, there is other options already availables like:
 - Folders, for instance to target a specific code base from another project or framework to get the latest classes or methods as examples for Copilot.
 - other to come and try...
 
-Here are a few basic examples to understand how it works. More complex example are available in ***Level 4: Copilot Advanced*** part of this workshop. 
+Here are a few basic examples to understand how it works. More complex example are available in ***Level 5: Copilot Advanced*** part of this workshop. 
 
-You can add multiple reference in context in a single request. Feel free to challenge it and see how effective it is. 
+You can add multiple context references in a single request to refine the context that you are passing. Feel free to try some of the '/' commands and combine with context using '#'. We have provided some examples below.
 
-**Pass a file**
+**Reference a specific file**
 
 ```text
-@workspace /tests generate unit tests for #AlbumController
+@workspace /explain #AlbumController
 ```
 
 And then select `AlbumController.cs` to add the file as reference.
 
-![Context manipulation file](assets/context-manip-file.png)
-
 **Ask question on git changes**
 
 ```text
-> can you give me the content to add in my changelog regarding my current #changes
+> Can you show me the content to add in my changelog regarding my current #changes
 
-> What in my current #changes can cause my code to fail at runtime?
+> What current #changes might cause my code to fail at runtime?
 ```
 
 **Target selection and attach folder**
 
-Open the `AlbumController.cs` file and select one or many functions. Then in the chat add all the album-api folder to the contect by **drag-and-dropping** the folder from the file explorer on the left.
+Open the `AlbumController.cs` file and select one or many functions. Then in the chat add all the album-api folder to the context by **drag-and-dropping** the folder from the file explorer on the left.
 
 ```text
-@workspace /tests generate unit tests for the function in #selection 
+@workspace /explain the code in #selection 
 ```
 
 ![Selection in context](assets/chat-context-selection.png)
@@ -823,7 +817,7 @@ You can also ask Copilot to do a review of your code. It will check your code fo
 ![Review button on git changes window](assets/review_git_changes.png)
 
 - Review on a single file
-Open again the `album-api/Controllers/UnsecuredController.cs`, right-click in the code window, and then in the `Copilot` menu select `Review and Comment` option. 
+Open again the `album-api/Controllers/UnsecuredController.cs`, right-click in the code window, and then in the `Generate` menu select `Review` option. 
 
 ![VS Code Copilot code review menu](assets/vscode-copilot-review.png)
 
@@ -835,17 +829,15 @@ It will start a review of your code and provide explanations and suggestions to 
 
 ---
 
-# Level 3: Copilot Edit & Agents Mode
+# Level 3: Copilot Edit Agent
 
-## Edit mode
+The Edit agent in GitHub Copilot appeared first in VS Code and was the first step in redefining the way you code with Copilot by transitioning from an `AI Infused` mode to an `AI-Native` approach. What it means is that instead of just answering questions, Copilot is taking actions, and is able now to achieve more complex, multi-steps tasks.
 
-The Edit Mode of GitHub Copilot appeared first in VS Code and was the first step in redefining the way you code with Copilot by transitioning from an `AI Infused` mode to an `AI-Native` approach. What it means is that instead of just answering questions, Copilot is taking actions, and is able now to achieve more complex, multi-steps tasks.
-
-It's very powerfull for tasks that needs a lot of operations while keeping track and context on a longer term, like code refactoring for example. Let's try that!
+It's very powerful for tasks that needs a lot of operations while keeping track and context on a longer term, like code refactoring for example. Let's try that!
 
 <div class="warning" data-title="note">
 
-> This mode is available only on **VS Code**. If you follow this tutorial with another editor, you can directly jump to the Agent mode part.
+> The Edit agent is available only on **VS Code**. If you follow this tutorial with another editor, you can directly jump to the Agent section.
 
 </div>
 
@@ -853,7 +845,7 @@ It's very powerfull for tasks that needs a lot of operations while keeping track
 
 Let's start by completing the API implementation and adding the missing routes and method to complete the CRUD of Albums.
 
-Open Copilot Chat windows on **Edit Mode** or using the `Ctrl+Shift+I` shortcut:
+Open Copilot Chat window and select **Edit** or using the `Ctrl+Shift+I` shortcut:
 
 ![Open Edit Mode](assets/vscode-edit-mode.png)
 
@@ -866,22 +858,21 @@ Complete the AlbumsAPI by adding the following routes
 - search albums by year (added previously)
 ```
 
-
-It will create an execute a plan to (probably):
+It will create an execution plan to (probably):
 - Add missing route to existing API controller
 - Create the code to executed the requests for the new routes
-- Provide explaination and details on all the code created
+- Provide explanation and details on all the code created
 
 ![edit mode result](assets/edit-mode-result.png)
 
-When the job is done you'll a working set enriched with all new files. You'll be able to stop there by just clicking **Done** button to end the edit process and keep it, iterate by continuing giving instructions in the current session, or rollback everything by clicking on the **Undo** arrow on top to come back to the previous state.
+When the job is done you'll see a working set enriched with the required changes. You'll be able to stop there by just clicking **Keep** button to end the edit process and keep the changes. If you wish to continue to iterate, you can do so by continuing to give instructions in the Edit session, or rollback everything by clicking on the **Undo** arrow on top to come back to the previous state.
 
-If some files are missing, you can ask directly Copilot to add them. He will reevaluate the entire chat and provide the missing one based on your ask.
+If some files are missing, you can ask directly Copilot to add them. Github Copilot will re-evaluate the entire chat and provide the missing one based on your ask.
 
 
 <div class="tip" data-title="tips">
 
-> The default model of Copilot will probably help to do the job but you can also take this as an opportunity to try a different one, among the premium models here to leverage more power and achieve more complex tasks. Try and make your own opinion on your favorite model in the premium models like Claude 3.7 or GPT4.5 for instance.
+> The default model of Copilot will probably help to do the job but you can also take this as an opportunity to try a different one, such as a premium model like Claude 4.5 or GPT5, to leverage more power and tackle more complex tasks. Try different models and form your own opinion on which is your favorite model.
 
 </div>
 
@@ -889,7 +880,7 @@ If some files are missing, you can ask directly Copilot to add them. He will ree
 
 We already seen in the previous example that the edit mode is able to create new code but also refactor existing files in the process of implementing new behavior.
 
-Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code with this consecutive requests:
+Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code by providing the following consecutive requests:
 
 ```text
 Add a new Artist model with Name, Birthdate, BirthPlace properties
@@ -902,7 +893,7 @@ Use the Artist class in the Album object
 
 ### Tests generation
 
-Another use case where we can take advantage of this powerfull edit mode is writing tests. 
+Another use case where we can take advantage of this powerful edit mode is writing tests. 
 
 Add the `AlbumController.cs`, `Album.cs` and `Artist.cs` files and Let's add some unit tests for our API:
 
@@ -912,28 +903,36 @@ Add unit test to my api
 
 ![Edit mode generate tests](assets/edit-mode-testsgen.png)
 
-Again, Copilot Edits is very strong to write complex code but this is also his limit: for the rest, aka running commands, installing package, running tests, etc. it can gives you the instructions but you will have to take the control.
+The Copilot Edit agent is very capable at writing complex code but it has a limitation: running commands, such as running commands in the terminal to install a package, run tests, etc. The Edit agent can give you the instructions to perform these actions manually but is unable to perform them on your behalf. The Edit agent also has limitations when it comes to making and planning a large number of changes, or more complex changes.
 
 **What if... it can do all that for you?**
 
-## Agent mode
+---
 
-The Agent mode is the evolution of edit mode, with all the missing capabilities like:
+# Level 4: Copilot Plan & Agent
+
+Agent is the evolution of the Edit agent, with all the missing capabilities like:
 - running commands for you on the terminal
-- correct errors on the fly
-- use MCP servers to extend his capabilities on top
+- correcting errors on the fly
+- using tools from MCP servers to extend capabilities
 
-It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
+It can accelerate the coding process even more than the Edit agent, particularly for larger and more complex changes.
 
-### Step 1: Rewrite the API from scratch
+The Agent is a powerful feature of Github Copilot, but as we all know: with great power, comes great responsibility! The fact that Agent can perform large tasks autonomously means we have to be even more careful with our prompts, or we may have to undo and refactor the code that Agent generates if we haven't been clear with what we want it to achieve.
 
-Here is an example in NodeJS but you can try it in Java or Python or any other stack you prefer.
+This is where the Plan Agent can help. It can help us to create a detailed plan and specification which is useful for tackling large, complex tasks, particularly when completing these tasks using Agent. The Plan agent can help to plan a large task and break the implementation of this task down into smaller steps.
+
+Let's get started by rebuilding the API, and you have the choice of the stack. 
+
+### Step 1: Create a Plan to rewrite the API from scratch
+
+Here is an example in NodeJS, but you can try it in Java or Python, or any other stack you prefer.
 
 Again, after **commiting your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS. 
-Open a new Copilot Chat on Agent mode and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
 
-![Agent mode](assets/vscode-agent-mode.png)
-Then type:
+Open a new Copilot Chat in **Plan agent** and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
+
+Then copy the prompt below:
 
 ```text
 Create a new nodejs api named album-api-v2 to manage music albums. 
@@ -941,14 +940,34 @@ This is a rewrite of the previous `albums-api` API in DotNet.
 Create all basic routes to list, get, add, update and delete albums.
 
 Create a collection with the exact same sample data from the previous albums-api.
-Data are kept in memory for the moment no need to database.
+Data is kept in memory and there is no requirement for a database.
 
-Write the code in TypeScript, start it on port 3000 and configure the routes to match the existing calls of the VueJS App.
+Write the code in TypeScript.
 
-Add unit tests and run it
+When the application is built, start it on port 3000 and configure the routes to match the existing calls of the VueJS App.
+
+Add unit tests and run them.
 ```
 
-Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample datas and even unit tests** and Copilot will list all actions completed. From there, you can choose to:
+The Plan agent will begin by completing a detailed analysis of the existing codebase and will use this information to generate a plan for the new API.
+
+When the Plan agent is completed, it should present you with a series of steps required to build the new API and it may also ask you to make some implementation choices. These choices can vary but might include what test framework to use and clarifications on how to implement the API with the existing Album model and controller.
+
+![Plan agent](assets/vscode-plan-agent-impl.png)
+
+You can choose whether to answer these questions to add more detail to the plan. You can even choose to write out the complete plan to see the detail the Plan agent has generated for this task. If you want to do this, copy the following in:
+
+``` text
+Write the complete plan out in markdown format. 
+```
+
+### Step 2: Use Agent to implement the plan
+
+Click on the **Start Implementation** when you are ready to begin the implementation phase. If you chose to write the plan out or provided clarifications, you can proceed with the implementation manually by selecting the "Agent", typing **Start Implementation** and sending this request. The plan will be'handed off' to the Agent, which will implement this plan autonomously for you.
+
+![Plan agent](assets/vscode-agent-impl.png)
+
+When the Agent has finished, you should have **a new API that can run with all services, sample data and even unit tests**. Copilot will list all the actions completed. From there, you can choose to:
 - **Keep** changes to validate this set of modifications
 - **Undo** to rollback to before this set of modifications
 - **Give new instructions** & continue to iterate
@@ -965,15 +984,15 @@ The last step before committing it and share it with you team is documenting. Tr
 can you add the instructions to a readme.md file
 ```
 
-Clic on `Keep` and `Done` to validate your modification. and commit your changes.
+Click on `Keep` to validate your modification. and commit your changes.
 
 Do not hesitate to play with the different models that are available to you, you can find the differences in the [documentation](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
 
-### Step 2: advanced code editing
+### Step 3: Advanced code editing
 
 Copilot in Agent mode can help you run heavy code editing tasks. As it's based on LLM that can naturally talk multiple languages, it's a great opportunity to help add multi-language support to our application.
 
-Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
+Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude Sonnet 4 or 4.5)
 
 ```markdown
 Add multi-language support to the album viewer app. Use translations files to define values for each language and add a selector for the language on the header of the application. The default language remain English but we also want to add French and German support.
@@ -1012,11 +1031,8 @@ To do this, add an `mcp.json` file inside the `.vscode` folder with the followin
 {
   "servers": {
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
-      }
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
     },
     "playwright": {
       "command": "npx",
@@ -1028,7 +1044,7 @@ To do this, add an `mcp.json` file inside the `.vscode` folder with the followin
 }
 ```
 
-Make sure you have a valid GitHub Personal Access Token stored in your environment as GITHUB_TOKEN.
+This definition uses OAuth to authenticate the Github MCP Server access using your Github login. You will be asked to log in to Github through the Web Browser to authenticate when running a tool from the server for the first time.
 
 <div class="tip" data-title="Tips">
 
@@ -1056,13 +1072,13 @@ Now that we have the MCP servers started, let's start working with GitHub. We wi
 ```
 Help me draft an issue for my github project to add a feature to my Vue App: Cart Management. 
 
-As a user on the list of albums i want to be able to add or remove albums to my cart. For that i can:
+As a user on the list of albums I want to be able to add or remove albums to my cart. For that I can:
 - see the number of albums on my cart display on a cart icon on the header
 - display the content of my cart by clicking on the cart icon
 - add albums from the list by clicking on the 'add to cart button'
 - remove albums from the cart on the cart detail
 
-Help me create the issue with a detailed description, implementation details and acceptance criteria
+Help me create the issue with a detailed description, implementation details and acceptance criteria.
 ```
 
 It will generate something like this:
@@ -1074,6 +1090,8 @@ You can continue to iterate until the result match your criteria and then ask to
 Add the issue on my GitHub project
 ```
 
+Note: When running for the first time, you may need to re-run the command to add the issue after you have authenticated.
+
 Copilot automatically map the operation with an available tool from his configured MCP Server and ask for the authorisation to run it:
 
 ![Add issue with mcp server tool](assets/mcp-tool-add-issue.png)
@@ -1084,11 +1102,11 @@ Accept it and the issue is now created on your project.
 
 ### Step 4: Implement the cart feature
 
-Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here), add the app folder for better context targeting and simply ask to implement the issue.
+Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here but similar models are fine), add the app folder for better context targeting and simply ask to implement the issue.
 
 ![Start implementation](assets/implement-issue.png)
 
-After some work your application should have a functionnal cart feature:
+After some work your application should have a functional cart feature:
 ![Cart feature implementer](assets/cart-feature-implemented.png)
 
 Once again, once you reached a new milestone, don't forget to validate the changes by clicking `Keep` and commit the changes.
@@ -1127,9 +1145,9 @@ At the end you will have a test file generated and Copilot can help you configur
 
 ---
 
-# Level 4: Copilot Advanced
+# Level 5: Advanced Copilot Concepts
 
-In the previous sections you discovered how to use all out-of-the-box features from GitHub Copilot. In this section you will learn techniques to get more accurate results, providing  Copilot what he doesn't know: your best practices, naming conventions, data model, internal APIs, etc...
+In the previous sections you discovered how to use all out-of-the-box features from GitHub Copilot. In this section you will learn techniques to get more accurate results, providing Copilot what it doesn't know, including: your best practices, naming conventions, data model, internal APIs, etc...
 
 We will use advanced `reusable prompts` and `customization capabilities` to make Copilot act like a real co-worker and not just the Copilot everyone is using. 
 
@@ -1142,7 +1160,7 @@ Talking about prompt engineering, you can also use the chat to provide examples 
 ```bash
 # one-shot programming
 
-Write me unit tests for phone number validators methods using mocha and chai in the current file.
+Write me unit tests for phone number validators methods in the current file.
 Use the following examples for positive test (test that should return true): 
 it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
 Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
@@ -1151,7 +1169,7 @@ Organize test in logic suites and generate at least 4 positives tests and 2 nega
 ```bash
 # few-shot programming
 
-Write me unit tests for all validators methods using mocha and chai in the current file.
+Write me unit tests for all validators methods in the current file.
 Use the following examples for positive test (test that should return true): 
 it('should return true if the phone number is a valid international number', () => { expect(validatePhoneNumber('+33606060606')).to.be.true; });
 it('should return true if the phone number is a valid local american number', () => { expect(validatePhoneNumber('202-939-9889')).to.be.true; });
@@ -1167,7 +1185,7 @@ Write a MusicStyle record that contains a List<MusicStyle> with 6 sample values 
 
 ### Role Prompting
 
-Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personnalize his behavior and setup your flavour of Copilot.
+Also called foundational prompt, it's a general prompt you're giving to Copilot Chat to personalize behavior and setup your flavour of Copilot.
 
 This is probably the first thing to do when you start a new task with Copilot Chat: **provide a clear description of what you want to build and how do you want Copilot to help you**.
 
@@ -1323,7 +1341,7 @@ Create a new file in `.github/prompts` folder with the name `get-my-issues.promp
 
 ```
 ---
-mode: 'agent'
+agent: 'agent'
 tools: ['githubRepo', 'github', 'get_issue', 'get_issue_comments', 'get_me', 'list_issues']
 description: 'List my issues in the current repository'
 ---
@@ -1344,45 +1362,45 @@ You can call it using the slash command: `/get-my-issues` and BTW you can add in
 
 </div>
 
-### Custom Chat Modes
+### Custom Agents
 
-We've already seen the built-in chat modes of GitHub Copilot (Ask, Edit & Agent). You can also create your own custom chat modes to tailor the interaction to your specific needs.
+We've already seen the built-in Agents of GitHub Copilot (Ask, Edit, Plan & Agent). You can also create your own custom agent to enable you to configure the AI to adopt different personas tailored to specific development roles and tasks. For example, you might create agents for a security reviewer, planner, solution architect, or other specialized roles. Each persona can have its own behavior, available MCP tools, and instructions.
 
-Custom chat modes are defined in a `.chatmode.md` Markdown file, and can be stored in your workspace for others to use, or in your user profile, where you can reuse them across different workspaces.
+You can also use handoffs to create guided workflows between agents, allowing you to transition seamlessly from one specialized agent to another with a single click. For example, you could move from a planning agent directly into the implementation agent, as you saw with the previous example when we re-wrote the Album API.
 
-To create your first custom chat mode, just create a new file `.github/chatmodes/Planning.chatmode.md` or click on the **Configure Modes** in the mode selection of GitHub Copilot window.
+Custom agents are defined in an `.agent.md` Markdown file, and can be stored in your workspace for others to use, or in your user profile, where you can reuse them across different workspaces.
+
+To create your first custom agent, which will use the Playwright MCP server to create and document a frontend test suite for the Album Web UI, either create a new file `.github/agents/WebTester.agent.md` or click on the **Configure Custom Agents** in the agent selection of GitHub Copilot window.
 
 ![Add chat mode menu](assets/add-chatmode-menu.png)
 
-Add the following content to the file:
+Add the following content to the agent file:
 
 ```markdown
 ---
-description: Generate an implementation plan for new features or refactoring existing code.
-tools: ['codebase', 'fetch', 'findTestFiles', 'githubRepo', 'search', 'usages']
-model: Claude Sonnet 4
+description: "Playwright Web Testing Agent"
+name: "WebTester"
+tools: ["changes", "codebase", "edit/editFiles", "fetch", "findTestFiles", "problems", "runCommands", "runTasks", "runTests", "search", "searchResults", "terminalLastCommand", "terminalSelection", "testFailure", "playwright"]
+model: Claude Sonnet 4.5
 ---
-# Planning mode instructions
-You are in planning mode. Your task is to generate an implementation plan for a new feature or for refactoring existing code.
-Don't make any code edits, just generate a plan.
 
-The plan consists of a Markdown document that describes the implementation plan, including the following sections:
+## Core Responsibilities
 
-* Overview: A brief description of the feature or refactoring task.
-* Requirements: A list of requirements for the feature or refactoring task.
-* Implementation Steps: A detailed list of steps to implement the feature or refactoring task.
-* Testing: A list of tests that need to be implemented to verify the feature or refactoring task.
+1.  **Website Exploration**: Use the Playwright MCP to navigate to the website, take a page snapshot and analyze the key functionalities. Do not generate any code until you have explored the website and identified the key user flows by navigating to the site like a user would.
+2.  **Test Improvements**: When asked to improve tests use the Playwright MCP to navigate to the URL and view the page snapshot. Use the snapshot to identify the correct locators for the tests. You may need to run the development server first.
+3.  **Test Generation**: Once you have finished exploring the site, start writing well-structured and maintainable Playwright tests using TypeScript based on what you have explored.
+4.  **Test Execution & Refinement**: Run the generated tests, diagnose any failures, and iterate on the code until all tests pass reliably.
+5.  **Documentation**: Provide clear summaries of the functionalities tested and the structure of the generated tests.
 ```
-
 Back in the Copilot window you'll be able to select the chat mode:
-![Select planning mode](assets/select-planning-mode.png)
+![Select Web Tester mode](assets/select-tester-mode.png)
 
 
 ## Advanced Context Manipulations
 
 ### Fetch Web Pages
 
-The chat Copilot can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
+The Copilot Chat agent can use external references to build more accurate suggestions. Let's say you want to generate a code that uses a specific version of a library, using a specific code sample from a documentation, or even request an API. You can provide a specific url or a web request that Copilot will use to generate more accurate code.
 
 Example 1:
 ```text
