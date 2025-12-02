@@ -187,11 +187,13 @@ Create a new `album-viewer/src/utils/validators.ts` file and try the different f
 // function named `validateDate` which validates a date from text input in a french format and converts it to a date object.
 ```
 
-Copilot can help you also to write Regular Expressions. Try these:
+Copilot can help you also to write Regular Expressions. Try the following:
 
 ```ts
 // function that validates the format of a GUID string.
+```
 
+```ts
 // function that validates the format of a IPV6 address string and is named `validateIPV6`.
 ```
 
@@ -213,7 +215,7 @@ public IActionResult Get(int id)
 In the same file you can show other prompts like:
 
 ```cs
-// function that sort albums by title, artist or price
+// function that retrieves albums and sorts them by title, artist or price
 ```
 
 ### Next edit suggestion
