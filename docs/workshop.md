@@ -465,20 +465,22 @@ Yes, writing a comment should be mandatory and developers tend to be lazy. GitHu
 
 ## Side Quest #2: Writing documentation
 
-Copilot can understand a natural language prompt and generate code and because it's just language to it, it can also `understand code and explain it in natural language` to help you document your code.
+As you have seen, Github Copilot can understand a natural language prompt and generate code. Copilot can also generate documentation because it's another form of natural language. Copilot can also `understand code and explain it in natural language` to help you understand and document your code.
 So it can help you in all your documentation tasks. It can generate simple documentation comment or standardized documentation comment like JavaDoc, JsDoc, etc... it can also help you translate your documentation in different languages. Let's see how it works.
 
 ### Simple documentation comment
 
-To see that just put you pointer on top of a Class, a method or any line of code and start typing the comment handler for the selected language to trigger Copilot. In language like Java, C# or TS for example, just type `// `and let the magic happen.
+To see how Copilot can generate documentation, just put you pointer on top of a Class, a method or any line of code and start typing the comment handler for the selected language to trigger Copilot. In language like Java, C# or TS for example, just type `// `and let the magic happen.
 
-Here is an example in the `albums-viewer/routes/index.js` file. Insert a line and start typing on line 13 inside the `try block`
+Here is an example in the `album-viewer/src/App.vue` file. Insert a line and start typing "//" on line 40 before the `fetchAlbums` function to generate a doc similar to the sample below "Fetch albums from the API":
 
 ```js
-router.get("/", async function (req, res, next) {
+// Fetch albums from the API
+const fetchAlbums = async (): Promise<void> => {
   try {
-    // Invoke the album-api via Dapr
-    const url = `http://127.0.0.1:${DaprHttpPort}/v1.0/invoke/${AlbumService}/method/albums`;
+    loading.value = true
+    error.value = null
+    const response = await axios.get<Album[]>('/albums')
 
 ```
 
@@ -501,7 +503,7 @@ public class AlbumController : ControllerBase
 
 ### Writing Markdown and HTML documentation
 
-Copilot is also very powerful to help you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
+Copilot is also very powerful at helping you write documentation. It can generate `markdown` and `html` code and accelerate the writing of your README.md files for example.
 
 <div class="warning" data-title="important">
 
