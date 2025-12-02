@@ -583,7 +583,7 @@ On GitHub Copilot Chat, you can switch between four built-in agents: **Ask**, **
 - **Edit**: The Edit agent is specifically optimized for editing code and specifically working on a set of modifications, in a multi-step process. It's very powerfull to generate code in a more interactive way and will guide you by providing guidance to run the commands but not executing it by itself.
 - **Agent**: This is the agentic (or multi-agent) version of **Edit**. It's a more advanced version of **Edit** that can run commands for you, catch any errors, and correct itself before continuing on with the process. It changes the way the developer builds applications by focusing on describing the feature and letting Github Copilot generate the code, rather than the user writing the code themselves. This is what the community calls **Vibe Coding**.
 
-**Agent** and **Edit** are detailed in next level. This level focuses on playing with **Ask**.
+**Plan**, **Agent** and **Edit** are detailed in the next level. This level focuses on playing with **Ask**.
 
 ### Inline Chat
 
@@ -677,7 +677,7 @@ Depending on the IDE, there is other options already availables like:
 - Folders, for instance to target a specific code base from another project or framework to get the latest classes or methods as examples for Copilot.
 - other to come and try...
 
-Here are a few basic examples to understand how it works. More complex example are available in ***Level 4: Copilot Advanced*** part of this workshop. 
+Here are a few basic examples to understand how it works. More complex example are available in ***Level 5: Copilot Advanced*** part of this workshop. 
 
 You can add multiple context references in a single request to refine the context that you are passing. Feel free to try some of the '/' commands and combine with context using '#'. We have provided some examples below.
 
