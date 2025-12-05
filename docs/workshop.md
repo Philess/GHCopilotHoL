@@ -1143,6 +1143,8 @@ Like this you will have better success rate in generating your end-to-end tests.
 
 At the end you will have a test file generated and Copilot can help you configure playwright for the project, your pipeline and complete your documentation accordingly. You just need to ask.
 
+### Step 6: Code Review
+
 ---
 
 # Level 5: Advanced Copilot Concepts
@@ -1491,6 +1493,23 @@ When hovering the card, it move up. I don't want it to move at all. Just resize 
 ```
 Image you can use (Copy and paste it on the chat window):
 ![Vision Debug Capture](assets/vision-debug-capture.png)
+
+
+---
+
+# Level 6: Leveraging agents on the platform
+
+## Copilot Coding Agent
+TODO Lucile
+Assign an issue
+discover Misson Control
+Review PR
+Open in Codespace to test
+Validate the PR
+
+## Your custom agents on Github.com
+Commit the Custom Agent file on main branch
+Delegate a task to the WebTester Agent
 
 
 ---
