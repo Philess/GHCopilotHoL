@@ -1501,7 +1501,25 @@ Image you can use (Copy and paste it on the chat window):
 
 ## Copilot Coding Agent
 TODO Lucile
-Assign an issue
+
+## Assign an issue to Github Coding Agent
+Let's go back to our Cart Management feature.Instead of implementing it directly, let's see how Copilot can help us to manage the task on GitHub.com
+First, let's retrieve the issue we created previously in the level 4 step 3 section, by navigating to the Issues tab of your repository.
+
+![Retrieve issues](assets/retrieve-issue.png)
+
+Let's open the issue and assign it to the Github Coding Agent by clicking on the **Assignees** section on the right panel and selecting **GitHub Coding Agent**.
+![Assign issue to Coding Agent](assets/assign-copilot.png)
+
+When assigning the issue to the coding agent, you have the possibility to provide additional instructions to the agent by providing an optional prompt to the agent. You can add more context or specific requirements for the implementation.
+Let's add the following prompt in order to ask copilot to test the feature with Playwright after implementation and provide screenshots in the PR description.
+
+```markdown
+Once feature is implemented, create a Playwright test suite to validate the functionality and provide screenshots in the PR description.
+```
+
+![assign-issue-copilot-prompt.png](assets/assign-issue-copilot-prompt.png)
+
 discover Misson Control
 Review PR
 Open in Codespace to test
