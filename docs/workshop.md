@@ -27,7 +27,7 @@ navigation_numbering: false             # Optional. Enable numbering in the side
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-*Version 1.4 - November 2025*
+*Version 1.5 - December 2025*
 
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
@@ -60,10 +60,16 @@ These are the very minimal pre-requisites to run this workshop:
 There are different ways to get access to GitHub Copilot:
 
 - **As an individual**, you can sign up to use [Copilot Free](https://github.com/github-copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
-
 - **As an individual**, sign up for a [paid subscription](https://github.com/github-copilot/signup/copilot_individual) to get unlimited completions and chat interactions. You can try GitHub Copilot for free with a one-time 30-day trial.
 
 - **As a member of an organization or enterprise** that has a subscription to GitHub Copilot, you can request access to Copilot by going to [https://github.com/settings/copilot](https://github.com/settings/copilot) and requesting access under "Get Copilot from an organization."
+
+
+<div class="warning" data-title="warning">
+
+> The **Copilot Free** offer does not include the feature on the github.com platform like the Coding Agent and the Code Review agent that are part of this workshop. You can still run 90% of this workshop with a free subscription but for the rest you will need a paid license.
+
+</div>
 
 
 ## Fork the repository
@@ -998,6 +1004,7 @@ Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude So
 Add multi-language support to the album viewer app. Use translations files to define values for each language and add a selector for the language on the header of the application. The default language remain English but we also want to add French and German support.
 ```
 
+Again, when you're happy with the result, create a new commit to save your changes.
 
 ### Setup MCP Servers
 
@@ -1102,7 +1109,12 @@ Accept it and the issue is now created on your project.
 
 ### Step 4: Implement the cart feature
 
-Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here but similar models are fine), add the app folder for better context targeting and simply ask to implement the issue.
+Now that we have an issue let's start working on it's implementation. 
+
+Be sure you're not working direclty on the main branch but switch to a new branch named `feat/cart-feature` for example.
+![new git branch](assets/new-git-branch.png)
+
+On the Agent mode, be sure to select a premium model or simply use the `Auto` model selection that analyse the task and automatically match it to the right model. Add the app folder for better context targeting and simply ask to implement the issue.
 
 ![Start implementation](assets/implement-issue.png)
 
@@ -1144,6 +1156,24 @@ Like this you will have better success rate in generating your end-to-end tests.
 At the end you will have a test file generated and Copilot can help you configure playwright for the project, your pipeline and complete your documentation accordingly. You just need to ask.
 
 ### Step 6: Code Review
+
+Once your code is ready, commit and push all your changes to your `feat/cart-feature` branch.
+![create PR from VSCode](assets/create-pr-vscode.png)
+
+Create a new Pull Request from your branch to the main branch of **your forked repo**
+![create pull request form](assets/create-pull-request-form.png)
+
+Once created the pull request opens on your VS Code. From there or from the GitHub portal, you can assign the PR to be reviewed by Copilot Code Review Agent:
+![assign PR to Copilot](assets/assign-pr-to-copilot.png)
+
+After a few minutes, you'll be able to view the comments from GitHub Copilot Code Review Agent.
+It checks your code for best practices, bugs, potential vulnerabilities... But **it also run a CodeQL scan and a secrets scan** to ensure your code is totally safe.
+
+You can read all the detailed suggestions, and you can review the session to see all the operations the agents went through.
+![Code review by Copilot](assets/code-review-copilot.png)
+You can also decide to assign a task to the coding agent on the platform to fix all theses points for you **but this is something we will experiment later in this lab**.
+
+For the moment, just review and fix the issues in your code that needs to be fixed, run the review again until everything is fixed and merge your branch whenever you are ready.
 
 ---
 
@@ -1570,9 +1600,18 @@ Once you are satisfied with the implementation, you can merge the pull request t
 
 
 ## Your custom agents on Github.com
-Commit the Custom Agent file on main branch
-Delegate a task to the WebTester Agent
 
+In order to call a custom agent on GitHub.com there is only two possible options:
+1 - Having your `.github/agents/<your_agent>.agent.md` file on the main branch
+2 - On an GitHub Organization only: having a `.github` or a `.github-private` repository with the agent file on it
+
+As we are working on a public repository outside an organization, you must have the Custom Agent file (created on previous step) on your main branch.
+
+When it's on the main branch you'll be able to assign a new task for the coding agent, by clicking on the dedicated button.
+You'll be able to target a specific branch, provide instructions and choose your custom agent (here the WebTester agent)
+![Delegate task to custom agent](assets/create-task-custom-agent.png)
+
+Assign the task to the agent and check the generated result in the pull request.
 
 ---
 
@@ -1582,7 +1621,7 @@ Well done, you made it 'till the end :)
 
 If you want content to go deeper, here are some suggestions:
 
-- Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts
+- Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts, instructions and custom agents.
 
 
 If you want more challenge, or specific use cases, here a a list of great content for you:
