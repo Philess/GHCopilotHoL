@@ -998,6 +998,7 @@ Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude So
 Add multi-language support to the album viewer app. Use translations files to define values for each language and add a selector for the language on the header of the application. The default language remain English but we also want to add French and German support.
 ```
 
+Again, when you're happy with the result, create a new commit to save your changes.
 
 ### Setup MCP Servers
 
@@ -1102,7 +1103,12 @@ Accept it and the issue is now created on your project.
 
 ### Step 4: Implement the cart feature
 
-Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here but similar models are fine), add the app folder for better context targeting and simply ask to implement the issue.
+Now that we have an issue let's start working on it's implementation. 
+
+Be sure you're not working direclty on the main branch but switch to a new branch named `feat/cart-feature` for example.
+![new git branch](assets/new-git-branch.png)
+
+On the Agent mode, be sure to select a premium model or simply use the `Auto` model selection that analyse the task and automatically match it to the right model. Add the app folder for better context targeting and simply ask to implement the issue.
 
 ![Start implementation](assets/implement-issue.png)
 
@@ -1144,6 +1150,24 @@ Like this you will have better success rate in generating your end-to-end tests.
 At the end you will have a test file generated and Copilot can help you configure playwright for the project, your pipeline and complete your documentation accordingly. You just need to ask.
 
 ### Step 6: Code Review
+
+Once your code is ready, commit and push all your changes to your `feat/cart-feature` branch.
+![create PR from VSCode](assets/create-pr-vscode.png)
+
+Create a new Pull Request from your branch to the main branch of **your forked repo**
+![create pull request form](assets/create-pull-request-form.png)
+
+Once created the pull request opens on your VS Code. From there or from the GitHub portal, you can assign the PR to be reviewed by Copilot Code Review Agent:
+![assign PR to Copilot](assets/assign-pr-to-copilot.png)
+
+After a few minutes, you'll be able to view the comments from GitHub Copilot Code Review Agent.
+It checks your code for best practices, bugs, potential vulnerabilities... But **it also run a CodeQL scan and a secrets scan** to ensure your code is totally safe.
+
+You can read all the detailed suggestions, and you can review the session to see all the operations the agents went through.
+![Code review by Copilot](assets/code-review-copilot.png)
+You can also decide to assign a task to the coding agent on the platform to fix all theses points for you **but this is something we will experiment later in this lab**.
+
+For the moment, just review and fix the issues in your code that needs to be fixed, run the review again until everything is fixed and merge your branch whenever you are ready.
 
 ---
 
