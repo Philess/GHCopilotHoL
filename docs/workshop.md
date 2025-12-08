@@ -1502,6 +1502,12 @@ Image you can use (Copy and paste it on the chat window):
 ## Copilot Coding Agent
 
 
+<div class="info" data-title="note">
+
+>  The GitHub Copilot Coding Agent is an AI-powered assistant that can autonomously handle coding tasks on GitHub.com. It can create, review, and merge pull requests, manage issues, and perform other development tasks directly on your GitHub repositories.
+</div>
+
+
 ## Assign an issue to Github Coding Agent
 
 Let's go back to our Cart Management feature. Instead of implementing it directly, let's see how Copilot can help us to manage the task on GitHub.com
