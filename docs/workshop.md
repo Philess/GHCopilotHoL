@@ -1532,9 +1532,18 @@ Open in Codespace to test
 Validate the PR
 
 ## Your custom agents on Github.com
-Commit the Custom Agent file on main branch
-Delegate a task to the WebTester Agent
 
+In order to call a custom agent on GitHub.com there is only two possible options:
+1 - Having your `.github/agents/<your_agent>.agent.md` file on the main branch
+2 - On an GitHub Organization only: having a `.github` or a `.github-private` repository with the agent file on it
+
+As we are working on a public repository outside an organization, you must have the Custom Agent file (created on previous step) on your main branch.
+
+When it's on the main branch you'll be able to assign a new task for the coding agent, by clicking on the dedicated button.
+You'll be able to target a specific branch, provide instructions and choose your custom agent (here the WebTester agent)
+![Delegate task to custom agent](assets/create-task-custom-agent.png)
+
+Assign the task to the agent and check the generated result in the pull request.
 
 ---
 
@@ -1544,7 +1553,7 @@ Well done, you made it 'till the end :)
 
 If you want content to go deeper, here are some suggestions:
 
-- Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts
+- Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts, instructions and custom agents.
 
 
 If you want more challenge, or specific use cases, here a a list of great content for you:
