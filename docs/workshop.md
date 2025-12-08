@@ -1545,7 +1545,7 @@ First, let's retrieve the issue we created previously in the level 4 step 3 sect
 
 ![Retrieve issues](assets/retrieve-issue.png)
 
-Let's open the issue and assign it to the Github Coding Agent by clicking on the **Assignees** section on the right panel and selecting **GitHub Coding Agent**.
+Let's open the issue and assign it to the GitHub Coding Agent by clicking on the **Assignees** section on the right panel and selecting **GitHub Coding Agent**.
 
 
 ![Assign issue to Coding Agent](assets/assign-copilot.png)
