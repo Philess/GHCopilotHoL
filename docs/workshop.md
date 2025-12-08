@@ -1594,7 +1594,7 @@ Let's add some review comments to ask copilot to make some changes to the implem
 
 ![review_pr.png](assets/review_pr.png)
 
-Now, copilot will process the review comments and make the necessary changes to the implementation. You can monitor the progress of the agent by checking the session details again.
+Now, Copilot will process the review comments and make the necessary changes to the implementation. You can monitor the progress of the agent by checking the session details again.
 
 Once you are satisfied with the implementation, you can merge the pull request to integrate the changes into the main branch.
 
