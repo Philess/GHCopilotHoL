@@ -1508,7 +1508,7 @@ Image you can use (Copy and paste it on the chat window):
 </div>
 
 
-## Assign an issue to Github Coding Agent
+### Assign an issue to Github Coding Agent
 
 Let's go back to our Cart Management feature. Instead of implementing it directly, let's see how Copilot can help us to manage the task on GitHub.com
 First, let's retrieve the issue we created previously in the level 4 step 3 section, by navigating to the Issues tab of your repository.
@@ -1532,6 +1532,9 @@ Once feature is implemented, create a Playwright test suite to validate the func
 
 ![assign-issue-copilot-prompt.png](assets/assign-issue-copilot-prompt.png)
 
+
+### Monitor the implementation progress
+
 Once the issue is assigned, the Coding Agent will start working on the implementation of the feature. You can monitor the progress of the agent by checking the pull requests created by the agent. The **initial commit** will be the plan for the implementation, you can comment the pull request to provide additional instructions or clarifications if needed.
 
 ![initial_plan.png](assets/initial_plan.png)
@@ -1552,6 +1555,8 @@ The session details will show you the progress of the agent, the actions taken b
 > Mission Control is the central hub for managing and monitoring the activities of GitHub Copilot Agents. It provides a comprehensive overview of all active and completed sessions, allowing users to track the progress of their agents, review actions taken, and manage ongoing tasks.
 
 </div>
+
+### Review the pull request
 
 Once copilot is done, you will receive a notification that the pull request is ready for review. You can then review the code changes made by the agent and you can test the feature by checking out the branch created by the agent locally or opening it in a Codespace. 
 
