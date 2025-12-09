@@ -1173,7 +1173,13 @@ You can read all the detailed suggestions, and you can review the session to see
 ![Code review by Copilot](assets/code-review-copilot.png)
 You can also decide to assign a task to the coding agent on the platform to fix all theses points for you **but this is something we will experiment later in this lab**.
 
-For the moment, just review and fix the issues in your code that needs to be fixed, run the review again until everything is fixed and merge your branch whenever you are ready.
+From this moment, you can just review and fix the issues in your code that needs to be fixed. But for the needs of the workshop we will stop there and move on to the next level.
+
+<div class="warning" data-title="Important">
+
+> **DO NOT MERGE your Pull Request!** We will need to keep it on a separate branch for the rest of the lab.
+
+</div>
 
 ---
 
@@ -1540,7 +1546,7 @@ Image you can use (Copy and paste it on the chat window):
 
 ### Assign an issue to Github Coding Agent
 
-Let's go back to our Cart Management feature. Instead of implementing it directly, let's see how Copilot can help us to manage the task on GitHub.com
+Let's go back to our Cart Management feature. Instead of implementing it directly, let's see how Copilot can help us to manage the task on GitHub.com.
 First, let's retrieve the issue we created previously in the level 4 step 3 section, by navigating to the Issues tab of your repository.
 
 ![Retrieve issues](assets/retrieve-issue.png)
@@ -1578,11 +1584,18 @@ From the pull request, click on the `View Session` button to open the session de
 
 The session details will show you the progress of the agent, the actions taken by the agent, and any errors or issues encountered during the implementation. You can also see the plan created by the agent and the steps taken to implement the feature. All works done by the agent are listed in the session. You can review any session, and even re-run specific steps if needed.
 
-![session_details.png](assets/session_detail.png)
-
 <div class="info" data-title="note">
 
 > Mission Control is the central hub for managing and monitoring the activities of GitHub Copilot Agents. It provides a comprehensive overview of all active and completed sessions, allowing users to track the progress of their agents, review actions taken, and manage ongoing tasks.
+
+</div>
+
+![session_details.png](assets/session_detail.png)
+
+
+<div class="tip" data-title="tip">
+
+> The task will take from a few minutes to half an hour to complete. You can let Copilot working in the background from here, continue to follow the lab with the ***Custom Agents*** part and then coming back to review the Pull Request.
 
 </div>
 
@@ -1602,10 +1615,12 @@ Once you are satisfied with the implementation, you can merge the pull request t
 ## Your custom agents on Github.com
 
 In order to call a custom agent on GitHub.com there is only two possible options:
+
 1 - Having your `.github/agents/<your_agent>.agent.md` file on the main branch
+
 2 - On an GitHub Organization only: having a `.github` or a `.github-private` repository with the agent file on it
 
-As we are working on a public repository outside an organization, you must have the Custom Agent file (created on previous step) on your main branch.
+As we are working on a public repository outside an organization, **you must have the Custom Agent file** (created on previous level - Advanced Copilot concepts) **on your main branch**.
 
 When it's on the main branch you'll be able to assign a new task for the coding agent, by clicking on the dedicated button.
 You'll be able to target a specific branch, provide instructions and choose your custom agent (here the WebTester agent)
