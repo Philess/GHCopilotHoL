@@ -8,9 +8,11 @@ level: beginner                         # Required. Can be 'beginner', 'intermed
 authors:                                # Required. You can add as many authors as needed      
   - Philippe DIDIERGEORGES
   - Ross BOAST
+  - Lucile JEANNERET
 contacts:                               # Required. Must match the number of authors
   - '@philess'
   - '@rossboast'
+  - '@ljeanner'
 duration_minutes: 180                    # Required. Estimated duration in minutes
 tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu         # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
