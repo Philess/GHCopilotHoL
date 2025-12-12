@@ -1,5 +1,5 @@
 ---
-published: true                        # Optional. Set to true to publish the workshop (default: false)
+published: false                        # Optional. Set to true to publish the workshop (default: false)
 type: workshop                          # Required.
 title: Product Hands-on Lab - GitHub Copilot, your new AI pair programmer              # Required. Full title of the workshop
 short_title: GitHub Copilot, your new AI pair programmer                # Optional. Short title displayed in the header
