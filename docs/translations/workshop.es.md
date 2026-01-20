@@ -37,13 +37,13 @@ navigation_numbering: false # Opcional. Habilitar numeración en el menú latera
 
 _Versión 1.4 - Noviembre 2025_
 
-El objetivo de este workshop es aprender a usar GitHub Copilot, mediante un ejercicio que consiste en construir un servidor web usando Node.js con diferentes funcionalidades y una API Web en .NET. En la segunda parte, aprenderás a usarlo para infraestructura como código y también para corregir malas prácticas en términos de seguridad.
+El objetivo de este workshop es aprender a usar GitHub Copilot, mediante un ejercicio que consiste en construir un servidor web usando Node.js con diferentes funcionalidades y una API Web en .NET. En la segunda parte, aprenderás a usarlo para infraestructura como código y también para corregir malas prácticas desde un punto de vista de seguridad.
 
 GitHub Copilot es un asistente de código potenciado por IA que ayuda a los desarrolladores a escribir mejor código más rápido. Utiliza modelos de aprendizaje automático entrenados con miles de millones de líneas de código para sugerir líneas completas o funciones enteras basándose en el contexto de lo que estás trabajando. Al usar GitHub Copilot, puedes aprender a escribir mejor código y mejorar tu productividad.
 
 <div class="warning" data-title="advertencia">
 
-> GitHub Copilot es un producto en rápida evolución y por lo tanto este workshop puede no estar 100% actualizado con las diferentes funcionalidades de las extensiones que vas a usar. Por favor, sé flexible si algo no es exactamente igual.
+> GitHub Copilot es un producto en continua evolución y por lo tanto este workshop puede no estar 100% actualizado con las diferentes funcionalidades de las extensiones que vas a usar.
 
 </div>
 
@@ -53,21 +53,21 @@ Hay dos formas de ejecutar este workshop:
 
 - online con **GitHub Codespaces**: la forma más rápida y fácil de empezar a practicar inmediatamente con un entorno alojado listo en segundos.
 
-- localmente en **tu computadora**: la mejor forma de instalar y configurar las herramientas que necesitas para trabajar con GitHub Copilot en todos tus proyectos.
+- localmente en **tu ordenador**: la mejor forma de instalar y configurar las herramientas que necesitas para trabajar con GitHub Copilot en todos tus proyectos.
 
 Estos son los pre-requisitos mínimos para ejecutar este workshop:
 
-|                                  |                                                                                 |
-| -------------------------------- | ------------------------------------------------------------------------------- |
-| Una cuenta de GitHub             | [Crear cuenta gratuita de GitHub](https://github.com/join)                      |
-| Acceso a GitHub Copilot activado | Obtener acceso a GitHub Copilot (sección siguiente)                             |
-| Un navegador web                 | [Descargar Microsoft Edge](https://www.microsoft.com/edge) o cualquier otro ;-) |
+|                                     |                                                                                 |
+| ----------------------------------- | ------------------------------------------------------------------------------- |
+| Una cuenta de GitHub                | [Crear cuenta gratuita de GitHub](https://github.com/join)                      |
+| Licencia de GitHub Copilot activada | Obtener acceso a GitHub Copilot (sección siguiente)                             |
+| Un navegador web                    | [Descargar Microsoft Edge](https://www.microsoft.com/edge) o cualquier otro ;-) |
 
 ## Obtener Acceso a GitHub Copilot
 
 Hay diferentes formas de obtener acceso a GitHub Copilot:
 
-- **Como individuo**, puedes registrarte para usar [Copilot Free](https://github.com/github-copilot/signup), sin necesidad de tarjeta de crédito. Tienes derecho a un número limitado de completados e interacciones de chat por mes con el plan gratuito, que se reinician cada mes. Aprende más sobre los [detalles y condiciones del plan Copilot Free](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
+- **Como individuo**, puedes registrarte para usar [Copilot Free](https://github.com/github-copilot/signup), sin necesidad de tarjeta de crédito. Tienes derecho a un número limitado de auto completados e interacciones de chat por mes con el plan gratuito, que se reinician cada mes. Aprende más sobre los [detalles y condiciones del plan Copilot Free](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
 
 - **Como individuo**, regístrate para una [suscripción de pago](https://github.com/github-copilot/signup/copilot_individual) para obtener completados e interacciones de chat ilimitados. Puedes probar GitHub Copilot gratis con una prueba única de 30 días.
 
@@ -77,7 +77,7 @@ Hay diferentes formas de obtener acceso a GitHub Copilot:
 
 Este workshop utiliza el siguiente repositorio de GitHub: [GitHub Copilot Demo](https://github.com/Philess/gh-copilot-demo)
 
-Este repositorio es un código inicial que te ayudará a experimentar todas las capacidades de GitHub Copilot. Toma el tiempo de ver el diseño de arquitectura mostrado.
+Este repositorio es un código inicial que te ayudará a experimentar todas las capacidades de GitHub Copilot.
 
 Comienza creando **tu propio fork** del repositorio haciendo clic en el botón `Fork` en la parte superior derecha de la página del repositorio. Esto creará una copia del repositorio en tu propia cuenta de GitHub y serás libre de hacer cualquier cambio que desees.
 
@@ -100,24 +100,36 @@ Para empezar a programar simplemente inicia un nuevo codespace y estarás listo,
 Después de solo unos segundos, serás redirigido a tu entorno Codespace, un entorno de desarrollo completo listo para usar en el navegador.
 **Puedes empezar a programar de inmediato**, tus extensiones de GitHub Copilot ya están instaladas y configuradas.
 
-Para una experiencia aún mejor, y si tienes VS Code instalado en tu computadora local, puedes abrir el Codespace en tu Visual Studio Code local haciendo clic en el botón `Open in VS Code` en el menú superior izquierdo de tu interfaz Codespace.
+Para una experiencia aún mejor, y si tienes VS Code instalado en tu máquina local, puedes abrir el Codespace en tu Visual Studio Code local haciendo clic en el botón `Open in VS Code` en el menú superior izquierdo de tu interfaz Codespace.
 ![open codespace in vs code menu](../assets/codespace-open-vscode.png)
 
 Una vez creado el Codespace, podrás elegir si quieres abrir el codespace en el navegador o en tu VS Code local directamente desde la página del repositorio de GitHub.
 
 ![open codespace in vscode](../assets/open-codespace-vscode.png)
 
-## OPCIÓN 2: Trabajar Localmente
+## OPCIÓN 2: Trabajar localmente
 
-Puedes elegir trabajar localmente en tu computadora para este workshop y aprovechar para instalar y configurar las herramientas que necesitarás para trabajar con GitHub Copilot en tus proyectos.
+Puedes elegir trabajar localmente en tu ordenador para este workshop y aprovechar para instalar y configurar las herramientas que necesitarás para trabajar con GitHub Copilot en tus proyectos.
 
-Primero necesitas instalar las siguientes herramientas localmente:
+<div class="info" data-title="nota">
+
+> **Opción rápida con Dev Container:** Si tienes **Docker** o **Podman** instalado en tu máquina local, puedes abrir este repositorio dentro de un Dev Container y aprovechar la misma configuración que usa GitHub Codespaces. Esto te proporciona un entorno de desarrollo completamente aislado y consistente sin necesidad de instalar todas las herramientas manualmente.
+>
+> Para hacerlo, debes tener instalada [la extensión Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers), y después simplemente abre el repositorio en VS Code y cuando se te solicite, selecciona la opción **"Reopen in Container"**. VS Code automáticamente detectará la configuración en la carpeta `.devcontainer` y creará el contenedor con todas las dependencias necesarias preinstaladas.
+>
+> Si no tienes esta posibilidad, sigue leyendo para la instalación manual.
+
+</div>
+
+### Instalación manual
+
+Para poder trabajar localmente necesitas instalar las siguientes herramientas localmente:
 
 1. Instalar [Visual Studio Code](https://code.visualstudio.com/)
 2. Instalar la extensión [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 3. Instalar la extensión [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
 4. Instalar [Node y npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-5. Instalar [.NET Core](https://dotnet.microsoft.com/download) \* _necesario si quieres ejecutar el código .NET proporcionado_
+5. Instalar [.NET](https://dotnet.microsoft.com/download) \* _necesario si quieres ejecutar el código .NET proporcionado_
 6. Clonar tu repositorio fork y abrirlo en VS Code:
 
 ```bash
@@ -138,9 +150,9 @@ Dale un vistazo, y asegúrate de ejecutar al menos la aplicación front-end ante
 
 ## Ayúdanos a mejorar este Workshop
 
-Si enfrentas algún desafío o error al ejecutar este workshop, por favor háznoslo saber. Tu ayuda será invaluable para hacer este workshop mejor, especialmente mientras intentamos mantenerlo actualizado regularmente.
+Si encuentras algún error al ejecutar este workshop, por favor háznoslo saber. Tu ayuda es muy importante para hacer este workshop mejor, especialmente mientras intentamos mantenerlo actualizado regularmente.
 
-[Reporta cualquier problema aquí.](https://github.com/Philess/GHCopilotHoL/issues/new)
+[Reporta cualquier incidencia aquí.](https://github.com/Philess/GHCopilotHoL/issues/new)
 
 ---
 
@@ -151,6 +163,7 @@ Esta sección te guiará a través de los primeros pasos con GitHub Copilot, com
 ## Empieza a Practicar con el Autocompletado de GitHub Copilot
 
 Una vez que empiezas a escribir un prompt y Copilot genera propuestas, puedes usar los siguientes atajos para interactuar con Copilot:
+
 <ul>
 <li>`tab` para aceptar la sugerencia actual completamente (`más común`)</li>
 <li>`ctrl + flecha derecha` para aceptar palabra por palabra la sugerencia (`para uso parcial`)</li>
