@@ -27,7 +27,7 @@ navigation_numbering: false # Opcional. Habilitar numeración en el menú latera
 
 <div class="info" data-title="🌐 Language / Idioma">
 
-> [🇬🇧 English](/workshop/workshop-vibe-coding.md) | **Español** (actual)
+> [🇬🇧 English](../workshop-vibe-coding.md) | **Español** (actual)
 
 </div>
 
