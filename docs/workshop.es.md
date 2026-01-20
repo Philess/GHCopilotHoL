@@ -15,7 +15,7 @@ contacts: # Requerido. Debe coincidir con el número de autores
   - "@0gis0"
 duration_minutes: 180 # Requerido. Duración estimada en minutos
 tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu # Requerido. Etiquetas para filtrado y búsqueda
-#banner_url: ../assets/banner.jpg           # Opcional. Debe ser una imagen de 1280x640px
+#banner_url: assets/banner.jpg           # Opcional. Debe ser una imagen de 1280x640px
 #video_url: https://youtube.com/link     # Opcional. Enlace a un video del workshop
 #audience: students                      # Opcional. Audiencia del workshop (estudiantes, desarrolladores profesionales, etc.)
 #wt_id: <cxa_tracking_id>                # Opcional. Código de seguimiento advocacy para enlaces soportados
@@ -95,17 +95,17 @@ Para empezar a programar simplemente inicia un nuevo codespace y estarás listo,
 
 </div>
 
-![create codespace](../assets/create-codespace.png)
+![create codespace](assets/create-codespace.png)
 
 Después de solo unos segundos, serás redirigido a tu entorno Codespace, un entorno de desarrollo completo listo para usar en el navegador.
 **Puedes empezar a programar de inmediato**, tus extensiones de GitHub Copilot ya están instaladas y configuradas.
 
 Para una experiencia aún mejor, y si tienes VS Code instalado en tu máquina local, puedes abrir el Codespace en tu Visual Studio Code local haciendo clic en el botón `Open in VS Code` en el menú superior izquierdo de tu interfaz Codespace.
-![open codespace in vs code menu](../assets/codespace-open-vscode.png)
+![open codespace in vs code menu](assets/codespace-open-vscode.png)
 
 Una vez creado el Codespace, podrás elegir si quieres abrir el codespace en el navegador o en tu VS Code local directamente desde la página del repositorio de GitHub.
 
-![open codespace in vscode](../assets/open-codespace-vscode.png)
+![open codespace in vscode](assets/open-codespace-vscode.png)
 
 ## 💻 OPCIÓN 2: Trabajar localmente
 
@@ -140,7 +140,7 @@ code .
 
 Finalmente, necesitas iniciar sesión en tu cuenta de GitHub en Visual Studio Code para activar las extensiones de GitHub Copilot. Las extensiones te pedirán iniciar sesión, pero si no ves el aviso, puedes iniciar sesión haciendo clic en el icono de usuario en la barra lateral inferior izquierda donde verás los inicios de sesión para GitHub y GitHub Copilot Chat.
 
-![alt text](../assets/gh-login.png)
+![alt text](assets/gh-login.png)
 
 ## ▶️ ¿Cómo ejecutar el código?
 
@@ -184,8 +184,8 @@ Es posible cambiar del modelo de autocompletado estándar de GitHub Copilot a ot
 
 En **VS Code** para verificar la configuración del modelo de autocompletado, abre el menú de Copilot en la barra de título de VS Code, selecciona `Configure Inline Suggestions...` > `Change Completions Model...`.
 
-![alt text](../assets/cfg-comp-model.png)
-![alt text](../assets/chg-comp-model.png)
+![alt text](assets/cfg-comp-model.png)
+![alt text](assets/chg-comp-model.png)
 
 <div class="info" data-title="info">
 
@@ -247,7 +247,7 @@ Un ejemplo es mejor que mil palabras, ¡así que probémoslo!
 
 Abre el archivo `albums-api/Models/Album.cs` y, en el constructor de Album, añade un nuevo parámetro de entrada `Year` de tipo `int` y observa cómo la Sugerencia de Siguiente Edición propone cambiar el cuerpo del método correspondiente:
 
-![Next Edit Suggestion](../assets/next-edit-sug.png)
+![Next Edit Suggestion](assets/next-edit-sug.png)
 
 ## 🛠️ Tareas cotidianas del desarrollador
 
@@ -477,11 +477,11 @@ Sí, escribir un comentario debería ser obligatorio y los desarrolladores tiend
 
 2. En el panel de Git commit, haz clic en el pequeño botón mágico a la derecha
 
-   ![GitHub Copilot Git comment generator](../assets/git-commit.png)
+   ![GitHub Copilot Git comment generator](assets/git-commit.png)
 
 3. Mira el mensaje de git commit que Copilot ha generado para ti
 
-   ![Generated comment](../assets/git-commit2.png)
+   ![Generated comment](assets/git-commit2.png)
 
 ## 📚 Misión Secundaria #2: Escribir documentación
 
@@ -529,7 +529,7 @@ Copilot también es muy potente ayudándote a escribir documentación. Puede gen
 
 > El autocompletado está desactivado por defecto en archivos markdown y texto. Puedes activarlo haciendo clic en el icono de Copilot en la esquina inferior derecha de tu IDE y seleccionar `Enable for Markdown` o `Enable for Plain Text`.
 
-![activate completion on markdown files](../assets/activate-markdown-completion.png)
+![activate completion on markdown files](assets/activate-markdown-completion.png)
 
 </div>
 
@@ -595,7 +595,7 @@ Prueba también usar las sugerencias de preguntas que aparecen a lo largo del ca
 
 En GitHub Copilot Chat, puedes cambiar entre cuatro agentes integrados: **Ask**, **Plan**, **Edit** y **Agent**. El agente en el que estás se muestra en la vista de chat.
 
-![chat mode selection](../assets/chat-mode-selection.png)
+![chat mode selection](assets/chat-mode-selection.png)
 
 - **Ask**: Este es el agente predeterminado. Te permite hacer preguntas y obtener respuestas de Copilot. También puedes pedir a Copilot que genere código para ti. Puedes cambiar a este modo haciendo clic en el botón **Ask** en la vista de chat.
 - **Plan**: El agente plan está optimizado para crear un plan de implementación estructurado para una tarea de codificación. Usa el agente plan cuando quieras dividir una funcionalidad compleja o cambio en pasos más pequeños y manejables antes de la implementación.
@@ -612,7 +612,7 @@ GitHub Copilot Chat es muy útil pero para un desarrollador, dejar el teclado y 
 
 2- Usa el atajo `Ctrl` + `i`. Debería abrir el popup de chat rápido, una pequeña ventana de chat donde pones tu cursor
 
-![GitHub Copilot Quick Chat](../assets/quickchat.png)
+![GitHub Copilot Quick Chat](assets/quickchat.png)
 
 3- Pide generar algo de código (ej. "Crear una clase C# llamada Toto"). Puedes hacer las mismas acciones que en la vista de chat pero apuntando directamente a una línea de código muy específica. También está más enfocado en generar código y menos en explicaciones.
 
@@ -620,7 +620,7 @@ GitHub Copilot Chat es muy útil pero para un desarrollador, dejar el teclado y 
 
 Las capacidades de los LLM evolucionan bastante rápido y tendemos a ver más y más modelos específicamente optimizados para diferentes tareas. GitHub Copilot integra múltiples modelos que puedes usar a través de cada uno de los agentes para proporcionar el mejor rendimiento para tu caso de uso.
 
-![Model Selection capture](../assets/model-selection.png)
+![Model Selection capture](assets/model-selection.png)
 
 <div class="tip" data-title="Modelos disponibles">
 
@@ -666,20 +666,20 @@ Abre el panel lateral de Chat y escribe \*_@workspace /New_ para especificar que
 
 Debería crear un proyecto estructurado e incluso un nuevo botón para crear el archivo. Haz clic en "Create workspace" para ver los archivos siendo creados.
 
-![GitHub Copilot Chat Participants](../assets/agents.png)
+![GitHub Copilot Chat Participants](assets/agents.png)
 
 ### Manipulación de Contexto
 
 Como viste en ejemplos anteriores, pasar el prompt correcto es clave para buenos resultados de Copilot. El otro factor importante es el contexto que estás pasando a Copilot junto con ese prompt.
 
 En el modo Chat o Edit puedes ver los archivos pasados en el contexto por defecto en el campo de chat:
-![current file in chat context](../assets/chat-context1.png)
+![current file in chat context](assets/chat-context1.png)
 
 Es posible ignorarlo haciendo clic en el icono de ojo a la izquierda del nombre del archivo.
 
 Pero el poder de la integración de Copilot en tu IDE es proporcionar múltiples tipos de datos en el contexto. Haz clic en el icono de clip en el campo de chat para ver todas las opciones:
 
-![vscode attachements](../assets/attachements.png)
+![vscode attachements](assets/attachements.png)
 
 Aquí están las principales opciones a tener en cuenta:
 
@@ -726,7 +726,7 @@ Abre el archivo `AlbumController.cs` y selecciona una o varias funciones. Luego 
 @workspace /explain el código en #selection
 ```
 
-![Selection in context](../assets/chat-context-selection.png)
+![Selection in context](assets/chat-context-selection.png)
 
 Mejorará el resultado apuntando a una parte muy específica del código para la acción mientras da un mejor entendimiento del contexto para la tarea adjuntando todo el código en la carpeta de la api.
 
@@ -831,19 +831,19 @@ También puedes pedir a Copilot que haga una revisión de tu código. Revisará 
 </div>
 
 - Revisar todos tus cambios de git:
-  ![Review button on git changes window](../assets/review_git_changes.png)
+  ![Review button on git changes window](assets/review_git_changes.png)
 
 - Revisar en un solo archivo
   Abre de nuevo el `album-api/Controllers/UnsecuredController.cs`, haz clic derecho en la ventana de código, y luego en el menú `Generate` selecciona la opción `Review`.
 
-![VS Code Copilot code review menu](../assets/vscode-copilot-review.png)
+![VS Code Copilot code review menu](assets/vscode-copilot-review.png)
 
 Iniciará una revisión de tu código y proporcionará explicaciones y sugerencias para mejorar tu código que puedes elegir aplicar o no con la misma experiencia de integración de comentarios de revisión de código.
 
 - en rojo abajo: Comentario y sugerencias de Copilot con botones para aceptar o descartar directamente el cambio e ir al siguiente comentario
 - en verde abajo: Todos los comentarios mostrados en la lista "Comments" en VS Code
 
-![VS Code Copilot code review results](../assets/vscode-code-review-results.png)
+![VS Code Copilot code review results](assets/vscode-code-review-results.png)
 
 ---
 
@@ -865,7 +865,7 @@ Empecemos completando la implementación de la API y añadiendo las rutas y mét
 
 Abre la ventana de Copilot Chat y selecciona **Edit** o usando el atajo `Ctrl+Shift+I`:
 
-![Open Edit Mode](../assets/vscode-edit-mode.png)
+![Open Edit Mode](assets/vscode-edit-mode.png)
 
 Añade los archivos `AlbumController.cs` y `Album.cs` de la carpeta `albums-api` como contexto para tu prompt, haciendo clic en el botón _Add Context_ o simplemente arrastrándolos y soltándolos en la ventana de chat.
 Luego escribe la siguiente solicitud a Copilot Chat Edit:
@@ -882,7 +882,7 @@ Creará un plan de ejecución para (probablemente):
 - Crear el código para ejecutar las solicitudes de las nuevas rutas
 - Proporcionar explicación y detalles de todo el código creado
 
-![edit mode result](../assets/edit-mode-result.png)
+![edit mode result](assets/edit-mode-result.png)
 
 Cuando el trabajo esté hecho verás un conjunto de trabajo enriquecido con los cambios requeridos. Podrás parar ahí simplemente haciendo clic en el botón **Keep** para terminar el proceso de edición y mantener los cambios. Si deseas continuar iterando, puedes hacerlo continuando dando instrucciones en la sesión Edit, o revertir todo haciendo clic en la flecha **Undo** arriba para volver al estado anterior.
 
@@ -906,7 +906,7 @@ Añadir un nuevo modelo Artist con propiedades Name, Birthdate, BirthPlace
 Usar la clase Artist en el objeto Album
 ```
 
-![Edit mode code refactoring](../assets/edit-mode-refactoring.png)
+![Edit mode code refactoring](assets/edit-mode-refactoring.png)
 
 ### Generación de tests
 
@@ -918,7 +918,7 @@ Añade los archivos `AlbumController.cs`, `Album.cs` y `Artist.cs` y añadamos a
 Añadir tests unitarios a mi api
 ```
 
-![Edit mode generate tests](../assets/edit-mode-testsgen.png)
+![Edit mode generate tests](assets/edit-mode-testsgen.png)
 
 El agente Copilot Edit es muy capaz de escribir código complejo pero tiene una limitación: ejecutar comandos, como ejecutar comandos en la terminal para instalar un paquete, ejecutar tests, etc. El agente Edit puede darte las instrucciones para realizar estas acciones manualmente pero es incapaz de realizarlas por ti. El agente Edit también tiene limitaciones cuando se trata de hacer y planificar un gran número de cambios, o cambios más complejos.
 
@@ -971,7 +971,7 @@ El agente Plan comenzará completando un análisis detallado del código existen
 
 Cuando el agente Plan haya terminado, debería presentarte una serie de pasos requeridos para construir la nueva API y también puede preguntarte para que tomes algunas decisiones de implementación. Estas opciones pueden variar pero podrían incluir qué framework de testing usar y aclaraciones sobre cómo implementar la API con el modelo Album y controlador existentes.
 
-![Plan agent](../assets/vscode-plan-agent-impl.png)
+![Plan agent](assets/vscode-plan-agent-impl.png)
 
 Puedes elegir si responder estas preguntas para añadir más detalle al plan. Incluso puedes elegir escribir el plan completo para ver el detalle que el agente Plan ha generado para esta tarea. Si quieres hacer esto, copia lo siguiente:
 
@@ -983,7 +983,7 @@ Escribe el plan completo en formato markdown.
 
 Haz clic en **Start Implementation** cuando estés listo para comenzar la fase de implementación. Si elegiste escribir el plan o proporcionaste aclaraciones, puedes proceder con la implementación manualmente seleccionando el "Agent", escribiendo **Start Implementation** y enviando esta solicitud. El plan será 'entregado' al Agent, que implementará este plan de forma autónoma para ti.
 
-![Plan agent](../assets/vscode-agent-impl.png)
+![Plan agent](assets/vscode-agent-impl.png)
 
 Cuando el Agent haya terminado, deberías tener **una nueva API que puede ejecutarse con todos los servicios, datos de ejemplo e incluso tests unitarios**. Copilot listará todas las acciones completadas. Desde ahí, puedes elegir:
 
@@ -991,7 +991,7 @@ Cuando el Agent haya terminado, deberías tener **una nueva API que puede ejecut
 - **Undo** para revertir a antes de este conjunto de modificaciones
 - **Dar nuevas instrucciones** y continuar iterando
 
-![Agent mode continue or keep](../assets/agent-mode-keep.png)
+![Agent mode continue or keep](assets/agent-mode-keep.png)
 
 Una vez terminado, verifica que la Aplicación Vue es capaz de trabajar con esa nueva API. No necesitarás cambiar nada del lado de la aplicación ya que pediste que la API se ejecute en el mismo puerto.
 
@@ -1031,10 +1031,10 @@ Para VSCode, las integraciones han sido muy simplificadas. Puedes encontrar todo
 
 Desde el marketplace, haz clic para instalar los servidores MCP `GitHub` y `Playwright`.
 
-![MCP servers gallery on VSCode Marketplace](../assets/mcp-servers-marketplace.png)
+![MCP servers gallery on VSCode Marketplace](assets/mcp-servers-marketplace.png)
 
 Una vez instalados, puedes iniciar los servidores desde la lista en VSCode:
-![Start MCP Server](../assets/start-mcp-server.png)
+![Start MCP Server](assets/start-mcp-server.png)
 
 Inicia tus servidores MCP GitHub y Playwright y proporciona la configuración cuando se te pida. Cuando ambos servidores estén funcionando estamos listos para continuar.
 
@@ -1078,8 +1078,8 @@ Esta definición usa OAuth para autenticar el acceso del Servidor MCP de GitHub 
 
 <div>
 
-![project settings](../assets/settings.png)
-![enable issue](../assets/cfg-issue.png)
+![project settings](assets/settings.png)
+![enable issue](assets/cfg-issue.png)
 
 **Trabajando con el Servidor MCP de GitHub**
 
@@ -1098,7 +1098,7 @@ Ayúdame a crear el issue con una descripción detallada, detalles de implementa
 ```
 
 Generará algo como esto:
-![draft issue with Copilot](../assets/draft-issue.png)
+![draft issue with Copilot](assets/draft-issue.png)
 
 Puedes continuar iterando hasta que el resultado coincida con tus criterios y luego pedir a Copilot que lo cree en GitHub:
 
@@ -1110,20 +1110,20 @@ Nota: Al ejecutar por primera vez, puede que necesites volver a ejecutar el coma
 
 Copilot automáticamente mapea la operación con una herramienta disponible de su Servidor MCP configurado y pide la autorización para ejecutarla:
 
-![Add issue with mcp server tool](../assets/mcp-tool-add-issue.png)
+![Add issue with mcp server tool](assets/mcp-tool-add-issue.png)
 
 Acéptalo y el issue estará creado en tu proyecto.
 
-![Issue created confirmation](../assets/add-issue-confirmation.png)
+![Issue created confirmation](assets/add-issue-confirmation.png)
 
 ### Paso 4: Implementar la funcionalidad del carrito
 
 Ahora que tenemos un issue empecemos a trabajar en su implementación. En el modo Agent, asegúrate de seleccionar un modelo premium (Claude Sonnet 3.7 aquí pero modelos similares están bien), añade la carpeta app para mejor enfoque de contexto y simplemente pide implementar el issue.
 
-![Start implementation](../assets/implement-issue.png)
+![Start implementation](assets/implement-issue.png)
 
 Después de algo de trabajo tu aplicación debería tener una funcionalidad de carrito funcional:
-![Cart feature implementer](../assets/cart-feature-implemented.png)
+![Cart feature implementer](assets/cart-feature-implemented.png)
 
 Una vez más, cuando alcances un nuevo hito, no olvides validar los cambios haciendo clic en `Keep` y hacer commit de los cambios.
 
@@ -1336,7 +1336,7 @@ La primera parte entre los `---` es donde pones los metadatos y especialmente el
 
 Para probarlo en acción, elimina el archivo `validators.test.ts` creado anteriormente, abre el archivo `validators.ts` y pide a Copilot que escriba algunos tests. Verás que lee tu archivo de instrucciones en el proceso.
 
-![Copilot reading instructions file](../assets/tests-instructions.png)
+![Copilot reading instructions file](assets/tests-instructions.png)
 
 <div class="info" data-title="nota">
 
@@ -1371,7 +1371,7 @@ Sugiere issues en los que podría querer enfocarme basándote en su antigüedad,
 Puedes ver cómo puedes configurar este prompt para que esté disponible para un **modo** específico, y qué **herramientas** están automáticamente disponibles para él. Es muy potente para personalizar la forma en que Copilot manejará la tarea.
 
 Puedes llamarlo usando el comando slash: `/get-my-issues` y además puedes añadir instrucciones y contexto con él.
-![Reusable prompt command in action](../assets/reusable-prompt-command.png)
+![Reusable prompt command in action](assets/reusable-prompt-command.png)
 
 <div class="info" data-title="nota">
 
@@ -1389,7 +1389,7 @@ Los agentes personalizados se definen en un archivo Markdown `.agent.md`, y pued
 
 Para crear tu primer agente personalizado, que usará el servidor MCP de Playwright para crear y documentar un conjunto de tests frontend para la UI Web de Album, crea un nuevo archivo `.github/agents/WebTester.agent.md` o haz clic en **Configure Custom Agents** en la selección de agentes de la ventana de GitHub Copilot.
 
-![Add chat mode menu](../assets/add-chatmode-menu.png)
+![Add chat mode menu](assets/add-chatmode-menu.png)
 
 Añade el siguiente contenido al archivo del agente:
 
@@ -1411,7 +1411,7 @@ model: Claude Sonnet 4.5
 ```
 
 De vuelta en la ventana de Copilot podrás seleccionar el modo de chat:
-![Select Web Tester mode](../assets/select-tester-mode.png)
+![Select Web Tester mode](assets/select-tester-mode.png)
 
 ## 🔍 Manipulaciones Avanzadas de Contexto
 
@@ -1425,7 +1425,7 @@ Ejemplo 1:
 ¿cuáles son las nuevas funcionalidades de la última versión de Angular? #fetch
 ```
 
-![Fetch info last version of angular](../assets/fetch-angular.png)
+![Fetch info last version of angular](assets/fetch-angular.png)
 
 <div class="info" data-title="nota">
 
@@ -1441,7 +1441,7 @@ Escribe una función TS que recupere todas las razas de perros de la siguiente A
 
 \* _puedes ver abajo que podría solicitar validación dependiendo del dominio para la solicitud_
 
-![Fetch Web Dogs API](../assets/fetch-dogs-api.png)
+![Fetch Web Dogs API](assets/fetch-dogs-api.png)
 
 Copilot usará la referencia externa dada para generar el código. Verás que generará la interfaz Breed (o clase) con una propiedad subBreeds. Viene de la API dada por la referencia externa.
 
@@ -1489,7 +1489,7 @@ Solo necesitas asegurarte de subir la imagen al chat y referenciarla en tu promp
 
 Digamos que acabas de tener un issue para actualizar el modelo de datos usado para álbumes en nuestra app. Inicia una nueva Sesión de Copilot en modo Agent y añade la siguiente imagen como contexto y pide ayuda a Copilot para implementar los cambios.
 
-![DataModel Diagram](../assets/datamodel-diagram.png)
+![DataModel Diagram](assets/datamodel-diagram.png)
 
 Pregunta a Copilot:
 
@@ -1510,7 +1510,7 @@ Al pasar el cursor sobre la tarjeta, se mueve hacia arriba. No quiero que se mue
 ```
 
 Imagen que puedes usar (Copia y pégala en la ventana de chat):
-![Vision Debug Capture](../assets/vision-debug-capture.png)
+![Vision Debug Capture](assets/vision-debug-capture.png)
 
 ---
 
@@ -1538,3 +1538,4 @@ Si quieres más desafíos, o casos de uso específicos, aquí hay una lista de g
 Si enfrentaste algún desafío o error al ejecutar este workshop, por favor háznoslo saber. Tu ayuda será invaluable para hacer este workshop mejor, especialmente mientras intentamos mantenerlo actualizado regularmente.
 
 [Reporta cualquier problema aquí.](https://github.com/Philess/GHCopilotHoL/issues/new)
+

@@ -9,7 +9,7 @@ This is a very complete 3 hours workshop to master GitHub Copilot on your IDE, p
 | Language              | Workshop                                           | Vibe Coding                                                                |
 | --------------------- | -------------------------------------------------- | -------------------------------------------------------------------------- |
 | 🇬🇧 English (Original) | [workshop.md](docs/workshop.md)                    | [workshop-vibe-coding.md](docs/workshop-vibe-coding.md)                    |
-| 🇪🇸 Español            | [workshop.es.md](docs/translations/workshop.es.md) | [workshop-vibe-coding.es.md](docs/translations/workshop-vibe-coding.es.md) |
+| 🇪🇸 Español            | [workshop.es.md](docs/workshop.es.md) | [workshop-vibe-coding.es.md](docs/workshop-vibe-coding.es.md) |
 
 ## Run the workshop
 
