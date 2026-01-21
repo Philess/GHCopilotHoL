@@ -371,7 +371,7 @@ Open the `app.tf` file in `iac/terraform` folder and start typing prompts at the
 
 Copilot will probably be always more effective with prompts to generate small but precisely described pieces of code rather than a whole class with a unique multiple lines prompt.
 
-Copilot completion is even more effective when you use it to generate small pieces of code step by step. For more complex task, we will see in the next section that Copilot Chat is more powerfull.
+Copilot completion is even more effective when you use it to generate small pieces of code step by step. For more complex task, we will see in the next section that Copilot Chat is more powerful.
 
 This is because completion must be almost "instant" to be natural to use where a chat request can take a few seconds to be processed without being annoying.
 
@@ -546,7 +546,7 @@ We'll see examples in the next sections to let you choose which one you prefer d
 
 ### Chat View
 
-The chat view gives you a full chat experience, integrate as any other tool view in your IDE. Once the view is open you can start chatting with Copilot as your personnal code coach. It keeps the history of the conversation and you can ask question related to the previoius answers. It also provides suggestions for questions along the way. You can:
+The chat view gives you a full chat experience, integrate as any other tool view in your IDE. Once the view is open you can start chatting with Copilot as your personal code coach. It keeps the history of the conversation and you can ask question related to the previous answers. It also provides suggestions for questions along the way. You can:
 
 - ask general question about coding on any language or best practice
 - ask to generate or fix code related to the current file and inject the code directly in the file
@@ -580,7 +580,7 @@ On GitHub Copilot Chat, you can switch between four built-in agents: **Ask**, **
 
 - **Ask**: This is the default agent. It enables you to ask questions and get answers from Copilot. You can also ask Copilot to generate code for you. You can switch to this mode by clicking the **Ask** button in the chat view.
 - **Plan**: The plan agent is optimized for creating a structured implementation plan for a coding task. Use the plan agent when you want to break down a complex feature or change into smaller, manageable steps before implementation.
-- **Edit**: The Edit agent is specifically optimized for editing code and specifically working on a set of modifications, in a multi-step process. It's very powerfull to generate code in a more interactive way and will guide you by providing guidance to run the commands but not executing it by itself.
+- **Edit**: The Edit agent is specifically optimized for editing code and specifically working on a set of modifications, in a multi-step process. It's very powerful to generate code in a more interactive way and will guide you by providing guidance to run the commands but not executing it by itself.
 - **Agent**: This is the agentic (or multi-agent) version of **Edit**. It's a more advanced version of **Edit** that can run commands for you, catch any errors, and correct itself before continuing on with the process. It changes the way the developer builds applications by focusing on describing the feature and letting Github Copilot generate the code, rather than the user writing the code themselves. This is what the community calls **Vibe Coding**.
 
 **Plan**, **Agent** and **Edit** are detailed in the next level. This level focuses on playing with **Ask**.
@@ -669,8 +669,8 @@ Here are the main options to keep in mind:
 - Image / Screenshot will use the Vision capability (only GPT-4o) to add some visual context
 - Terminal commands / selection
 
-Depending on the IDE, there is other options already availables like:
-- Prompt to attach reusables prompts
+Depending on the IDE, there is other options already available like:
+- Prompt to attach reusable prompts
 - Fetch data from the web
 - Tests failure for unit test runs that have failed
 - Problems identified in the VS Code windows
@@ -792,7 +792,7 @@ Once you have the answer, you can ask to fix the issues by typing:
 > Can you propose a fix?
 ```
 
-When you have the fix in the code you choose to **copy it or inject it directy in the file** by hovering the code block in the chat and selecting the right option on the top left.
+When you have the fix in the code you choose to **copy it or inject it directly in the file** by hovering the code block in the chat and selecting the right option on the top left.
 
 
 ### Debug with Copilot *
@@ -928,7 +928,7 @@ Let's get started by rebuilding the API, and you have the choice of the stack.
 
 Here is an example in NodeJS, but you can try it in Java or Python, or any other stack you prefer.
 
-Again, after **commiting your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS. 
+Again, after **committing your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS. 
 
 Open a new Copilot Chat in **Plan agent** and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
 
@@ -990,16 +990,16 @@ Do not hesitate to play with the different models that are available to you, you
 
 ### Step 3: Advanced code editing
 
-Copilot in Agent mode can help you run heavy code editing tasks. As it's based on LLM that can naturally talk multiple languages, it's a great opportunity to help add multi-language support to our application.
+Copilot in Agent mode can help you run heavy code editing tasks. As it uses an LLM model that can naturally talk multiple languages, it's a great opportunity to help add multi-lingual support to our application.
 
-Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude Sonnet 4 or 4.5)
+Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude Sonnet 4.5, etc)
 
 ```markdown
 Add multi-language support to the album viewer app. Use translations files to define values for each language and add a selector for the language on the header of the application. The default language remain English but we also want to add French and German support.
 ```
 
 
-### Setup MCP Servers
+### Step 4: Setup MCP Servers
 
 **What are MCP Server?** - according to https://modelcontextprotocol.io/
 
@@ -1053,7 +1053,7 @@ With the dedicated extensions, you can install and manage MCP servers directly f
 
 </div>
 
-### Step 3: Create an issue
+### Step 5: Create an issue
 
 <div class="info" data-title="note">
 
@@ -1100,7 +1100,7 @@ Accept it and the issue is now created on your project.
 
 ![Issue created confirmation](assets/add-issue-confirmation.png)
 
-### Step 4: Implement the cart feature
+### Step 6: Implement the cart feature
 
 Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here but similar models are fine), add the app folder for better context targeting and simply ask to implement the issue.
 
@@ -1111,7 +1111,7 @@ After some work your application should have a functional cart feature:
 
 Once again, once you reached a new milestone, don't forget to validate the changes by clicking `Keep` and commit the changes.
 
-### Step 5: Test the feature with Playwright
+### Step 7: Test the feature with Playwright
 
 Now that our feature is ready, it's time to create the tests for it. We are working on a front end application so testing logic with unit test is interesting but does not allow to validate UI interactions.
 
@@ -1137,7 +1137,7 @@ Please use Playwright tools to generate a test for this scenario:
 Check each step of the test and don't move forward until you succeed.
 ```
 
-GitHub Copilot will use the MCP tool to directly execute the test step by step. What really makes the difference is that, because he's executing it, he's able to see when something is not working and will coreect it immediately.
+GitHub Copilot will use the MCP tool to directly execute the test step by step. What really makes the difference is that, because Copilot is executing it, Copilot is able to see when something is not working and will correct it immediately.
 
 Like this you will have better success rate in generating your end-to-end tests. During the test he will start a browser and take screenshots so you will be able to see the impact of each action.
 
@@ -1191,7 +1191,7 @@ This is probably the first thing to do when you start a new task with Copilot Ch
 
 <div class="warning" data-title="Important">
 
-> **This is very powerfull when handled properly** so be sure to start every coding sessions with a role prompt and save your best prompt for future use.
+> **This is very powerful when handled properly** so be sure to start every coding sessions with a role prompt and save your best prompt for future use.
 
 </div>
 
@@ -1315,7 +1315,7 @@ it('should return true if the phone number is a valid international number', () 
 Organize test in logic suites and generate at least 4 positives tests and 2 negatives tests for each method.
 ```
 
-The first part between the `---` is where you put the metadata and specially the `applyTo` metadata that let's you filter on which files your instructions will automaticaaly apply.
+The first part between the `---` is where you put the metadata and specially the `applyTo` metadata that let's you filter on which files your instructions will automatically apply.
 
 To test it in action, remove the previously created `validators.test.ts` file, open the `validators.ts` file and ask Copilot to write some tests. You will see it read your instructions file in the process.
 
@@ -1484,7 +1484,7 @@ Let's say that when running your app, and you have an error message on the Vue A
 
 You can use the vision capabilities of some models with Copilot to help debug by providing a screen capture of the error message / the visual change you want to apply.
 
-Select a model that have vision capabilities in agent mode and add an annoted capture like the following (by copy/pasting or drag/dropping it) and ask Copilot:
+Select a model that have vision capabilities in agent mode and add an annotated capture like the following (by copy/pasting or drag/dropping it) and ask Copilot:
 
 ```
 When hovering the card, it move up. I don't want it to move at all. Just resize 90% when clicking to simulate a button instead.
