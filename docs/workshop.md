@@ -27,7 +27,7 @@ navigation_numbering: false # Optional. Enable numbering in the side menu (defau
 
 <div class="info" data-title="Language | Idioma">
 
-> 🇬🇧 English (current) | [🇪🇸 Español](workshop/translations/workshop.es.md)
+> 🇬🇧 English (current) | [🇪🇸 Español](https://moaw.dev/workshop/gh:0GiS0/GHCopilotHoL/feature/spanish-translations/docs/workshop.md)
 
 </div>
 
