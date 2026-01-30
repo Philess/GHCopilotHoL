@@ -239,7 +239,7 @@ En el mismo archivo puedes mostrar otros prompts como:
 // función que recupera álbumes y los ordena por título, artista o precio
 ```
 
-### Sugerencia de siguiente edición 
+### Sugerencia de siguiente edición
 
 _La sugerencia de siguiente edición_ es una evolución del autocompletado estándar en GitHub Copilot. Cuando estás modificando código y aceptas una sugerencia de código, si puede tener un impacto en otra parte de tu código, automáticamente sugerirá el siguiente cambio en tu código, y no solo directamente donde está tu cursor, sino también anticipando dónde podría estar tu próxima edición.
 
