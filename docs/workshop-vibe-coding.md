@@ -1,27 +1,35 @@
 ---
-published: false                        # Optional. Set to true to publish the workshop (default: false)
-type: workshop                          # Required.
-title: Hands-on Lab - Vibe Coding with GitHub Copilot programmer              # Required. Full title of the workshop
-short_title: Vibe Coding with GitHub Copilot                # Optional. Short title displayed in the header
-description: Discover how to leverage GitHub Copilot to develop your project  # Required.
-level: beginner                         # Required. Can be 'beginner', 'intermediate' or 'advanced'
-authors:                                # Required. You can add as many authors as needed      
+published: false # Optional. Set to true to publish the workshop (default: false)
+type: workshop # Required.
+title: Hands-on Lab - Vibe Coding with GitHub Copilot programmer # Required. Full title of the workshop
+short_title: Vibe Coding with GitHub Copilot # Optional. Short title displayed in the header
+description: Discover how to leverage GitHub Copilot to develop your project # Required.
+level: beginner # Required. Can be 'beginner', 'intermediate' or 'advanced'
+authors: # Required. You can add as many authors as needed
   - Philippe DIDIERGEORGES
-contacts:                               # Required. Must match the number of authors
-  - '@philess'
-duration_minutes: 90                    # Required. Estimated duration in minutes
-tags: javascript, .net, python, GitHub, IA, copilot, AI          # Required. Tags for filtering and searching
+  - Gisela TORRES
+contacts: # Required. Must match the number of authors
+  - "@philess"
+  - "@0gis0"
+duration_minutes: 90 # Required. Estimated duration in minutes
+tags: javascript, .net, python, GitHub, IA, copilot, AI # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
 #video_url: https://youtube.com/link     # Optional. Link to a video of the workshop
 #audience: students                      # Optional. Audience of the workshop (students, pro devs, etc.)
 #wt_id: <cxa_tracking_id>                # Optional. Set advocacy tracking code for supported links
 #oc_id: <marketing_tracking_id>          # Optional. Set marketing tracking code for supported links
-navigation_levels: 3                    # Optional. Number of levels displayed in the side menu (default: 2)
-navigation_numbering: false             # Optional. Enable numbering in the side menu (default: true)
+navigation_levels: 3 # Optional. Number of levels displayed in the side menu (default: 2)
+navigation_numbering: false # Optional. Enable numbering in the side menu (default: true)
 #sections_title:                         # Optional. Override titles for each section to be displayed in the side bar
 #   - Section 1 title
 #   - Section 2 title
 ---
+
+<div class="info" data-title="Language | Idioma">
+
+> 🇬🇧 English (current) | [🇪🇸 Español](translations/workshop-vibe-coding.es.md)
+
+</div>
 
 # A Vibe Coding with GitHub Copilot Tutorial
 
@@ -38,17 +46,17 @@ GitHub Copilot is an AI-powered code assistant that helps developers write bette
 ## Minimal Pre-requisites
 
 There are two ways to run this workshop:
+
 - online with **GitHub Codespaces**: fastest and easiest way to start playing immediately
 - locally on **your computer**: the best way to install and configure the tools you need to work with GitHub Copilot on every projects
 
 These are the very minimal pre-requisites to run this workshop:
 
-| | |
-|----------------|-----------------|
-| A GitHub account | [Create free GitHub account](https://github.com/join) |
-| GitHub Copilot Access activated | [Get Access to Github Copilot](#get-access-to-github-copilot) |
-| A web browser  | [Download Microsoft Edge](https://www.microsoft.com/edge) or any other one ;-)|
-
+|                                 |                                                                                |
+| ------------------------------- | ------------------------------------------------------------------------------ |
+| A GitHub account                | [Create free GitHub account](https://github.com/join)                          |
+| GitHub Copilot Access activated | [Get Access to Github Copilot](#get-access-to-github-copilot)                  |
+| A web browser                   | [Download Microsoft Edge](https://www.microsoft.com/edge) or any other one ;-) |
 
 ## Get Access to Github Copilot
 
@@ -59,7 +67,6 @@ There are different ways to get access to GitHub Copilot:
 - **As an individual**, sign up for a [paid subscription](https://github.com/github-copilot/signup/copilot_individual) to get unlimited completions and chat interactions. You can try GitHub Copilot for free with a one-time 30-day trial.
 
 - **As a member of an organization or enterprise** that has a subscription to GitHub Copilot, you can request access to Copilot by going to [https://github.com/settings/copilot](https://github.com/settings/copilot) and requesting access under "Get Copilot from an organization."
-
 
 ## Fork the repository
 
@@ -87,7 +94,6 @@ To start programming just start a new codespace and you are ready to go, don't n
 
 After a few seconds, you will be redirected to the Codespace environment. You can start coding right away, your Github Copilot extensions are already installed and configured.
 
-
 ---
 
 # Level 1: Code Completion with GitHub Copilot
@@ -97,20 +103,19 @@ This section will guide you through the first steps with GitHub Copilot, startin
 ## Start playing with GitHub Copilot Completion
 
 Once you start typing a prompt and copilot generate proposals, you can use the following shortcuts to interact with Copilot:
-    <ul>
-        <li>`tab` to accept the current suggestion entirely (`most common`)</li>
-        <li>`ctrl + right arrow` to accept word by word the suggestion (`for partial use`)</li>
-        <li>`alt + ^` to move to next suggestion</li>
-        <li>`shift + tab` to go back to the previous suggestion</li>
-        <li>`ctrl+enter` to display the copilot pane</li>
-    </ul>
+<ul>
+<li>`tab` to accept the current suggestion entirely (`most common`)</li>
+<li>`ctrl + right arrow` to accept word by word the suggestion (`for partial use`)</li>
+<li>`alt + ^` to move to next suggestion</li>
+<li>`shift + tab` to go back to the previous suggestion</li>
+<li>`ctrl+enter` to display the copilot pane</li>
+</ul>
 
 <div class="info" data-title="info">
 
 > These shortcuts are the default ones for VS Code. If you are using another IDE, you can find the shortcuts in the [GitHub Copilot documentation](https://docs.github.com/en/copilot/getting-started-with-github-copilot/).
 
 <div>
-
 
 ## Let's start with the basics
 
@@ -128,7 +133,6 @@ Create a new `album-viewer/utils/validators.ts` file and start with the prompt:
 ```
 
 ### Next edit suggestion
-
 
 <div class="warning" data-title="note">
 
@@ -156,11 +160,11 @@ Yes, writing a comment should be mandatory and developers tend to be lazy. GitHu
 
 2. On the Git commit panel, click the small magical button on the right
 
-    ![GitHub Copilot Git comment generator](assets/git-commit.png)
+   ![GitHub Copilot Git comment generator](assets/git-commit.png)
 
 3. Admire Copilot having generated a comment for you
 
-    ![Generated comment](assets/git-commit2.png)
+   ![Generated comment](assets/git-commit2.png)
 
 ---
 
@@ -168,12 +172,11 @@ Yes, writing a comment should be mandatory and developers tend to be lazy. GitHu
 
 GitHub Copilot is a generative AI and thus, perfect to generate code, but it has powerfull analysis capabilities on your code that can be used in several case to improve code quality like: find security issues, bad practices in your code and generate a fix, refactor and add comment to legacy code, generate tests, etc...
 
-
 ## Start playing with the Chat
 
 Once Copilot Chat is setup, you can start using it:
 
-- by clicking the **Copilot Icon** on the top next to the search bar *or* pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
+- by clicking the **Copilot Icon** on the top next to the search bar _or_ pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
 - by pressing `Ctrl` + `i` shortcut for a quick **inline question** to the chat
 
 The **Chat View** is a sticky version, very usefull to keep the chat open and ask questions to copilot.
@@ -220,13 +223,14 @@ On the GitHub Copilot Chat, you can switch between three modes: **Ask**, **Edit*
 
 ### Model Selection
 
-LLMs capabilities evolves pretty fast and we tend to see more and more models specifically optimized for specific tasks. In order to always provide the best performances for your usage, GitHub Copilot now integrate multiple model that you can switch between on Chat / Edit modes. 
+LLMs capabilities evolves pretty fast and we tend to see more and more models specifically optimized for specific tasks. In order to always provide the best performances for your usage, GitHub Copilot now integrate multiple model that you can switch between on Chat / Edit modes.
 
 ![Model Selection capture](assets/model-selection.png)
 
 <div class="tip" data-title="Available models">
 
 > The list of available models will depend on multiple parameters:
+>
 > - which IDE are you using
 > - which mode are you using (Chat / Inline / Edit)
 > - what are the model authorized by your Copilot Administrator
@@ -260,6 +264,7 @@ But the power of the integration of Copilot in your IDE is to provide multiple k
 ![vscode attachements](assets/attachements.png)
 
 Here are the main options to keep in mind:
+
 - Codebase and File will target either all or a specific file in your current workspace
 - Selection will target the current selected text on screen
 - (Git) Changes will focus only on your pending modifications
@@ -267,15 +272,16 @@ Here are the main options to keep in mind:
 - Terminal commands / selection
 
 Depending on the IDE, there is other options already availables like:
+
 - Prompt to attach reusables prompts
 - Fetch data from the web
 - Tests failure for unit test runs that have failed
 - Problems identified in the VS Code windows
 - other to come and try...
 
-Here are a few basic examples to understand how it works. More complex example are available in ***Level 4: Copilot Advanced*** part of this workshop. 
+Here are a few basic examples to understand how it works. More complex example are available in **_Level 4: Copilot Advanced_** part of this workshop.
 
-You can add multiple reference in context in a single request. Feel free to challenge it and see how effective it is. 
+You can add multiple reference in context in a single request. Feel free to challenge it and see how effective it is.
 
 **Pass a file**
 
@@ -300,13 +306,12 @@ And then select `AlbumController.cs` to add the file as reference.
 Open the `AlbumController.cs` file and select one or many functions. Then in the chat add all the album-api folder to the contect by **drag-and-dropping** the folder from the file explorer on the left.
 
 ```text
-> @workspace /tests generate unit tests for the function in #selection 
+> @workspace /tests generate unit tests for the function in #selection
 ```
 
 ![Selection in context](assets/chat-context-selection.png)
 
 It will improve result by targeting a very specific part of the code for the action while giving a better understanding of the context for the task by attaching all the code in the api folder.
-
 
 ## Everyday developer's tasks
 
@@ -318,18 +323,16 @@ Open file `album-viewer/lang/translations.json` and ask in the chat to add some 
 
 ```json
 [
-    {
-        "language": "en",
-        "values": {
-            "main-title": "Welcome to the world of the future",
-            "main-subtitle": "The future is now with copilot",
-            "main-button": "Get started"
-        }
+  {
+    "language": "en",
+    "values": {
+      "main-title": "Welcome to the world of the future",
+      "main-subtitle": "The future is now with copilot",
+      "main-button": "Get started"
     }
+  }
 ]
 ```
-
-
 
 ### Write Tests
 
@@ -372,7 +375,7 @@ You can also use Copilot to generate documentation at a high level as it'sc flue
 
 ### Code Translation
 
-*Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`*
+_Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`_
 
 To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. In case of dealing with Legacy code like COBOL for example it can be very useful. Open the `legacy/albums.cbl` file and try asking Copilot to translate the code to Python.
 
@@ -395,7 +398,6 @@ Once you have the answer, you can ask to fix the issues by typing:
 
 When you have the fix in the code you choose to **copy it or inject it directy in the file** by hovering the code block in the chat and selecting the right option on the top left.
 
-
 ### Ask copilot to review your code
 
 You can also ask Copilot to do a review of your code. It will check your code for security issues, bad practices, etc... and generate comments just as a co-worker will do on a pull request. It provides actionable suggestions to improve your code quality and ensure best practices are followed.
@@ -406,11 +408,12 @@ You can also ask Copilot to do a review of your code. It will check your code fo
 
 </div>
 
-Open again the `album-api/Controllers/UnsecuredController.cs`, right-click in the code window, and then in the `Copilot` menu select `Review and Comment` option. 
+Open again the `album-api/Controllers/UnsecuredController.cs`, right-click in the code window, and then in the `Copilot` menu select `Review and Comment` option.
 
 ![VS Code Copilot code review menu](assets/vscode-copilot-review.png)
 
 It will start a review of your code and provide explanations and suggestions to improve your code that you can choose to apply or not with the same experience with code review comments integration.
+
 - in red below: Copilot comment and suggestions with buttons to directly accept or discard change and go to next comment
 - in green below: All comment shows in the "Comments" list in VS Code
 
@@ -440,16 +443,17 @@ After **committing your code**, to keep a valid starting point to potentially ro
 
 ![Open Edit Mode](assets/open-edit-mode.png)
 
-Add the `AlbumController.cs` and `Album.cs` files from the API folder in the Working Set, by clicking *Add file* button or simply by pasting it, and then type the following request to Copilot Edit:
+Add the `AlbumController.cs` and `Album.cs` files from the API folder in the Working Set, by clicking _Add file_ button or simply by pasting it, and then type the following request to Copilot Edit:
 
 ```text
-Create a album-app client project in vuejs with screen to list, 
+Create a album-app client project in vuejs with screen to list,
 display, create, update and delete albums using the AlbumAPI
 ```
 
 ![edit mode code generation](assets/edit-mode-codegen.png)
 
 It will create an execute a plan to (probably):
+
 - Add missing route to existing API controller
 - create a new Vue from scratch with all the required code
 - provide explaination and details on all the code created
@@ -484,10 +488,9 @@ Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` file
 
 ![Edit mode code refactoring](assets/edit-mode-refactoring.png)
 
-
 ### Tests generation
 
-Another use case where we can take advantage of this powerfull edit mode is writing tests. 
+Another use case where we can take advantage of this powerfull edit mode is writing tests.
 
 Add the `AlbumController.cs`, `Album.cs` and `Artist.cs` files and Let's add some unit tests for our API:
 
@@ -503,7 +506,7 @@ Again, Copilot Edits is very strong to write complex code but this is also his l
 
 ## Agents mode
 
-The Agent mode is the evolution of edit mode, with capabilities to directly run commands on the terminal and correct errors on the fly on top of just editing code. It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack. 
+The Agent mode is the evolution of edit mode, with capabilities to directly run commands on the terminal and correct errors on the fly on top of just editing code. It accelerate even more the coding process. As action is worth thousand words, let's start by rebuilding the API this time, and you have the choice of the stack.
 
 <div class="warning" data-title="note">
 
@@ -522,16 +525,17 @@ Again, after **commiting your code**, to keep a new starting point to potentiall
 Then type:
 
 ```text
-Create a new nodejs api named album-api to manage music albums. 
+Create a new nodejs api named album-api to manage music albums.
 Create all basic routes to list, get, add, update and delete albums.
 
-Create a collection with sample data. 
+Create a collection with sample data.
 Data are kept in memory for the moment no need to database.
 
 Add unit tests and run it
 ```
 
 Follow the step, validate each step to continue or give different instructions along the way to see the agents working for you. When finished, you should have **a new API that can run with all services, sample datas and even unit tests** and Copilot will list all actions completed. From there, you can choose to:
+
 - **Keep** changes to validate this set of modifications
 - **Undo** to rollback to before this set of modifications
 - **Give new instructions** & continue to iterate
@@ -548,20 +552,20 @@ Clic on `Keep` and `Done` to validate your modification and commit your changes.
 
 ### Step 2: Create a new web app
 
-Now that we have a new API, let's take the opportunity to rewrite our frontend app, based on this new API. 
+Now that we have a new API, let's take the opportunity to rewrite our frontend app, based on this new API.
 
 First, **remove** the old `album-app` folder, start a new session in `Agent Mode` and type (reference your created file in context):
 
 ```text
-Create a new Vue app named album-app to manage music albums, using the album api #file:albumRoutes.js #file:albumModel.js  
+Create a new Vue app named album-app to manage music albums, using the album api #file:albumRoutes.js #file:albumModel.js
 Create a splashscreen, a view for all routes, and a burger menu to navigate.
 ```
+
 ![Agent Mode Vue App](assets/agent-mode-vue-app.png)
 
 <!-- ### Debug with agent mode and Vision
 
 Let's say that when running your app, you have an error message like this one: -->
-
 
 ---
 
@@ -573,9 +577,9 @@ If you want more challenge, more details and specific use cases, here a a list o
 
 - [GitHub Copilot Ultimate tutorial](https://aka.ms/github-copilot-hol) The longer version of this workshops, going deeper in details, use cases and features
 - [Copilot Adventures](https://github.com/microsoft/CopilotAdventures)
-    A series of code adventures in fantastic worlds were Copilot will be your best ally
+  A series of code adventures in fantastic worlds were Copilot will be your best ally
 - [Zero2Hero](https://github.com/Azure-Samples/zero2hero)
-    A set of short challenges to test your ability with GitHub Copilot
+  A set of short challenges to test your ability with GitHub Copilot
 
 - [Mastering GitHubCopilot for paired programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming)
-    A set of technology-focused lesson for developers, sharing best practices and recipices for adressing code, sql, deployment, and modernization tasks with GitHub Copilot
+  A set of technology-focused lesson for developers, sharing best practices and recipices for adressing code, sql, deployment, and modernization tasks with GitHub Copilot
