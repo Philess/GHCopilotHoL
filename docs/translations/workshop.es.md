@@ -29,13 +29,13 @@ navigation_numbering: false # Opcional. Habilitar numeración en el menú latera
 
 <div class="info" data-title="🌐 Language / Idioma">
 
-> [🇬🇧 English](../workshop/workshop.md) | **Español** (actual)
+> [🇬🇧 English](https://moaw.dev/workshop/gh:Philess/GHCopilotHoL/main/docs/) | **Español** (actual)
 
 </div>
 
 # 🚀 El tutorial definitivo de GitHub Copilot para desarrolladores
 
-_Versión 1.4 - Noviembre 2025_
+*Versión 1.4 - Noviembre 2025*
 
 El objetivo de este workshop es aprender a usar GitHub Copilot, mediante un ejercicio que consiste en construir un servidor web usando Node.js con diferentes funcionalidades y una API Web en .NET. En la segunda parte, aprenderás a usarlo para infraestructura como código y también para corregir malas prácticas desde un punto de vista de seguridad.
 
@@ -85,7 +85,7 @@ Comienza creando **tu propio fork** del repositorio haciendo clic en el botón `
 
 ## ☁️ OPCIÓN 1: Trabajar con GitHub Codespaces
 
-El entorno ya está configurado para trabajar con [GitHub Codespaces](https://github.com/features/codespaces), puedes encontrar los archivos de configuración en la carpeta _.devcontainer_.
+El entorno ya está configurado para trabajar con [GitHub Codespaces](https://github.com/features/codespaces), puedes encontrar los archivos de configuración en la carpeta *.devcontainer*.
 
 Para empezar a programar simplemente inicia un nuevo codespace y estarás listo, no necesitas instalar nada.
 
@@ -129,7 +129,7 @@ Para poder trabajar localmente necesitas instalar las siguientes herramientas lo
 2. Instalar la extensión [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 3. Instalar la extensión [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
 4. Instalar [Node y npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-5. Instalar [.NET](https://dotnet.microsoft.com/download) \* _necesario si quieres ejecutar el código .NET proporcionado_
+5. Instalar [.NET](https://dotnet.microsoft.com/download) \* *necesario si quieres ejecutar el código .NET proporcionado*
 6. Clonar tu repositorio fork y abrirlo en VS Code:
 
 ```bash
@@ -241,7 +241,7 @@ En el mismo archivo puedes mostrar otros prompts como:
 
 ### Sugerencia de siguiente edición
 
-_La sugerencia de siguiente edición_ es una evolución del autocompletado estándar en GitHub Copilot. Cuando estás modificando código y aceptas una sugerencia de código, si puede tener un impacto en otra parte de tu código, automáticamente sugerirá el siguiente cambio en tu código, y no solo directamente donde está tu cursor, sino también anticipando dónde podría estar tu próxima edición.
+*La sugerencia de siguiente edición* es una evolución del autocompletado estándar en GitHub Copilot. Cuando estás modificando código y aceptas una sugerencia de código, si puede tener un impacto en otra parte de tu código, automáticamente sugerirá el siguiente cambio en tu código, y no solo directamente donde está tu cursor, sino también anticipando dónde podría estar tu próxima edición.
 
 Un ejemplo es mejor que mil palabras, ¡así que probémoslo!
 
@@ -315,7 +315,7 @@ describe("validateDate", () => {
 });
 ```
 
-_Puedes añadir otros bloques `it` para agregar más casos de prueba y también añadir los tests para las otras funciones. Por ejemplo, intenta añadir un nuevo bloque `it` para la función validateDate para probar que lanza un error cuando se le da una cadena vacía._
+*Puedes añadir otros bloques `it` para agregar más casos de prueba y también añadir los tests para las otras funciones. Por ejemplo, intenta añadir un nuevo bloque `it` para la función validateDate para probar que lanza un error cuando se le da una cadena vacía.*
 
 ### Escribir workflows de CI
 
@@ -402,7 +402,7 @@ Esto es porque el autocompletado debe ser casi "instantáneo" para ser natural d
 
 </div>
 
-**Prompts grandes que _podrían_ funcionar**
+**Prompts grandes que *podrían* funcionar**
 
 - De vuelta en `albums-viewer/src/utils` añade un nuevo archivo `viz.ts` para crear una función que genere un gráfico. Aquí hay un ejemplo de prompt para hacer eso:
 
@@ -555,7 +555,7 @@ GitHub Copilot es una IA generativa y por lo tanto es perfecto para generar cód
 
 Una vez que Copilot Chat está configurado, puedes empezar a usarlo:
 
-- haciendo clic en el **Icono de Copilot** arriba junto a la barra de búsqueda _o_ presionando el atajo `Ctrl` + `Shift` + `i` para abrir la **Vista de Chat**
+- haciendo clic en el **Icono de Copilot** arriba junto a la barra de búsqueda *o* presionando el atajo `Ctrl` + `Shift` + `i` para abrir la **Vista de Chat**
 - presionando el atajo `Ctrl` + `i` para una **pregunta rápida en línea** al chat
 
 La **Vista de Chat** es una versión fija que es útil para mantener el chat abierto y hacer preguntas a Copilot.
@@ -658,7 +658,7 @@ Esta lista de agentes puede extenderse instalando extensiones en tu IDE.
 
 ¡Probémoslo!
 
-Abre el panel lateral de Chat y escribe \*_@workspace /New_ para especificar que quieres crear un nuevo proyecto. Por ejemplo, intenta crear un proyecto Asp.Net
+Abre el panel lateral de Chat y escribe \**@workspace /New* para especificar que quieres crear un nuevo proyecto. Por ejemplo, intenta crear un proyecto Asp.Net
 
 ```text
 @workspace /new crear un nuevo proyecto ASP.NET core 9.0, con tres vistas Index, Users y products.
@@ -698,7 +698,7 @@ Dependiendo del IDE, hay otras opciones ya disponibles como:
 - Carpetas, por ejemplo para apuntar a una base de código específica de otro proyecto o framework para obtener las últimas clases o métodos como ejemplos para Copilot.
 - otros por venir y probar...
 
-Aquí hay algunos ejemplos básicos para entender cómo funciona. Ejemplos más complejos están disponibles en la parte de **_Nivel 5: Copilot Avanzado_** de este workshop.
+Aquí hay algunos ejemplos básicos para entender cómo funciona. Ejemplos más complejos están disponibles en la parte de ***Nivel 5: Copilot Avanzado*** de este workshop.
 
 Puedes añadir múltiples referencias de contexto en una sola solicitud para refinar el contexto que estás pasando. Siéntete libre de probar algunos de los comandos '/' y combinar con contexto usando '#'. Hemos proporcionado algunos ejemplos a continuación.
 
@@ -737,7 +737,7 @@ Mejorará el resultado apuntando a una parte muy específica del código para la
 Copilot también puede ayudarte a generar tests para tu código. Puede generar `tests unitarios`, `tests de integración`, `tests end to end`, y tests de `carga` con scripts de JMeter por ejemplo.
 
 Abre el archivo `album-api/Controllers/UnsecuredController.cs` y escribe preguntas como estas en el chat
-_¿Por qué no probar primero en línea con `Ctrl + i` y de nuevo con la vista de chat después para ver la diferencia?_
+*¿Por qué no probar primero en línea con `Ctrl + i` y de nuevo con la vista de chat después para ver la diferencia?*
 
 ```text
 > Genera una clase de tests unitarios para este código
@@ -787,7 +787,7 @@ Puedes probar algunos de estos comandos en el archivo `album-api/Controllers/Uns
 
 ### Traducción de Código
 
-_Copilot puede entender y generar lenguajes naturales y lenguajes de código en ambas direcciones así que combinando todo puedes usarlo para `traducir piezas de código de un lenguaje a otro`_
+*Copilot puede entender y generar lenguajes naturales y lenguajes de código en ambas direcciones así que combinando todo puedes usarlo para `traducir piezas de código de un lenguaje a otro`*
 
 Para traducir una pieza de código a un lenguaje específico, ábrela y pide al chat que la traduzca a otro lenguaje. Por ejemplo abre el archivo `album-viewer/src/utils/validators.ts` creado en la primera sección dedicada al autocompletado de Copilot y pide traducirlo a C por ejemplo.
 
@@ -867,7 +867,7 @@ Abre la ventana de Copilot Chat y selecciona **Edit** o usando el atajo `Ctrl+Sh
 
 ![Open Edit Mode](../assets/vscode-edit-mode.png)
 
-Añade los archivos `AlbumController.cs` y `Album.cs` de la carpeta `albums-api` como contexto para tu prompt, haciendo clic en el botón _Add Context_ o simplemente arrastrándolos y soltándolos en la ventana de chat.
+Añade los archivos `AlbumController.cs` y `Album.cs` de la carpeta `albums-api` como contexto para tu prompt, haciendo clic en el botón *Add Context* o simplemente arrastrándolos y soltándolos en la ventana de chat.
 Luego escribe la siguiente solicitud a Copilot Chat Edit:
 
 ```text
@@ -1021,7 +1021,7 @@ Añadir soporte multi-idioma a la app album viewer. Usar archivos de traduccione
 
 **¿Qué son los Servidores MCP?** - según https://modelcontextprotocol.io/
 
-_"MCP significa **Model Context Protocol**. Es un protocolo abierto que estandariza cómo las aplicaciones proporcionan contexto a los modelos de lenguaje grande (LLMs). Piensa en MCP como un puerto USB-C para aplicaciones de IA. Así como USB-C proporciona una forma estandarizada de conectar tus dispositivos a varios periféricos y accesorios, MCP proporciona una forma estandarizada de conectar modelos de IA a diferentes fuentes de datos y herramientas. MCP te permite construir agentes y flujos de trabajo complejos sobre LLMs y conecta tus modelos con el mundo."_
+*"MCP significa **Model Context Protocol**. Es un protocolo abierto que estandariza cómo las aplicaciones proporcionan contexto a los modelos de lenguaje grande (LLMs). Piensa en MCP como un puerto USB-C para aplicaciones de IA. Así como USB-C proporciona una forma estandarizada de conectar tus dispositivos a varios periféricos y accesorios, MCP proporciona una forma estandarizada de conectar modelos de IA a diferentes fuentes de datos y herramientas. MCP te permite construir agentes y flujos de trabajo complejos sobre LLMs y conecta tus modelos con el mundo."*
 
 Con el soporte completo de servidores MCP en GitHub Copilot, tendrás la capacidad de usar Herramientas, Prompts y Recursos proporcionados por los servidores MCP. Le dará a Copilot un conjunto completamente nuevo de capacidades.
 
@@ -1211,7 +1211,7 @@ Esto es probablemente lo primero que hacer cuando empiezas una nueva tarea con C
 
 </div>
 
-**_Estructura de un role prompt_**
+***Estructura de un role prompt***
 
 Qué puedes incluir en un role prompt:
 
@@ -1220,7 +1220,7 @@ Qué puedes incluir en un role prompt:
 - Ser específico en la calidad de las respuestas y pedir referencias y recursos adicionales para aprender más y asegurar que las respuestas que recibes son correctas
 - Resumir la tarea y preguntar si las instrucciones están claras
 
-**_Ejemplo de un role prompt_**
+***Ejemplo de un role prompt***
 
 Inicia una nueva conversación y escribe el siguiente prompt:
 
@@ -1240,7 +1240,7 @@ Desde ahí puedes empezar a hacer preguntas y de vez en cuando, asegurar que Cop
 ¿Sigues usando las instrucciones que te proporcioné?
 ```
 
-**_Prueba tu role prompt_**
+***Prueba tu role prompt***
 
 Puedes probar tu role prompt haciendo preguntas sobre mejores prácticas para accesibilidad en Apps React Native y amenazas OWASP Top 10. También puedes pedir generar código para la funcionalidad de subida y verificar si el código generado es seguro y accesible.
 
