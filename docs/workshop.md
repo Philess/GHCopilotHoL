@@ -27,13 +27,13 @@ navigation_numbering: false # Optional. Enable numbering in the side menu (defau
 
 <div class="info" data-title="Language | Idioma">
 
-> 🇬🇧 English (current) | [🇪🇸 Español](https://moaw.dev/workshop/gh:0GiS0/GHCopilotHoL/feature/spanish-translations/docs/workshop.md)
+> 🇬🇧 English (current) | [🇪🇸 Español](https://moaw.dev/workshop/gh:Philess/GHCopilotHoL/main/docs/translations/workshop.es.md)
 
 </div>
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-_Version 1.4 - November 2025_
+*Version 1.4 - November 2025*
 
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
@@ -83,7 +83,7 @@ Start by creating **your own fork** of the repository by clicking on the `Fork` 
 
 ## OPTION 1: Work with GitHub Codespaces
 
-The environment is already configured to work with [GitHub Codespaces](https://github.com/features/codespaces), you can find the configuration files in the _.devcontainer_ folder.
+The environment is already configured to work with [GitHub Codespaces](https://github.com/features/codespaces), you can find the configuration files in the *.devcontainer* folder.
 
 To start programming just start a new codespace and you are ready to go, don't need to install anything.
 
@@ -115,7 +115,7 @@ You first need to install the following tools locally:
 2. Install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
 3. Install the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extension
 4. Install [Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-5. Install [.NET Core](https://dotnet.microsoft.com/download) \* _needed if you want to run provided .net code_
+5. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
 6. Clone your forked repository and open it in VS Code:
 
 ```bash
@@ -226,7 +226,7 @@ In the same file you can show other prompts like:
 
 ### Next edit suggestion
 
-_Next edit suggestion_ is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, if it can have an impact on another part of your code, it will automatically suggest the next change in your code, and not only directly where your cursor is, but also anticipating where your next edit might be.
+*Next edit suggestion* is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, if it can have an impact on another part of your code, it will automatically suggest the next change in your code, and not only directly where your cursor is, but also anticipating where your next edit might be.
 
 An example is better than a thousands words, so let's try that!
 
@@ -300,7 +300,7 @@ describe("validateDate", () => {
 });
 ```
 
-_You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws an error when given an empty string._
+*You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws an error when given an empty string.*
 
 ### Write CI workflows
 
@@ -387,7 +387,7 @@ This is because completion must be almost "instant" to be natural to use where a
 
 </div>
 
-**Big prompts that _could_ works**
+**Big prompts that *could* works**
 
 - Back in the `albums-viewer/src/utils` add a new file `viz.ts` to create a function that generates a graph. Here is a sample of prompt to do that:
 
@@ -539,7 +539,7 @@ GitHub Copilot is a generative AI and thus it is perfect to generate code and do
 
 Once Copilot Chat is setup, you can start using it:
 
-- by clicking the **Copilot Icon** on the top next to the search bar _or_ pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
+- by clicking the **Copilot Icon** on the top next to the search bar *or* pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
 - by pressing `Ctrl` + `i` shortcut for a quick **inline question** to the chat
 
 The **Chat View** is a sticky version that is useful to keep the chat open and ask questions to Copilot.
@@ -643,7 +643,7 @@ This list of agents can be extended by installing extensions in your IDE.
 
 Let's try it!
 
-Open the side Chat panel and type \*_@workspace /New_ to specify that you want to create a new project. For instance, try to create an Asp.Net project
+Open the side Chat panel and type \**@workspace /New* to specify that you want to create a new project. For instance, try to create an Asp.Net project
 
 ```text
 @workspace /new create a new ASP.NET core 9.0 project, with three views Index, Users and products.
@@ -682,7 +682,7 @@ Depending on the IDE, there is other options already available like:
 - Folders, for instance to target a specific code base from another project or framework to get the latest classes or methods as examples for Copilot.
 - other to come and try...
 
-Here are a few basic examples to understand how it works. More complex example are available in **_Level 5: Copilot Advanced_** part of this workshop.
+Here are a few basic examples to understand how it works. More complex example are available in ***Level 5: Copilot Advanced*** part of this workshop.
 
 You can add multiple context references in a single request to refine the context that you are passing. Feel free to try some of the '/' commands and combine with context using '#'. We have provided some examples below.
 
@@ -721,7 +721,7 @@ It will improve result by targeting a very specific part of the code for the act
 Copilot can also help you generate tests for your code. It can generate `unit tests`, `integration tests`, `end to end tests`, and `load testing` tests with JMeter scripts for example.
 
 Open the `album-api/Controllers/UnsecuredController.cs` file and type questions like these to the chat
-_Why not trying inline with `Ctrl + i` first and again with the chat view after to see the difference?_
+*Why not trying inline with `Ctrl + i` first and again with the chat view after to see the difference?*
 
 ```text
 > Generate a unit tests class for this code
@@ -771,7 +771,7 @@ You can try some of these commands on the `album-api/Controllers/UnsecuredContro
 
 ### Code Translation
 
-_Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`_
+*Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`*
 
 To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. For example open the `album-viewer/src/utils/validators.ts` file created in the first section dedicated to Copilot autocompletion and ask to translate it to C for example.
 
@@ -851,7 +851,7 @@ Open Copilot Chat window and select **Edit** or using the `Ctrl+Shift+I` shortcu
 
 ![Open Edit Mode](assets/vscode-edit-mode.png)
 
-Add the `AlbumController.cs` and `Album.cs` files from the `albums-api` folder as context for your prompt, by clicking _Add Context_ button or simply by drag and drop them into the chat windows.
+Add the `AlbumController.cs` and `Album.cs` files from the `albums-api` folder as context for your prompt, by clicking *Add Context* button or simply by drag and drop them into the chat windows.
 Then type the following request to Copilot Chat Edit:
 
 ```text
@@ -1006,7 +1006,7 @@ Add multi-language support to the album viewer app. Use translations files to de
 
 **What are MCP Server?** - according to https://modelcontextprotocol.io/
 
-_"MCP stands for **Model Context Protocol**. It's is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."_
+*"MCP stands for **Model Context Protocol**. It's is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."*
 
 With the full support of MCP server in GitHub Copilot, you will have ability to use Tools, Prompts and Resources provided by the MCP servers. It will give Copilot an whole new set of capabilities.
 
@@ -1196,7 +1196,7 @@ This is probably the first thing to do when you start a new task with Copilot Ch
 
 </div>
 
-**_Structure of a role prompt_**
+***Structure of a role prompt***
 
 What can you include in a role prompt:
 
@@ -1205,7 +1205,7 @@ What can you include in a role prompt:
 - Be specific in the quality of answers and ask for reference and additional resources to learn more and ensure the answers you receive are correct
 - Resume the task and ask if the instructions are clear
 
-**_Example of a role prompt_**
+***Example of a role prompt***
 
 Start a new conversation and type the following prompt:
 
@@ -1225,7 +1225,7 @@ From there you can start asking questions and from time to time, ensure Copilot 
 Are you still using the instructions I provided?
 ```
 
-**_Test your role prompt_**
+***Test your role prompt***
 
 You can test your role prompt by asking questions about best practices for accessibility on React Native Apps and OWASP Top 10 treats. You can also ask to generate code for the upload feature and check if the generated code is secured and accessible.
 
@@ -1424,7 +1424,7 @@ Example 2:
 Write a TS function that retrieves all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
 ```
 
-\* _you can see below that it might request validation depending on the domain for the request_
+\* *you can see below that it might request validation depending on the domain for the request*
 
 ![Fetch Web Dogs API](assets/fetch-dogs-api.png)
 
