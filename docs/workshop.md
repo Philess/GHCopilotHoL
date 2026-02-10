@@ -1022,9 +1022,11 @@ With the full support of MCP server in GitHub Copilot, you will have ability to 
 
 **Let's configure our first MCP Servers!**
 
-For VSCode, the integrations has been very simplified. You can find all your MCP server configured in the Extensions view, and you even have a direct link to the dedicated [VSCode marketplace](https://code.visualstudio.com/mcp)
+For VSCode, the integrations has been very simplified. You can find and install the MCP servers from the marketplace directy from the extensions view on VSCode:
+install the `GitHub` and `Playwright` MCP servers
+![vscode-install-mcp](assets/vscode-install-mcp.png)
 
-From the marketplace, click to install the `GitHub` and `Playwright` MCP servers.
+You also have a direct link on the dedicated [VSCode marketplace website](https://code.visualstudio.com/mcp)
 
 ![MCP servers gallery on VSCode Marketplace](assets/mcp-servers-marketplace.png)
 
@@ -1035,8 +1037,10 @@ Start your GitHub and Playwright MCP servers and provide the configuration when 
 
 <div class="warning" data-title="Important">
 
-> If you are using your Codespace on your browser and not on VSCode, the marketplace link will not work. But don't worry, you still can to install the MCP server locally.  
-> To do this, add an `mcp.json` file inside the `.vscode` folder with the following configuration:
+> If you are using your Codespace on your browser and not on VSCode, you will need to activate the marketplace first from the VSCode Extensions view.
+![vscode-activate-mcp](assets/vscode-activate-mcp.png)
+
+> Alternatively, you can install MCP manually: add an `mcp.json` file inside the `.vscode` folder with the following configuration:
 
 </div>
 
