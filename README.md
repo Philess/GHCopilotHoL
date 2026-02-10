@@ -4,6 +4,13 @@ This repository is the home repository for the [GitHub Copilot Ultimate Hands-on
 
 This is a very complete 3 hours workshop to master GitHub Copilot on your IDE, packed with real-world scenarios and best practices.
 
+## 🌍 Available Languages / Idiomas Disponibles
+
+| Language              | Workshop                                           | Vibe Coding                                                                |
+| --------------------- | -------------------------------------------------- | -------------------------------------------------------------------------- |
+| 🇬🇧 English (Original) | [workshop.md](docs/workshop.md)                    | [workshop-vibe-coding.md](docs/workshop-vibe-coding.md)                    |
+| 🇪🇸 Español            | [workshop.es.md](/workshop/translations/workshop.es.md) | [workshop-vibe-coding.es.md](/workshop/translations/workshop-vibe-coding.es.md) |
+
 ## Run the workshop
 
 For a better experience, we recommend you to run the workshop directly on the [MOAW platform](https://aka.ms/github-copilot-hol) where the lab is hosted.
@@ -13,10 +20,12 @@ For a better experience, we recommend you to run the workshop directly on the [M
 This project welcomes contributions and suggestions.
 
 You can contribute by creating issues for:
+
 - Reporting bugs and issues
 - Suggesting improvements
 
 You can also contribute by submitting pull requests for:
+
 - Fixing bugs and issues
 - Implementing suggested improvements
 - Adding new features
