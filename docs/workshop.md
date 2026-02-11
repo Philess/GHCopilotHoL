@@ -1030,17 +1030,18 @@ You also have a direct link on the dedicated [VSCode marketplace website](https:
 
 ![MCP servers gallery on VSCode Marketplace](assets/mcp-servers-marketplace.png)
 
-Once installed, you can start the servers from the list in VSCode:
-![Start MCP Server](assets/start-mcp-server.png)
 
-Start your GitHub and Playwright MCP servers and provide the configuration when prompted. When both servers are running we are ready to continue.
+**Using MCP Servers on Codespaces**
 
-<div class="warning" data-title="Important">
+If you are using your **Codespace on your browser** and not on VSCode, you will face some limitations with MCP servers due to the underlying architecture of Codespaces itself.  
 
-> If you are using your Codespace on your browser and not on VSCode, you will need to activate the marketplace first from the VSCode Extensions view.
+First, you will need to activate the marketplace first from the VSCode Extensions view, and then install Playwright MCP server **in Workspace**.
 ![vscode-activate-mcp](assets/vscode-activate-mcp.png)
+![vscode-install-mcp-in-workspace](assets/vscode-install-mcp-in-workspace.png)
 
-> Alternatively, you can install MCP manually: add an `mcp.json` file inside the `.vscode` folder with the following configuration:
+This will work with MCP servers like *Playwright* which is build on NPM but for MCP servers like GitHub that should run on your local Docker it will not work.
+
+Luckily, GitHub also propose an hosted version of it's MCP Server you can manually by adding an `mcp.json` file inside the `.vscode` folder with the following configuration:
 
 </div>
 
@@ -1050,23 +1051,25 @@ Start your GitHub and Playwright MCP servers and provide the configuration when 
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest --vision"]
     }
   }
 }
 ```
 
-This definition uses OAuth to authenticate the Github MCP Server access using your Github login. You will be asked to log in to Github through the Web Browser to authenticate when running a tool from the server for the first time.
+Once installed, you can start the servers from the list in VSCode:
+![Start MCP Server](assets/start-mcp-server.png)
 
-<div class="tip" data-title="Tips">
+**Starting the MCP Server**
 
-> Using VS Code simplifies MCP configuration.  
-> With the dedicated extensions, you can install and manage MCP servers directly from the editor, without manually editing the `mcp.json` file.
+Start your GitHub and Playwright MCP servers and provide the configuration when prompted. When both servers are running we are ready to continue.
 
-</div>
+For the **GitHub MCP Server** you will need to authenticate with your Github account. 
+
+- **On the hosted version** (Codespace), you will be automatically authenticated with the same account you are using for Codespaces. You just need to provide the right permissions to the MCP Server to access your repositories.
+- **On the Docker based version** (from the marketplace) when starting the server you will be prompted to add a GitHub PAT token. Follow instructions here to create a new PAT token
+![github-mcp-token](assets/github-mcp-token.png)
+
+
 
 ### Step 5: Create an issue
 
