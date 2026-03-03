@@ -8,11 +8,13 @@ level: beginner # Required. Can be 'beginner', 'intermediate' or 'advanced'
 authors: # Required. You can add as many authors as needed
   - Philippe DIDIERGEORGES
   - Ross BOAST
-contacts: # Required. Must match the number of authors
-  - "@philess"
-  - "@rossboast"
-duration_minutes: 180 # Required. Estimated duration in minutes
-tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu # Required. Tags for filtering and searching
+  - Lucile JEANNERET
+contacts:                               # Required. Must match the number of authors
+  - '@philess'
+  - '@rossboast'
+  - '@ljeanner'
+duration_minutes: 180                    # Required. Estimated duration in minutes
+tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu         # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
 #video_url: https://youtube.com/link     # Optional. Link to a video of the workshop
 #audience: students                      # Optional. Audience of the workshop (students, pro devs, etc.)
@@ -33,7 +35,7 @@ navigation_numbering: false # Optional. Enable numbering in the side menu (defau
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-*Version 1.4 - November 2025*
+*Version 1.5 - December 2025*
 
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
@@ -66,10 +68,17 @@ These are the very minimal pre-requisites to run this workshop:
 There are different ways to get access to GitHub Copilot:
 
 - **As an individual**, you can sign up to use [Copilot Free](https://github.com/github-copilot/signup), without the need for a credit card. You are entitled to a limited number of completions and chat interactions per month with the free plan, which reset each month. Learn more about the [Copilot Free plan details and conditions](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot).
-
 - **As an individual**, sign up for a [paid subscription](https://github.com/github-copilot/signup/copilot_individual) to get unlimited completions and chat interactions. You can try GitHub Copilot for free with a one-time 30-day trial.
 
 - **As a member of an organization or enterprise** that has a subscription to GitHub Copilot, you can request access to Copilot by going to [https://github.com/settings/copilot](https://github.com/settings/copilot) and requesting access under "Get Copilot from an organization."
+
+
+<div class="warning" data-title="warning">
+
+> The **Copilot Free** offer does not include the feature on the github.com platform like the Coding Agent and the Code Review agent that are part of this workshop. You can still run 90% of this workshop with a free subscription but for the rest you will need a paid license.
+
+</div>
+
 
 ## Fork the repository
 
@@ -1001,6 +1010,7 @@ Open Copilot in Agent mode and again Select a premium Model (ie: GPT5, Claude So
 Add multi-language support to the album viewer app. Use translations files to define values for each language and add a selector for the language on the header of the application. The default language remain English but we also want to add French and German support.
 ```
 
+Again, when you're happy with the result, create a new commit to save your changes.
 
 ### Step 4: Setup MCP Servers
 
@@ -1012,21 +1022,26 @@ With the full support of MCP server in GitHub Copilot, you will have ability to 
 
 **Let's configure our first MCP Servers!**
 
-For VSCode, the integrations has been very simplified. You can find all your MCP server configured in the Extensions view, and you even have a direct link to the dedicated [VSCode marketplace](https://code.visualstudio.com/mcp)
+For VSCode, the integrations has been very simplified. You can find and install the MCP servers from the marketplace directy from the extensions view on VSCode:
+install the `GitHub` and `Playwright` MCP servers
+![vscode-install-mcp](assets/vscode-install-mcp.png)
 
-From the marketplace, click to install the `GitHub` and `Playwright` MCP servers.
+You also have a direct link on the dedicated [VSCode marketplace website](https://code.visualstudio.com/mcp)
 
 ![MCP servers gallery on VSCode Marketplace](assets/mcp-servers-marketplace.png)
 
-Once installed, you can start the servers from the list in VSCode:
-![Start MCP Server](assets/start-mcp-server.png)
 
-Start your GitHub and Playwright MCP servers and provide the configuration when prompted. When both servers are running we are ready to continue.
+**Using MCP Servers on Codespaces**
 
-<div class="warning" data-title="Important">
+If you are using your **Codespace on your browser** and not on VSCode, you will face some limitations with MCP servers due to the underlying architecture of Codespaces itself.  
 
-> If you are using your Codespace on your browser and not on VSCode, the marketplace link will not work. But don't worry, you still can to install the MCP server locally.  
-> To do this, add an `mcp.json` file inside the `.vscode` folder with the following configuration:
+First, you will need to activate the marketplace first from the VSCode Extensions view, and then install Playwright MCP server **in Workspace**.
+![vscode-activate-mcp](assets/vscode-activate-mcp.png)
+![vscode-install-mcp-in-workspace](assets/vscode-install-mcp-in-workspace.png)
+
+This will work with MCP servers like *Playwright* which is build on NPM but for MCP servers like GitHub that should run on your local Docker it will not work.
+
+Luckily, GitHub also propose an hosted version of it's MCP Server you can manually by adding an `mcp.json` file inside the `.vscode` folder with the following configuration:
 
 </div>
 
@@ -1036,23 +1051,25 @@ Start your GitHub and Playwright MCP servers and provide the configuration when 
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest --vision"]
     }
   }
 }
 ```
 
-This definition uses OAuth to authenticate the Github MCP Server access using your Github login. You will be asked to log in to Github through the Web Browser to authenticate when running a tool from the server for the first time.
+Once installed, you can start the servers from the list in VSCode:
+![Start MCP Server](assets/start-mcp-server.png)
 
-<div class="tip" data-title="Tips">
+**Starting the MCP Server**
 
-> Using VS Code simplifies MCP configuration.  
-> With the dedicated extensions, you can install and manage MCP servers directly from the editor, without manually editing the `mcp.json` file.
+Start your GitHub and Playwright MCP servers and provide the configuration when prompted. When both servers are running we are ready to continue.
 
-</div>
+For the **GitHub MCP Server** you will need to authenticate with your Github account. 
+
+- **On the hosted version** (Codespace), you will be automatically authenticated with the same account you are using for Codespaces. You just need to provide the right permissions to the MCP Server to access your repositories.
+- **On the Docker based version** (from the marketplace) when starting the server you will be prompted to add a GitHub PAT token. Follow instructions here to create a new PAT token
+![github-mcp-token](assets/github-mcp-token.png)
+
+
 
 ### Step 5: Create an issue
 
@@ -1103,7 +1120,12 @@ Accept it and the issue is now created on your project.
 
 ### Step 6: Implement the cart feature
 
-Now that we have an issue let's start working on it's implementation. On the Agent mode, be sure to select a premium model (Claude Sonnet 3.7 here but similar models are fine), add the app folder for better context targeting and simply ask to implement the issue.
+Now that we have an issue let's start working on it's implementation. 
+
+Be sure you're not working direclty on the main branch but switch to a new branch named `feat/cart-feature` for example.
+![new git branch](assets/new-git-branch.png)
+
+On the Agent mode, be sure to select a premium model or simply use the `Auto` model selection that analyse the task and automatically match it to the right model. Add the app folder for better context targeting and simply ask to implement the issue.
 
 ![Start implementation](assets/implement-issue.png)
 
@@ -1143,6 +1165,32 @@ GitHub Copilot will use the MCP tool to directly execute the test step by step. 
 Like this you will have better success rate in generating your end-to-end tests. During the test he will start a browser and take screenshots so you will be able to see the impact of each action.
 
 At the end you will have a test file generated and Copilot can help you configure playwright for the project, your pipeline and complete your documentation accordingly. You just need to ask.
+
+### Step 6: Code Review
+
+Once your code is ready, commit and push all your changes to your `feat/cart-feature` branch.
+![create PR from VSCode](assets/create-pr-vscode.png)
+
+Create a new Pull Request from your branch to the main branch of **your forked repo**
+![create pull request form](assets/create-pull-request-form.png)
+
+Once created the pull request opens on your VS Code. From there or from the GitHub portal, you can assign the PR to be reviewed by Copilot Code Review Agent:
+![assign PR to Copilot](assets/assign-pr-to-copilot.png)
+
+After a few minutes, you'll be able to view the comments from GitHub Copilot Code Review Agent.
+It checks your code for best practices, bugs, potential vulnerabilities... But **it also run a CodeQL scan and a secrets scan** to ensure your code is totally safe.
+
+You can read all the detailed suggestions, and you can review the session to see all the operations the agents went through.
+![Code review by Copilot](assets/code-review-copilot.png)
+You can also decide to assign a task to the coding agent on the platform to fix all theses points for you **but this is something we will experiment later in this lab**.
+
+From this moment, you can just review and fix the issues in your code that needs to be fixed. But for the needs of the workshop we will stop there and move on to the next level.
+
+<div class="warning" data-title="Important">
+
+> **DO NOT MERGE your Pull Request!** We will need to keep it on a separate branch for the rest of the lab.
+
+</div>
 
 ---
 
@@ -1497,6 +1545,104 @@ When hovering the card, it move up. I don't want it to move at all. Just resize 
 Image you can use (Copy and paste it on the chat window):
 ![Vision Debug Capture](assets/vision-debug-capture.png)
 
+
+---
+
+# Level 6: Leveraging agents on the platform
+
+## Copilot Coding Agent
+
+
+<div class="info" data-title="note">
+
+>  The GitHub Copilot Coding Agent is an AI-powered assistant that can autonomously handle coding tasks on GitHub.com. It can create, review, and merge pull requests, manage issues, and perform other development tasks directly on your GitHub repositories.
+</div>
+
+
+### Assign an issue to Github Coding Agent
+
+Let's go back to our Cart Management feature. Instead of implementing it directly, let's see how Copilot can help us to manage the task on GitHub.com.
+First, let's retrieve the issue we created previously in the level 4 step 3 section, by navigating to the Issues tab of your repository.
+
+![Retrieve issues](assets/retrieve-issue.png)
+
+Let's open the issue and assign it to the GitHub Coding Agent by clicking on the **Assignees** section on the right panel and selecting **GitHub Coding Agent**.
+
+
+![Assign issue to Coding Agent](assets/assign-copilot.png)
+
+When assigning the issue to the coding agent, you have the possibility to provide additional instructions to the agent by providing an optional prompt to the agent. You can add more context or specific requirements for the implementation.
+
+Let's add the **following prompt** in order to ask copilot to test the feature with Playwright after implementation and provide screenshots in the PR description.
+
+Copy Paste the following prompt: 
+
+```markdown
+Once feature is implemented, create a Playwright test suite to validate the functionality and provide screenshots in the PR description.
+```
+
+![assign-issue-copilot-prompt.png](assets/assign-issue-copilot-prompt.png)
+
+
+### Monitor the implementation progress
+
+Once the issue is assigned, the Coding Agent will start working on the implementation of the feature. You can monitor the progress of the agent by checking the pull requests created by the agent. The **initial commit** will be the plan for the implementation, you can comment the pull request to provide additional instructions or clarifications if needed.
+
+![initial_plan.png](assets/initial_plan.png)
+
+You can monitor the progress of the agent by checking the **session**. 
+
+From the pull request, click on the `View Session` button to open the session details.
+
+
+![view_session.png](assets/view_session.png)
+
+The session details will show you the progress of the agent, the actions taken by the agent, and any errors or issues encountered during the implementation. You can also see the plan created by the agent and the steps taken to implement the feature. All works done by the agent are listed in the session. You can review any session, and even re-run specific steps if needed.
+
+<div class="info" data-title="note">
+
+> Mission Control is the central hub for managing and monitoring the activities of GitHub Copilot Agents. It provides a comprehensive overview of all active and completed sessions, allowing users to track the progress of their agents, review actions taken, and manage ongoing tasks.
+
+</div>
+
+![session_details.png](assets/session_detail.png)
+
+
+<div class="tip" data-title="tip">
+
+> The task will take from a few minutes to half an hour to complete. You can let Copilot working in the background from here, continue to follow the lab with the ***Custom Agents*** part and then coming back to review the Pull Request.
+
+</div>
+
+### Review the pull request
+
+Once copilot is done, you will receive a notification that the pull request is ready for review. You can then review the code changes made by the agent and you can test the feature by checking out the branch created by the agent locally or opening it in a Codespace. 
+
+Let's add some review comments to ask copilot to make some changes to the implementation. We will ask him to remove the screenshot folder by adding a review comment on the PR and mention copilot directly
+
+![review_pr.png](assets/review_pr.png)
+
+Now, Copilot will process the review comments and make the necessary changes to the implementation. You can monitor the progress of the agent by checking the session details again.
+
+Once you are satisfied with the implementation, you can merge the pull request to integrate the changes into the main branch.
+
+
+## Your custom agents on Github.com
+
+In order to call a custom agent on GitHub.com there is only two possible options:
+
+1 - Having your `.github/agents/<your_agent>.agent.md` file on the main branch
+
+2 - On an GitHub Organization only: having a `.github` or a `.github-private` repository with the agent file on it
+
+As we are working on a public repository outside an organization, **you must have the Custom Agent file** (created on previous level - Advanced Copilot concepts) **on your main branch**.
+
+When it's on the main branch you'll be able to assign a new task for the coding agent, by clicking on the dedicated button.
+You'll be able to target a specific branch, provide instructions and choose your custom agent (here the WebTester agent)
+![Delegate task to custom agent](assets/create-task-custom-agent.png)
+
+Assign the task to the agent and check the generated result in the pull request.
+
 ---
 
 # Extra Credits 🪙
@@ -1505,7 +1651,8 @@ Well done, you made it 'till the end :)
 
 If you want content to go deeper, here are some suggestions:
 
-- Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts
+- Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts, instructions and custom agents.
+
 
 If you want more challenge, or specific use cases, here a a list of great content for you:
 
