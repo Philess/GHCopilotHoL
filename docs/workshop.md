@@ -9,12 +9,12 @@ authors: # Required. You can add as many authors as needed
   - Philippe DIDIERGEORGES
   - Ross BOAST
   - Lucile JEANNERET
-contacts:                               # Required. Must match the number of authors
-  - '@philess'
-  - '@rossboast'
-  - '@ljeanner'
-duration_minutes: 180                    # Required. Estimated duration in minutes
-tags: javascript, .net, python, GitHub, IA, Copilot, AI, csu         # Required. Tags for filtering and searching
+contacts: # Required. Must match the number of authors
+  - "@philess"
+  - "@rossboast"
+  - "@ljeanner"
+duration_minutes: 180 # Required. Estimated duration in minutes
+tags: javascript, .net, python, GitHub, IA, Copilot, AI, CSU # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
 #video_url: https://youtube.com/link     # Optional. Link to a video of the workshop
 #audience: students                      # Optional. Audience of the workshop (students, pro devs, etc.)
@@ -35,7 +35,7 @@ navigation_numbering: false # Optional. Enable numbering in the side menu (defau
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-*Version 1.5 - December 2025*
+_Version 1.5 - March 2026_
 
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
@@ -72,13 +72,11 @@ There are different ways to get access to GitHub Copilot:
 
 - **As a member of an organization or enterprise** that has a subscription to GitHub Copilot, you can request access to Copilot by going to [https://github.com/settings/copilot](https://github.com/settings/copilot) and requesting access under "Get Copilot from an organization."
 
-
 <div class="warning" data-title="warning">
 
 > The **Copilot Free** offer does not include the feature on the github.com platform like the Coding Agent and the Code Review agent that are part of this workshop. You can still run 90% of this workshop with a free subscription but for the rest you will need a paid license.
 
 </div>
-
 
 ## Fork the repository
 
@@ -92,7 +90,7 @@ Start by creating **your own fork** of the repository by clicking on the `Fork` 
 
 ## OPTION 1: Work with GitHub Codespaces
 
-The environment is already configured to work with [GitHub Codespaces](https://github.com/features/codespaces), you can find the configuration files in the *.devcontainer* folder.
+The environment is already configured to work with [GitHub Codespaces](https://github.com/features/codespaces), you can find the configuration files in the _.devcontainer_ folder.
 
 To start programming just start a new codespace and you are ready to go, don't need to install anything.
 
@@ -124,7 +122,7 @@ You first need to install the following tools locally:
 2. Install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
 3. Install the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extension
 4. Install [Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-5. Install [.NET Core](https://dotnet.microsoft.com/download) \* *needed if you want to run provided .net code*
+5. Install [.NET Core](https://dotnet.microsoft.com/download) \* _needed if you want to run provided .net code_
 6. Clone your forked repository and open it in VS Code:
 
 ```bash
@@ -158,6 +156,7 @@ This section will guide you through the first steps with GitHub Copilot, startin
 ## Start playing with GitHub Copilot Completion
 
 Once you start typing a prompt and Copilot generate proposals, you can use the following shortcuts to interact with Copilot:
+
 <ul>
 <li>`tab` to accept the current suggestion entirely (`most common`)</li>
 <li>`ctrl + right arrow` to accept word by word the suggestion (`for partial use`)</li>
@@ -235,7 +234,7 @@ In the same file you can show other prompts like:
 
 ### Next edit suggestion
 
-*Next edit suggestion* is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, if it can have an impact on another part of your code, it will automatically suggest the next change in your code, and not only directly where your cursor is, but also anticipating where your next edit might be.
+_Next edit suggestion_ is an evolution of the standard completion in GitHub Copilot. When you are modifying code and accepting a code suggestion, if it can have an impact on another part of your code, it will automatically suggest the next change in your code, and not only directly where your cursor is, but also anticipating where your next edit might be.
 
 An example is better than a thousands words, so let's try that!
 
@@ -309,7 +308,7 @@ describe("validateDate", () => {
 });
 ```
 
-*You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws an error when given an empty string.*
+_You can add other `it` block to add more test cases and also add the tests for the other functions. For example try add a new `it` block for the validateDate function to test that it throws an error when given an empty string._
 
 ### Write CI workflows
 
@@ -396,7 +395,7 @@ This is because completion must be almost "instant" to be natural to use where a
 
 </div>
 
-**Big prompts that *could* works**
+**Big prompts that _could_ works**
 
 - Back in the `albums-viewer/src/utils` add a new file `viz.ts` to create a function that generates a graph. Here is a sample of prompt to do that:
 
@@ -548,7 +547,7 @@ GitHub Copilot is a generative AI and thus it is perfect to generate code and do
 
 Once Copilot Chat is setup, you can start using it:
 
-- by clicking the **Copilot Icon** on the top next to the search bar *or* pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
+- by clicking the **Copilot Icon** on the top next to the search bar _or_ pressing `Ctrl` + `Shift` + `i` shortcut to open the **Chat view**
 - by pressing `Ctrl` + `i` shortcut for a quick **inline question** to the chat
 
 The **Chat View** is a sticky version that is useful to keep the chat open and ask questions to Copilot.
@@ -652,7 +651,7 @@ This list of agents can be extended by installing extensions in your IDE.
 
 Let's try it!
 
-Open the side Chat panel and type \**@workspace /New* to specify that you want to create a new project. For instance, try to create an Asp.Net project
+Open the side Chat panel and type \*_@workspace /New_ to specify that you want to create a new project. For instance, try to create an Asp.Net project
 
 ```text
 @workspace /new create a new ASP.NET core 9.0 project, with three views Index, Users and products.
@@ -684,6 +683,7 @@ Here are the main options to keep in mind:
 - Terminal commands / selection
 
 Depending on the IDE, there is other options already available like:
+
 - Prompt to attach reusable prompts
 - Fetch data from the web
 - Tests failure for unit test runs that have failed
@@ -691,7 +691,7 @@ Depending on the IDE, there is other options already available like:
 - Folders, for instance to target a specific code base from another project or framework to get the latest classes or methods as examples for Copilot.
 - other to come and try...
 
-Here are a few basic examples to understand how it works. More complex example are available in ***Level 5: Copilot Advanced*** part of this workshop.
+Here are a few basic examples to understand how it works. More complex example are available in **_Level 5: Copilot Advanced_** part of this workshop.
 
 You can add multiple context references in a single request to refine the context that you are passing. Feel free to try some of the '/' commands and combine with context using '#'. We have provided some examples below.
 
@@ -730,7 +730,7 @@ It will improve result by targeting a very specific part of the code for the act
 Copilot can also help you generate tests for your code. It can generate `unit tests`, `integration tests`, `end to end tests`, and `load testing` tests with JMeter scripts for example.
 
 Open the `album-api/Controllers/UnsecuredController.cs` file and type questions like these to the chat
-*Why not trying inline with `Ctrl + i` first and again with the chat view after to see the difference?*
+_Why not trying inline with `Ctrl + i` first and again with the chat view after to see the difference?_
 
 ```text
 > Generate a unit tests class for this code
@@ -780,7 +780,7 @@ You can try some of these commands on the `album-api/Controllers/UnsecuredContro
 
 ### Code Translation
 
-*Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`*
+_Copilot can understand and generate natural languages and code language in both way so by combining everything you can use it to `translate code pieces from a language to another one`_
 
 To translate a piece of code in a specific language, open it and ask to the chat to translate it to another language. For example open the `album-viewer/src/utils/validators.ts` file created in the first section dedicated to Copilot autocompletion and ask to translate it to C for example.
 
@@ -840,27 +840,29 @@ It will start a review of your code and provide explanations and suggestions to 
 
 ---
 
-# Level 3: Copilot Edit Agent
+# Level 3: Copilot Agent Basics
 
-The Edit agent in GitHub Copilot appeared first in VS Code and was the first step in redefining the way you code with Copilot by transitioning from an `AI Infused` mode to an `AI-Native` approach. What it means is that instead of just answering questions, Copilot is taking actions, and is able now to achieve more complex, multi-steps tasks.
+GitHub Copilot Agent represents a shift from an `AI Infused` mode to an `AI-Native` approach, enabling Copilot to not just answer questions but actively take actions to complete complex, multi-step tasks. The Agent builds on the capabilities of Chat with advanced features including:
 
-It's very powerful for tasks that needs a lot of operations while keeping track and context on a longer term, like code refactoring for example. Let's try that!
+- Running terminal commands on your behalf
+- Automatically fixing errors and iterating on solutions
+- Leveraging MCP server tools to extend functionality
+- Maintaining context across longer, multi-turn interactions
 
-<div class="warning" data-title="note">
-
-> The Edit agent is available only on **VS Code**. If you follow this tutorial with another editor, you can directly jump to the Agent section.
-
-</div>
+This makes Agent particularly powerful for complex tasks like refactoring, API development, and test generation, where multiple operations need to be coordinated while preserving full context of your codebase. Let's explore these capabilities!
 
 ### Code Generation
 
 Let's start by completing the API implementation and adding the missing routes and method to complete the CRUD of Albums.
 
-Open Copilot Chat window and select **Edit** or using the `Ctrl+Shift+I` shortcut:
+Open Copilot Chat window and make sure **Agent** is selected or using the `Ctrl+Shift+I` shortcut:
 
-![Open Edit Mode](assets/vscode-edit-mode.png)
+![Select Agent Mode](assets/vscode-agent-mode.png)
 
-Add the `AlbumController.cs` and `Album.cs` files from the `albums-api` folder as context for your prompt, by clicking *Add Context* button or simply by drag and drop them into the chat windows.
+Add the `AlbumController.cs` and `Album.cs` files from the `albums-api` folder as context for your prompt, by clicking _Add Context_ button or simply by drag and drop them into the chat windows.
+
+![agent add attachments](assets/agents-add-attachments.png)
+
 Then type the following request to Copilot Chat Edit:
 
 ```text
@@ -869,13 +871,15 @@ Complete the AlbumsAPI by adding the following routes
 - search albums by year (added previously)
 ```
 
+![agent mode result](assets/agents-mode-result.png)
+
 It will create an execution plan to (probably):
 
 - Add missing route to existing API controller
 - Create the code to executed the requests for the new routes
 - Provide explanation and details on all the code created
 
-![edit mode result](assets/edit-mode-result.png)
+![agent result](assets/agents-result.png)
 
 When the job is done you'll see a working set enriched with the required changes. You'll be able to stop there by just clicking **Keep** button to end the edit process and keep the changes. If you wish to continue to iterate, you can do so by continuing to give instructions in the Edit session, or rollback everything by clicking on the **Undo** arrow on top to come back to the previous state.
 
@@ -889,9 +893,9 @@ If some files are missing, you can ask directly Copilot to add them. Github Copi
 
 ### Code refactoring
 
-We already seen in the previous example that the edit mode is able to create new code but also refactor existing files in the process of implementing new behavior.
+We already seen in the previous example that the agent mode is able to create new code but also refactor existing files in the process of implementing new behavior.
 
-Let's start a new Edit session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code by providing the following consecutive requests:
+Let's start a new agent session, add the `AlbumController.cs` and `Album.cs` files in the working set, and edit the API code by providing the following consecutive requests:
 
 ```text
 Add a new Artist model with Name, Birthdate, BirthPlace properties
@@ -899,11 +903,11 @@ Add a new Artist model with Name, Birthdate, BirthPlace properties
 Use the Artist class in the Album object
 ```
 
-![Edit mode code refactoring](assets/edit-mode-refactoring.png)
+![Agent mode code refactoring](assets/agent-mode-refactoring.png)
 
 ### Tests generation
 
-Another use case where we can take advantage of this powerful edit mode is writing tests.
+Another use case where we can take advantage of this powerful agent mode is writing tests.
 
 Add the `AlbumController.cs`, `Album.cs` and `Artist.cs` files and Let's add some unit tests for our API:
 
@@ -911,23 +915,20 @@ Add the `AlbumController.cs`, `Album.cs` and `Artist.cs` files and Let's add som
 Add unit test to my api
 ```
 
-![Edit mode generate tests](assets/edit-mode-testsgen.png)
+![Agent mode generate tests](assets/agent-test-unit.png)
 
-The Copilot Edit agent is very capable at writing complex code but it has a limitation: running commands, such as running commands in the terminal to install a package, run tests, etc. The Edit agent can give you the instructions to perform these actions manually but is unable to perform them on your behalf. The Edit agent also has limitations when it comes to making and planning a large number of changes, or more complex changes.
+The Copilot agent is very capable at writing complex code but extra operations will be limited to the tooling that it is given, like running commands in the terminal to install a package, run tests, etc.
+If the tooling is not activated in the what session, the agent will be able to provide the guidance and commands to execute accordingly, but won't be able to perform them on your behalf.
 
-**What if... it can do all that for you?**
+![Agent built-in tools](assets/agent-built-in-tools.png)
+
+The Github Copilot extension comes with a set of built-in capabilities that will help the agent interact with the code base, the environment terminal or fetch external resources.
+
+**What if... it can do all of that and more for you?**
 
 ---
 
-# Level 4: Copilot Plan & Agent
-
-Agent is the evolution of the Edit agent, with all the missing capabilities like:
-
-- running commands for you on the terminal
-- correcting errors on the fly
-- using tools from MCP servers to extend capabilities
-
-It can accelerate the coding process even more than the Edit agent, particularly for larger and more complex changes.
+# Level 4: Copilot Plan & Implement
 
 The Agent is a powerful feature of Github Copilot, but as we all know: with great power, comes great responsibility! The fact that Agent can perform large tasks autonomously means we have to be even more careful with our prompts, or we may have to undo and refactor the code that Agent generates if we haven't been clear with what we want it to achieve.
 
@@ -939,7 +940,7 @@ Let's get started by rebuilding the API, and you have the choice of the stack.
 
 Here is an example in NodeJS, but you can try it in Java or Python, or any other stack you prefer.
 
-Again, after **committing your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS. 
+Again, after **committing your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS.
 
 Open a new Copilot Chat in **Plan agent** and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
 
@@ -1016,7 +1017,7 @@ Again, when you're happy with the result, create a new commit to save your chang
 
 **What are MCP Server?** - according to https://modelcontextprotocol.io/
 
-*"MCP stands for **Model Context Protocol**. It's is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."*
+_"MCP stands for **Model Context Protocol**. It's is an open protocol that standardizes how applications provide context to large language models (LLMs). Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. MCP enables you to build agents and complex workflows on top of LLMs and connects your models with the world."_
 
 With the full support of MCP server in GitHub Copilot, you will have ability to use Tools, Prompts and Resources provided by the MCP servers. It will give Copilot an whole new set of capabilities.
 
@@ -1030,16 +1031,15 @@ You also have a direct link on the dedicated [VSCode marketplace website](https:
 
 ![MCP servers gallery on VSCode Marketplace](assets/mcp-servers-marketplace.png)
 
-
 **Using MCP Servers on Codespaces**
 
-If you are using your **Codespace on your browser** and not on VSCode, you will face some limitations with MCP servers due to the underlying architecture of Codespaces itself.  
+If you are using your **Codespace on your browser** and not on VSCode, you will face some limitations with MCP servers due to the underlying architecture of Codespaces itself.
 
 First, you will need to activate the marketplace first from the VSCode Extensions view, and then install Playwright MCP server **in Workspace**.
 ![vscode-activate-mcp](assets/vscode-activate-mcp.png)
 ![vscode-install-mcp-in-workspace](assets/vscode-install-mcp-in-workspace.png)
 
-This will work with MCP servers like *Playwright* which is build on NPM but for MCP servers like GitHub that should run on your local Docker it will not work.
+This will work with MCP servers like _Playwright_ which is build on NPM but for MCP servers like GitHub that should run on your local Docker it will not work.
 
 Luckily, GitHub also propose an hosted version of it's MCP Server you can manually by adding an `mcp.json` file inside the `.vscode` folder with the following configuration:
 
@@ -1063,13 +1063,11 @@ Once installed, you can start the servers from the list in VSCode:
 
 Start your GitHub and Playwright MCP servers and provide the configuration when prompted. When both servers are running we are ready to continue.
 
-For the **GitHub MCP Server** you will need to authenticate with your Github account. 
+For the **GitHub MCP Server** you will need to authenticate with your Github account.
 
 - **On the hosted version** (Codespace), you will be automatically authenticated with the same account you are using for Codespaces. You just need to provide the right permissions to the MCP Server to access your repositories.
 - **On the Docker based version** (from the marketplace) when starting the server you will be prompted to add a GitHub PAT token. Follow instructions here to create a new PAT token
-![github-mcp-token](assets/github-mcp-token.png)
-
-
+  ![github-mcp-token](assets/github-mcp-token.png)
 
 ### Step 5: Create an issue
 
@@ -1120,7 +1118,7 @@ Accept it and the issue is now created on your project.
 
 ### Step 6: Implement the cart feature
 
-Now that we have an issue let's start working on it's implementation. 
+Now that we have an issue let's start working on it's implementation.
 
 Be sure you're not working direclty on the main branch but switch to a new branch named `feat/cart-feature` for example.
 ![new git branch](assets/new-git-branch.png)
@@ -1244,7 +1242,7 @@ This is probably the first thing to do when you start a new task with Copilot Ch
 
 </div>
 
-***Structure of a role prompt***
+**_Structure of a role prompt_**
 
 What can you include in a role prompt:
 
@@ -1253,7 +1251,7 @@ What can you include in a role prompt:
 - Be specific in the quality of answers and ask for reference and additional resources to learn more and ensure the answers you receive are correct
 - Resume the task and ask if the instructions are clear
 
-***Example of a role prompt***
+**_Example of a role prompt_**
 
 Start a new conversation and type the following prompt:
 
@@ -1273,7 +1271,7 @@ From there you can start asking questions and from time to time, ensure Copilot 
 Are you still using the instructions I provided?
 ```
 
-***Test your role prompt***
+**_Test your role prompt_**
 
 You can test your role prompt by asking questions about best practices for accessibility on React Native Apps and OWASP Top 10 treats. You can also ask to generate code for the upload feature and check if the generated code is secured and accessible.
 
@@ -1472,7 +1470,7 @@ Example 2:
 Write a TS function that retrieves all dog breeds from the following API and return an array of Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
 ```
 
-\* *you can see below that it might request validation depending on the domain for the request*
+\* _you can see below that it might request validation depending on the domain for the request_
 
 ![Fetch Web Dogs API](assets/fetch-dogs-api.png)
 
@@ -1545,19 +1543,17 @@ When hovering the card, it move up. I don't want it to move at all. Just resize 
 Image you can use (Copy and paste it on the chat window):
 ![Vision Debug Capture](assets/vision-debug-capture.png)
 
-
 ---
 
 # Level 6: Leveraging agents on the platform
 
 ## Copilot Coding Agent
 
-
 <div class="info" data-title="note">
 
->  The GitHub Copilot Coding Agent is an AI-powered assistant that can autonomously handle coding tasks on GitHub.com. It can create, review, and merge pull requests, manage issues, and perform other development tasks directly on your GitHub repositories.
-</div>
+> The GitHub Copilot Coding Agent is an AI-powered assistant that can autonomously handle coding tasks on GitHub.com. It can create, review, and merge pull requests, manage issues, and perform other development tasks directly on your GitHub repositories.
 
+</div>
 
 ### Assign an issue to Github Coding Agent
 
@@ -1568,14 +1564,13 @@ First, let's retrieve the issue we created previously in the level 4 step 3 sect
 
 Let's open the issue and assign it to the GitHub Coding Agent by clicking on the **Assignees** section on the right panel and selecting **GitHub Coding Agent**.
 
-
 ![Assign issue to Coding Agent](assets/assign-copilot.png)
 
 When assigning the issue to the coding agent, you have the possibility to provide additional instructions to the agent by providing an optional prompt to the agent. You can add more context or specific requirements for the implementation.
 
 Let's add the **following prompt** in order to ask copilot to test the feature with Playwright after implementation and provide screenshots in the PR description.
 
-Copy Paste the following prompt: 
+Copy Paste the following prompt:
 
 ```markdown
 Once feature is implemented, create a Playwright test suite to validate the functionality and provide screenshots in the PR description.
@@ -1583,17 +1578,15 @@ Once feature is implemented, create a Playwright test suite to validate the func
 
 ![assign-issue-copilot-prompt.png](assets/assign-issue-copilot-prompt.png)
 
-
 ### Monitor the implementation progress
 
 Once the issue is assigned, the Coding Agent will start working on the implementation of the feature. You can monitor the progress of the agent by checking the pull requests created by the agent. The **initial commit** will be the plan for the implementation, you can comment the pull request to provide additional instructions or clarifications if needed.
 
 ![initial_plan.png](assets/initial_plan.png)
 
-You can monitor the progress of the agent by checking the **session**. 
+You can monitor the progress of the agent by checking the **session**.
 
 From the pull request, click on the `View Session` button to open the session details.
-
 
 ![view_session.png](assets/view_session.png)
 
@@ -1607,16 +1600,15 @@ The session details will show you the progress of the agent, the actions taken b
 
 ![session_details.png](assets/session_detail.png)
 
-
 <div class="tip" data-title="tip">
 
-> The task will take from a few minutes to half an hour to complete. You can let Copilot working in the background from here, continue to follow the lab with the ***Custom Agents*** part and then coming back to review the Pull Request.
+> The task will take from a few minutes to half an hour to complete. You can let Copilot working in the background from here, continue to follow the lab with the **_Custom Agents_** part and then coming back to review the Pull Request.
 
 </div>
 
 ### Review the pull request
 
-Once copilot is done, you will receive a notification that the pull request is ready for review. You can then review the code changes made by the agent and you can test the feature by checking out the branch created by the agent locally or opening it in a Codespace. 
+Once copilot is done, you will receive a notification that the pull request is ready for review. You can then review the code changes made by the agent and you can test the feature by checking out the branch created by the agent locally or opening it in a Codespace.
 
 Let's add some review comments to ask copilot to make some changes to the implementation. We will ask him to remove the screenshot folder by adding a review comment on the PR and mention copilot directly
 
@@ -1625,7 +1617,6 @@ Let's add some review comments to ask copilot to make some changes to the implem
 Now, Copilot will process the review comments and make the necessary changes to the implementation. You can monitor the progress of the agent by checking the session details again.
 
 Once you are satisfied with the implementation, you can merge the pull request to integrate the changes into the main branch.
-
 
 ## Your custom agents on Github.com
 
@@ -1652,7 +1643,6 @@ Well done, you made it 'till the end :)
 If you want content to go deeper, here are some suggestions:
 
 - Explore the [Awesome-Copilot repo](https://github.com/github/awesome-copilot) for the best prompts, instructions and custom agents.
-
 
 If you want more challenge, or specific use cases, here a a list of great content for you:
 
