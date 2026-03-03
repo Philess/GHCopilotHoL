@@ -942,7 +942,7 @@ Here is an example in NodeJS, but you can try it in Java or Python, or any other
 
 Again, after **committing your code**, to keep a new starting point to potentially rollback to. We will do a rewrite of our API in order to migrate it from ASP.Net to NodeJS.
 
-Open a new Copilot Chat in **Plan agent** and Select a premium Model (ie: GPT5, Claude Sonnet 3.7 or 4)
+Open a new Copilot Chat in **Plan agent** and Select a premium Model (ie: GPT5, Claude Sonnet 4.5)
 
 Then copy the prompt below:
 
@@ -979,6 +979,10 @@ Click on the **Start Implementation** when you are ready to begin the implementa
 
 ![Plan agent](assets/vscode-agent-impl.png)
 
+If the implementation requires to execute additional commands, the agent will ask before any execution (unless configured for auto-approve in the session or workspace). The plan delivery status is being updated accordingly in the todo list below. This requires the `todo` tool to be enabled in the session to have this view. This helps making sure the plan is followed without modification from the planning phase through the actual implementation :
+
+![Agent implementation run command and todo udpdate](assets/agent-run-todo.png)
+
 When the Agent has finished, you should have **a new API that can run with all services, sample data and even unit tests**. Copilot will list all the actions completed. From there, you can choose to:
 
 - **Keep** changes to validate this set of modifications
@@ -987,11 +991,11 @@ When the Agent has finished, you should have **a new API that can run with all s
 
 ![Agent mode continue or keep](assets/agent-mode-keep.png)
 
-Once finished, check that you the Vue Application is able to work with that new API. You will not need to change anything on the application side since you asked that the API run on the same port.
+Once finished, check that the Vue Application is able to work with that new API. You will not need to change anything on the application side since you asked that the API run on the same port.
 
 At this step, if there is any error, ask Copilot for help to fix it. If everything works fine, you can delete the previous API folder `albums-api`.
 
-The last step before committing it and share it with you team is documenting. Try to ask this to Copilot again:
+The last step before committing it and share it with your team is documenting the result. Try to ask this to Copilot again:
 
 ```text
 can you add the instructions to a readme.md file
@@ -1039,9 +1043,9 @@ First, you will need to activate the marketplace first from the VSCode Extension
 ![vscode-activate-mcp](assets/vscode-activate-mcp.png)
 ![vscode-install-mcp-in-workspace](assets/vscode-install-mcp-in-workspace.png)
 
-This will work with MCP servers like _Playwright_ which is build on NPM but for MCP servers like GitHub that should run on your local Docker it will not work.
+This will work with MCP servers like _Playwright_ which is built on NPM but for MCP servers, but other local MCP servers like GitHub offer a local execution in docker, which might not be suitable for all environments.
 
-Luckily, GitHub also propose an hosted version of it's MCP Server you can manually by adding an `mcp.json` file inside the `.vscode` folder with the following configuration:
+Luckily, GitHub also offers a remote version of its MCP Server you can use by manually adding an `mcp.json` file inside the `.vscode` folder with the following configuration:
 
 </div>
 
