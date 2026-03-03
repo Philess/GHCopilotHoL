@@ -1439,7 +1439,7 @@ Ejemplo 2:
 Escribe una función TS que recupere todas las razas de perros de la siguiente API y retorne un array de Breed #fetch https://dogapi.dog/api-docs/v2/swagger.json
 ```
 
-\* _puedes ver abajo que podría solicitar validación dependiendo del dominio para la solicitud_
+\* *puedes ver abajo que podría solicitar validación dependiendo del dominio para la solicitud*
 
 ![Fetch Web Dogs API](../assets/fetch-dogs-api.png)
 
