@@ -21,17 +21,7 @@
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "extensions": [
-        "ms-azuretools.azure-dev",
-        "ms-azuretools.vscode-bicep",
-        "DavidAnson.vscode-markdownlint"
-      ],
-      "settings": {
-        "[markdown]": {
-          "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-          "editor.formatOnSave": false
-        }
-      }
+      "extensions": ["ms-azuretools.azure-dev", "ms-azuretools.vscode-bicep"]
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
