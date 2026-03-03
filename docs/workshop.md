@@ -9,10 +9,12 @@ authors: # Required. You can add as many authors as needed
   - Philippe DIDIERGEORGES
   - Ross BOAST
   - Lucile JEANNERET
+  - Julien STREBLER
 contacts: # Required. Must match the number of authors
   - "@philess"
   - "@rossboast"
   - "@ljeanner"
+  - "@justrebl"
 duration_minutes: 180 # Required. Estimated duration in minutes
 tags: javascript, .net, python, GitHub, IA, Copilot, AI, CSU # Required. Tags for filtering and searching
 #banner_url: assets/banner.jpg           # Optional. Should be a 1280x640px image
@@ -1131,7 +1133,7 @@ On the Agent mode, be sure to select a premium model or simply use the `Auto` mo
 
 ![Start implementation](assets/implement-issue.png)
 
-After some work your application should have a functional cart feature:
+After some time your application should have a functional cart feature:
 ![Cart feature implementer](assets/cart-feature-implemented.png)
 
 Once again, once you reached a new milestone, don't forget to validate the changes by clicking `Keep` and commit the changes.
@@ -1146,7 +1148,7 @@ Now that our feature is ready, it's time to create the tests for it. We are work
 
 </div>
 
-You have setup an Playwright MCP previously and we will use it to write and test simultaneously our test.
+You have setup an Playwright MCP previously and we will use it to write and execute simultaneously our test.
 
 Open a new GitHub Copilot Chat session on Agent mode with a premium model (the latest the better) and type the following prompt:
 
@@ -1658,6 +1660,9 @@ If you want more challenge, or specific use cases, here a a list of great conten
 
 - [Mastering GitHubCopilot for paired programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming)
   A set of technology-focused lesson for developers, sharing best practices and recipices for adressing code, sql, deployment, and modernization tasks with GitHub Copilot
+
+- [Writing great agents.md](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
+  A set of best practices shared by the Github Product Group from identifying the most effective patterns out of public repositories using custom Github Copilot agents.
 
 ## Help us improve this Workshop
 
