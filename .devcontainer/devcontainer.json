@@ -21,16 +21,13 @@
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "extensions": [
-        "ms-azuretools.azure-dev",
-        "ms-azuretools.vscode-bicep"
-      ]
+      "extensions": ["ms-azuretools.azure-dev", "ms-azuretools.vscode-bicep"]
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm install -g @moaw/cli",
+  "postCreateCommand": "npm install -g @moaw/cli"
   // Set minimal host requirements for the container.
   // "hostRequirements": {
   //   "memory": "8gb"
