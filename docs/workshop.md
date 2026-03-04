@@ -621,7 +621,7 @@ to provide the best performance for your use case.
 > The list of available models will depend on multiple parameters:
 >
 > - which IDE you are using
-> - which agent you are using (Chat / Inline / Edit / Agent)
+> - which agent you are using (Chat / Inline / Agent)
 > - the models authorized by your Copilot Administrator
 
 </div>
@@ -666,7 +666,7 @@ It should create a structured project and even a new button to create the file. 
 
 As you saw in previous examples, passing the right prompt is key for good Copilot results. The other big factor is the context you are passing to Copilot along with that prompt.
 
-In the Chat or Edit mode you can see the files passed in the context by default in the chat field:
+In the Agent mode you can see the files passed in the context by default in the field:
 ![current file in chat context](assets/chat-context1.png)
 
 It's possible to ignore it by clicking on the eye icon on the left of the file name.
@@ -1298,7 +1298,7 @@ What is the most secure way to upload a photo from my app?
 
 This feature is easing the customization of Copilot by providing an instruction file that will be:
 
-- used as **meta instructions** for all you chat/edit requests
+- used as **meta instructions** for all you chat/agent requests
 - stored in the repo as code which means it will be automatically **shared among team members**
 
 It very powerful to add context for Copilot specifically dedicated for the current codebase.
@@ -1417,7 +1417,7 @@ You can call it using the slash command: `/get-my-issues` and BTW you can add in
 
 ### Custom Agents
 
-We've already seen the built-in Agents of GitHub Copilot (Ask, Edit, Plan & Agent). You can also create your own custom agent to enable you to configure the AI to adopt different personas tailored to specific development roles and tasks. For example, you might create agents for a security reviewer, planner, solution architect, or other specialized roles. Each persona can have its own behavior, available MCP tools, and instructions.
+We've already seen the built-in Agents of GitHub Copilot (Ask, Plan & Agent). You can also create your own custom agent to enable you to configure the AI to adopt different personas tailored to specific development roles and tasks. For example, you might create agents for a security reviewer, planner, solution architect, or other specialized roles. Each persona can have its own behavior, available MCP tools, and instructions.
 
 You can also use handoffs to create guided workflows between agents, allowing you to transition seamlessly from one specialized agent to another with a single click. For example, you could move from a planning agent directly into the implementation agent, as you saw with the previous example when we re-wrote the Album API.
 
