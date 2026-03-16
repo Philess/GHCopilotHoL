@@ -37,7 +37,7 @@ navigation_numbering: false # Optional. Enable numbering in the side menu (defau
 
 # The ultimate GitHub Copilot Tutorial for developers
 
-*Version 1.5 - March 2026*
+*Version 1.6 - March 2026*
 
 The goal of this workshop is to learn how to use GitHub Copilot, using an exercise that consists of building a web server using Nodejs with different functionalities and a .NET Web API. In the second part, you'll learn how to use it for infrastructure as code but also to fix bad practices in terms of security.
 
@@ -587,7 +587,7 @@ Try also using the questions suggestions that appears along the way.
 
 ### Built-in Agents: Ask, Plan & Agent
 
-On GitHub Copilot Chat, you can switch between four built-in agents: **Ask**, **Plan**, and **Agent**. The agent you are in is displayed in the chat view.
+On GitHub Copilot Chat, you can switch between three built-in agents: **Ask**, **Plan**, and **Agent**. The agent you are in is displayed in the chat view.
 
 ![chat mode selection](assets/chat-mode-selection.png)
 
@@ -1298,7 +1298,7 @@ What is the most secure way to upload a photo from my app?
 
 This feature is easing the customization of Copilot by providing an instruction file that will be:
 
-- used as **meta instructions** for all you chat/agent requests
+- used as **meta instructions** for all your chat/agent requests
 - stored in the repo as code which means it will be automatically **shared among team members**
 
 It very powerful to add context for Copilot specifically dedicated for the current codebase.
