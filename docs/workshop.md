@@ -585,18 +585,17 @@ Try it then with some of your code files in the repository. Open a file a try as
 
 Try also using the questions suggestions that appears along the way.
 
-### Built-in Agents: Ask, Edit, Plan & Agent
+### Built-in Agents: Ask, Plan & Agent
 
-On GitHub Copilot Chat, you can switch between four built-in agents: **Ask**, **Plan**, **Edit**, and **Agent**. The agent you are in is displayed in the chat view.
+On GitHub Copilot Chat, you can switch between four built-in agents: **Ask**, **Plan**, and **Agent**. The agent you are in is displayed in the chat view.
 
 ![chat mode selection](assets/chat-mode-selection.png)
 
 - **Ask**: This is the default agent. It enables you to ask questions and get answers from Copilot. You can also ask Copilot to generate code for you. You can switch to this mode by clicking the **Ask** button in the chat view.
 - **Plan**: The plan agent is optimized for creating a structured implementation plan for a coding task. Use the plan agent when you want to break down a complex feature or change into smaller, manageable steps before implementation.
-- **Edit**: The Edit agent is specifically optimized for editing code and specifically working on a set of modifications, in a multi-step process. It's very powerful to generate code in a more interactive way and will guide you by providing guidance to run the commands but not executing it by itself.
-- **Agent**: This is the agentic (or multi-agent) version of **Edit**. It's a more advanced version of **Edit** that can run commands for you, catch any errors, and correct itself before continuing on with the process. It changes the way the developer builds applications by focusing on describing the feature and letting Github Copilot generate the code, rather than the user writing the code themselves. This is what the community calls **Vibe Coding**.
+- **Agent**: This is the agentic (or multi-agentic) version of the chat. It's an advanced version of the chat that can run commands for you, catch any errors, and correct itself before continuing on with the process. It changes the way the developer builds applications by focusing on describing the feature, the specifications and instructions an agent needs to follow before letting Github Copilot generate the code, rather than the user writing the code themselves. This is what the community calls **Vibe Coding**.
 
-**Plan**, **Agent** and **Edit** are detailed in the next level. This level focuses on playing with **Ask**.
+**Plan** and **Agent** are detailed in the next level. This level focuses on playing with **Ask**.
 
 ### Inline Chat
 
@@ -622,7 +621,7 @@ to provide the best performance for your use case.
 > The list of available models will depend on multiple parameters:
 >
 > - which IDE you are using
-> - which agent you are using (Chat / Inline / Edit / Agent)
+> - which agent you are using (Chat / Inline / Agent)
 > - the models authorized by your Copilot Administrator
 
 </div>
@@ -667,7 +666,7 @@ It should create a structured project and even a new button to create the file. 
 
 As you saw in previous examples, passing the right prompt is key for good Copilot results. The other big factor is the context you are passing to Copilot along with that prompt.
 
-In the Chat or Edit mode you can see the files passed in the context by default in the chat field:
+In the Agent mode you can see the files passed in the context by default in the field:
 ![current file in chat context](assets/chat-context1.png)
 
 It's possible to ignore it by clicking on the eye icon on the left of the file name.
@@ -1299,7 +1298,7 @@ What is the most secure way to upload a photo from my app?
 
 This feature is easing the customization of Copilot by providing an instruction file that will be:
 
-- used as **meta instructions** for all you chat/edit requests
+- used as **meta instructions** for all you chat/agent requests
 - stored in the repo as code which means it will be automatically **shared among team members**
 
 It very powerful to add context for Copilot specifically dedicated for the current codebase.
@@ -1418,7 +1417,7 @@ You can call it using the slash command: `/get-my-issues` and BTW you can add in
 
 ### Custom Agents
 
-We've already seen the built-in Agents of GitHub Copilot (Ask, Edit, Plan & Agent). You can also create your own custom agent to enable you to configure the AI to adopt different personas tailored to specific development roles and tasks. For example, you might create agents for a security reviewer, planner, solution architect, or other specialized roles. Each persona can have its own behavior, available MCP tools, and instructions.
+We've already seen the built-in Agents of GitHub Copilot (Ask, Plan & Agent). You can also create your own custom agent to enable you to configure the AI to adopt different personas tailored to specific development roles and tasks. For example, you might create agents for a security reviewer, planner, solution architect, or other specialized roles. Each persona can have its own behavior, available MCP tools, and instructions.
 
 You can also use handoffs to create guided workflows between agents, allowing you to transition seamlessly from one specialized agent to another with a single click. For example, you could move from a planning agent directly into the implementation agent, as you saw with the previous example when we re-wrote the Album API.
 
